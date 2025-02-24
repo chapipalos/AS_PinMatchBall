@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Escale : MonoBehaviour
 {
@@ -20,29 +21,42 @@ public class Escale : MonoBehaviour
 
     void Update()
     {
+        Inputs();
 
-       if ( isInfinite || numberOfCyclesPassed < maximumNumberOfCycles )
-       {
-         secondsPassed += Time.deltaTime;
-       float periodPercentage = Mathf.Clamp01( secondsPassed / cycleSeconds );
-
-       if ( periodPercentage <= firstStagePercentage )
+        if (mAppear)
         {
-          transform.localScale = remapValue( periodPercentage, 0.0f, firstStagePercentage, 1.0f, scaleMultiplier ) * scaleOrigin;
-         }
-          else
-         {
-          transform.localScale = ( scaleMultiplier - remapValue( periodPercentage, firstStagePercentage, 1.0f, 0.0f, scaleMultiplier - 1.0f ) ) * scaleOrigin;
+            if (isInfinite || numberOfCyclesPassed < maximumNumberOfCycles)
+            {
+                secondsPassed += Time.deltaTime;
+                float periodPercentage = Mathf.Clamp01(secondsPassed / cycleSeconds);
+
+                if (periodPercentage <= firstStagePercentage)
+                {
+                    transform.localScale = remapValue(periodPercentage, 0.0f, firstStagePercentage, 1.0f, scaleMultiplier) * scaleOrigin;
+                }
+                else
+                {
+                    transform.localScale = (scaleMultiplier - remapValue(periodPercentage, firstStagePercentage, 1.0f, 0.0f, scaleMultiplier - 1.0f)) * scaleOrigin;
+                }
+
+                if (periodPercentage >= 1.0f)
+                {
+                    if (!isInfinite)
+                    {
+                        ++numberOfCyclesPassed;
+                    }
+                    secondsPassed = 0.0f;
+                    mAppear = false;
+                }
+            }
         }
+    }
 
-       if ( periodPercentage >= 1.0f )
-       {
-           if ( !isInfinite )
+    private void Inputs()
+    {
+        if (Input.GetKey(KeyCode.Space))
         {
-           ++numberOfCyclesPassed;
-         }
-           secondsPassed = 0.0f;
-         }
+            mAppear = true;
         }
     }
 
@@ -65,5 +79,7 @@ public class Escale : MonoBehaviour
     public float scaleMultiplier = 2.0f;        // Scale multiplier
 
     public float firstStagePercentage = 0.2f;        // First stage percentage
+
+    public bool mAppear;
 
 }
