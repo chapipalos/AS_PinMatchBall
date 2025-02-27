@@ -52,6 +52,13 @@ public class Escale : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("BALL"))
+        {
+            mAppear = true;
+        }
+    }
     private void Inputs()
     {
         if (Input.GetKey(KeyCode.Space))
