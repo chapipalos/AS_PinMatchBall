@@ -31,7 +31,7 @@ public class SampleSpin : MonoBehaviour
       if ( mResetRequested )
       {
         mResetRequested = false;
-        mRigidBody.velocity = Vector3.zero;
+        mRigidBody.linearVelocity = Vector3.zero;
         mRigidBody.angularVelocity = Vector3.zero;
         transform.position = mPositionStart;
       }
@@ -45,9 +45,9 @@ public class SampleSpin : MonoBehaviour
           mRigidBody.AddTorque( Mathf.Abs( mSpinMagnitude ) * mSpinAxis, ForceMode.VelocityChange );
         }
 
-        Vector3 effectForceDirection = 100.0f * mRigidBody.velocity.magnitude * Vector3.Cross( mSpinAxis, mRigidBody.velocity );
+        Vector3 effectForceDirection = 100.0f * mRigidBody.linearVelocity.magnitude * Vector3.Cross( mSpinAxis, mRigidBody.linearVelocity );
         // NOTE: This is by NO means an accurate representation; it is just a test taking into account the axes and some factors involved in the effect
-        mRigidBody.AddForce( mArbitraryVelocityMultiplier * mRigidBody.velocity.magnitude * Vector3.Cross( mSpinAxis, mRigidBody.velocity.normalized ).normalized, ForceMode.VelocityChange );
+        mRigidBody.AddForce( mArbitraryVelocityMultiplier * mRigidBody.linearVelocity.magnitude * Vector3.Cross( mSpinAxis, mRigidBody.linearVelocity.normalized ).normalized, ForceMode.VelocityChange );
       }
     }
   }
