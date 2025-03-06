@@ -868,7 +868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4896540754929250447, guid: 06136845b61b01e4c9a5801732fd4af8, type: 3}
       propertyPath: m_Name
-      value: Flippers (1)
+      value: FlippersP1
       objectReference: {fileID: 0}
     - target: {fileID: 4896540754929250447, guid: 06136845b61b01e4c9a5801732fd4af8, type: 3}
       propertyPath: m_TagString
@@ -1318,7 +1318,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4896540754929250447, guid: 06136845b61b01e4c9a5801732fd4af8, type: 3}
       propertyPath: m_Name
-      value: Flippers
+      value: FlippersP2
       objectReference: {fileID: 0}
     - target: {fileID: 4896540754929250447, guid: 06136845b61b01e4c9a5801732fd4af8, type: 3}
       propertyPath: m_TagString
@@ -1438,5 +1438,5 @@ SceneRoots:
   - {fileID: 1972920254}
   - {fileID: 2058409806}
   - {fileID: 3460799117587792577}
-  - {fileID: 67303487691452599}
   - {fileID: 1736141244}
+  - {fileID: 67303487691452599}
