@@ -51,6 +51,11 @@ public class Trigger : MonoBehaviour
         RotateFlipper(rightRotating, rightFlipper, orgRightRotation, true);
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
     private void Inputs()
     {
         if (player)
