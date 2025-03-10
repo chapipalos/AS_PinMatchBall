@@ -714,6 +714,7 @@ MonoBehaviour:
   m_Ball: {fileID: 0}
   m_PointOfGravity1: {fileID: 1552381224}
   m_PointOfGravity2: {fileID: 1606881629}
+  velocityGravity: 0.01
 --- !u!4 &1499359274
 Transform:
   m_ObjectHideFlags: 0
@@ -1386,7 +1387,7 @@ Transform:
   m_GameObject: {fileID: 2058409801}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.9, y: 1.14, z: 3.6}
+  m_LocalPosition: {x: -3.2, y: 1.14, z: 3.6}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
