@@ -11,13 +11,15 @@ public class MainMenu : MonoBehaviour
     float SliderBrighValue;
     public Slider brightnessSlider;
     public Image BrighPanel;
-  
+
+
 
     private void Start()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("volumeAudio", 0.5f);
         brightnessSlider.value = PlayerPrefs.GetFloat("brightness", 0.5f);
-        BrighPanel.color=new Color(BrighPanel.color.r,BrighPanel.color.g,BrighPanel.color.b, brightnessSlider.value);   
+        BrighPanel.color=new Color(BrighPanel.color.r,BrighPanel.color.g,BrighPanel.color.b, brightnessSlider.value);
+    
 
     }
     public void changeSlider(float value)
@@ -43,7 +45,9 @@ public class MainMenu : MonoBehaviour
     {
         SliderBrighValue = value;
         PlayerPrefs.SetFloat("brightness", SliderBrighValue);
+        PlayerPrefs.Save();
         BrighPanel.color = new Color(BrighPanel.color.r, BrighPanel.color.g, BrighPanel.color.b, brightnessSlider.value);
+     
     }
 }
 
