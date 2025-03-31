@@ -7,12 +7,24 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public Slider volumeSlider;
+    float SliderVolumeValue;
+    float SliderBrighValue;
     public Slider brightnessSlider;
+    public Image BrighPanel;
   
 
     private void Start()
     {
-       
+        volumeSlider.value = PlayerPrefs.GetFloat("volumeAudio", 0.5f);
+        brightnessSlider.value = PlayerPrefs.GetFloat("brightness", 0.5f);
+        BrighPanel.color=new Color(BrighPanel.color.r,BrighPanel.color.g,BrighPanel.color.b, brightnessSlider.value);   
+
+    }
+    public void changeSlider(float value)
+    {
+        SliderVolumeValue = value;
+        PlayerPrefs.SetFloat("volumeAudio", SliderVolumeValue);
+        AudioListener.volume=volumeSlider.value;
     }
 
     public void play()
@@ -25,14 +37,13 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void UpdateVolume(float value)
-    {
-       
-    }
+
 
     public void UpdateBrightness(float value)
     {
-      
+        SliderBrighValue = value;
+        PlayerPrefs.SetFloat("brightness", SliderBrighValue);
+        BrighPanel.color = new Color(BrighPanel.color.r, BrighPanel.color.g, BrighPanel.color.b, brightnessSlider.value);
     }
 }
 
