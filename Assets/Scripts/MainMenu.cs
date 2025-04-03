@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,20 +10,51 @@ public class MainMenu : MonoBehaviour
 {
     public Slider volumeSlider;
     float SliderVolumeValue;
-    float SliderBrighValue;
-    public Slider brightnessSlider;
-    public Image BrighPanel;
+    Resolution[] resol;
+    public TMP_Dropdown resdrop;
 
 
 
     private void Start()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("volumeAudio", 0.5f);
-        brightnessSlider.value = PlayerPrefs.GetFloat("brightness", 0.5f);
-        BrighPanel.color=new Color(BrighPanel.color.r,BrighPanel.color.g,BrighPanel.color.b, brightnessSlider.value);
+
+        ReviseResolution();
     
 
     }
+
+    private void ReviseResolution()
+    {
+        int ActualRes=0;
+        string option;
+    resol =Screen.resolutions;
+        resdrop.ClearOptions();
+        List<string> optionsRes = new List<string>();
+        for (int i = 0; i < resol.Length; i++)
+        {
+            option = resol[i].width+" x "+resol[i].height;
+            optionsRes.Add(option); 
+
+
+
+            if (Screen.fullScreen && resol[i].width==Screen.currentResolution.width && resol[i].height==Screen.currentResolution.height)
+            {
+               ActualRes = i;
+            }
+        }
+        resdrop.AddOptions(optionsRes);
+        resdrop.value = ActualRes;
+        resdrop.RefreshShownValue();
+
+
+    }
+    public void changeResolution(int index)
+    {
+        Resolution resolut= resol[index];
+        Screen.SetResolution(resolut.width, resolut.height, Screen.fullScreen);
+    }
+
     public void changeSlider(float value)
     {
         SliderVolumeValue = value;
@@ -41,13 +74,6 @@ public class MainMenu : MonoBehaviour
 
 
 
-    public void UpdateBrightness(float value)
-    {
-        SliderBrighValue = value;
-        PlayerPrefs.SetFloat("brightness", SliderBrighValue);
-        PlayerPrefs.Save();
-        BrighPanel.color = new Color(BrighPanel.color.r, BrighPanel.color.g, BrighPanel.color.b, brightnessSlider.value);
-     
-    }
+
 }
 
