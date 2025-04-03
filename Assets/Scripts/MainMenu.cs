@@ -12,18 +12,32 @@ public class MainMenu : MonoBehaviour
     float SliderVolumeValue;
     Resolution[] resol;
     public TMP_Dropdown resdrop;
-
+    public Toggle FullScr;
 
 
     private void Start()
     {
+
+
+        if (Screen.fullScreen)
+        {
+            FullScr.isOn = true;
+        }
+
+        else
+        {
+            FullScr.isOn = false;
+        }
         volumeSlider.value = PlayerPrefs.GetFloat("volumeAudio", 0.5f);
 
         ReviseResolution();
     
 
     }
-
+    public void ActivateFullScreen(bool fullScreen)
+    {
+        Screen.fullScreen = fullScreen;
+    }
     private void ReviseResolution()
     {
         int ActualRes=0;
