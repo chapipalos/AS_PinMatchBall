@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 49}
   - component: {fileID: 78}
+  - component: {fileID: 80}
   m_Layer: 0
   m_Name: Directional light
   m_TagString: Untagged
@@ -357,6 +358,29 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27}
   m_Enabled: 1
+--- !u!114 &80
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!196 &88
 NavMeshSettings:
   serializedVersion: 2
@@ -637,6 +661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 508628648}
   - component: {fileID: 508628647}
+  - component: {fileID: 508628649}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -724,6 +749,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &508628649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508628646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &701124440 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
@@ -1471,6 +1519,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 48}
     m_Modifications:
+    - target: {fileID: 2978727326849619402, guid: 325dfdd9dab0e8f478b599780abdbd57, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 05c2971c62ad61946a2497e37267e7c1, type: 2}
     - target: {fileID: 2978727326851520296, guid: 325dfdd9dab0e8f478b599780abdbd57, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.66
@@ -1578,6 +1630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBall
       objectReference: {fileID: 0}
+    - target: {fileID: 1330407642059109953, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cb9053d6f12b6904583f1d0c6cc10b4e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1597,6 +1653,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 48}
     m_Modifications:
+    - target: {fileID: 689703387596577980, guid: 6a43ca4885280844bb009563bd7d1dcd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cb9053d6f12b6904583f1d0c6cc10b4e, type: 2}
+    - target: {fileID: 689703387596577982, guid: 6a43ca4885280844bb009563bd7d1dcd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cb9053d6f12b6904583f1d0c6cc10b4e, type: 2}
     - target: {fileID: 689703387598504572, guid: 6a43ca4885280844bb009563bd7d1dcd, type: 3}
       propertyPath: m_Name
       value: AtomBall
@@ -1704,6 +1768,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4667656744898575420, guid: 12ab7dfd39045c04a914a2ac9e59b02f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cb9053d6f12b6904583f1d0c6cc10b4e, type: 2}
+    - target: {fileID: 4667656744898575422, guid: 12ab7dfd39045c04a914a2ac9e59b02f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cb9053d6f12b6904583f1d0c6cc10b4e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
