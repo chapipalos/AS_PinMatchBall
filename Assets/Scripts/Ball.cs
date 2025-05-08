@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -7,10 +8,16 @@ public class Ball : MonoBehaviour
 
     private MeshRenderer m_MeshRenderer;
 
+    public GameObject m_SparklePrefab;
+    private GameObject m_SparkleEffect;
+    private ParticleSystem[] m_SparklePartycleSystem;
 
-    public bool m_IsPlayer1;
-    public bool m_IsPlayer2;
-    
+    private void Awake()
+    {
+        m_SparkleEffect = GameObject.Instantiate(m_SparklePrefab);
+        m_SparklePartycleSystem = m_SparkleEffect.GetComponentsInChildren<ParticleSystem>();
+    }
+
     void Start()
     {
         m_MeshRenderer = GetComponent<MeshRenderer>();
@@ -21,24 +28,20 @@ public class Ball : MonoBehaviour
         if(collision.gameObject.CompareTag("Player1"))
         {
             m_MeshRenderer.material = m_MaterialPlayer1;
-            m_IsPlayer1 = true;
-            m_IsPlayer2 = false;
+            GameManager.m_PlayerOwner = false;
         }
-        else if(collision.gameObject.CompareTag("Player2"))
+        if(collision.gameObject.CompareTag("Player2"))
         {
             m_MeshRenderer.material = m_MaterialPlayer2;
-            m_IsPlayer2 = true;
-            m_IsPlayer1 = false;
+            GameManager.m_PlayerOwner = true;
         }
-
-    }
-
-
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            foreach (ParticleSystem ps in m_SparklePartycleSystem)
+            {
+                ps.transform.position = transform.position;
+                ps.Play();
+            }
+        }
     }
 }
