@@ -4287,7 +4287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RespawnPoint: {fileID: 289685832}
   m_ForceAmount: 10
-  particles: {fileID: 100000, guid: 41caabb81e9bb9f468feae7e763002e2, type: 3}
+  particles: {fileID: 100000, guid: 9f29ca98810539c408b7cc3a04ca61b4, type: 3}
   Goalparticles: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
 --- !u!65 &1468261135
 BoxCollider:
@@ -4367,7 +4367,7 @@ MonoBehaviour:
   m_Ball: {fileID: 0}
   m_PointOfGravity1: {fileID: 1552381224}
   m_PointOfGravity2: {fileID: 1606881629}
-  velocityGravity: 0.01
+  velocityGravity: 0.05
 --- !u!4 &1499359274
 Transform:
   m_ObjectHideFlags: 0
@@ -4562,7 +4562,7 @@ MonoBehaviour:
   m_RespawnPoint: {fileID: 1750882290}
   m_ForceAmount: 10
   particles: {fileID: 100000, guid: 41caabb81e9bb9f468feae7e763002e2, type: 3}
-  Goalparticles: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
+  Goalparticles: {fileID: 100000, guid: 60656d7d0b74a9a45b3c02ba301ae223, type: 3}
 --- !u!65 &1569581056
 BoxCollider:
   m_ObjectHideFlags: 0

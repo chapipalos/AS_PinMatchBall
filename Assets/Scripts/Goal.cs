@@ -8,6 +8,7 @@ public class Goal : MonoBehaviour
     public float m_ForceAmount = 10f;
     public GameObject particles;
     public GameObject Goalparticles;
+ 
 
     void Start()
     {
@@ -34,5 +35,6 @@ public class Goal : MonoBehaviour
             rb.AddForce(direction * m_ForceAmount, ForceMode.Impulse);
 
         }
+    
     }
 }
