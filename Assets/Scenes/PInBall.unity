@@ -4229,6 +4229,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7033944699096290931, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
   m_PrefabInstance: {fileID: 344590567}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1260918027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1260918030}
+  - component: {fileID: 1260918029}
+  - component: {fileID: 1260918028}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1260918028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260918027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46061cc35b0816e41ace472c33dc822a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimeFrozen: 0
+  m_TimeStunned: 0
+  m_TimeGhostBall: 0
+--- !u!114 &1260918029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260918027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d92dd451f2c3641aa79185a2c701e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freezePowerUpPrefab: {fileID: 689703387598504572, guid: 6a43ca4885280844bb009563bd7d1dcd, type: 3}
+  wheelPowerUpPrefab: {fileID: 4244544703068471477, guid: 3b5a28db09a60f0479da5f8cdf8d7039, type: 3}
+  accelerationPowerUpPrefab: {fileID: 4667656744896307966, guid: 12ab7dfd39045c04a914a2ac9e59b02f, type: 3}
+  spikeBallPowerUpPrefab: {fileID: 8217891378572228073, guid: 8ce846c7eebb84f4d92bc6bdcde36312, type: 3}
+  ghostPowerUpPrefab: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
+  AntigoalPowerUpPrefab: {fileID: 3769926552780399675, guid: 640b1c008119192418bb742524f946d6, type: 3}
+  MagnetPowerUpPrefab: {fileID: 7564358235192646565, guid: 64feaa7b7b780fb4f92198f6fb2e1bdb, type: 3}
+  m_spawnInterval: 5
+  maxSpawns: 10
+  SpawnPosition: {fileID: 0}
+--- !u!4 &1260918030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260918027}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.154895, y: 8.121553, z: 28.455873}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1290997223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4655,60 +4725,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1738879274667412634, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
   m_PrefabInstance: {fileID: 1787047306}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1456347728
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1456347730}
-  - component: {fileID: 1456347729}
-  m_Layer: 0
-  m_Name: SpawnPowerUps
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1456347729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456347728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64d92dd451f2c3641aa79185a2c701e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  freezePowerUpPrefab: {fileID: 689703387598504572, guid: 6a43ca4885280844bb009563bd7d1dcd, type: 3}
-  wheelPowerUpPrefab: {fileID: 4244544703068471477, guid: 3b5a28db09a60f0479da5f8cdf8d7039, type: 3}
-  accelerationPowerUpPrefab: {fileID: 4667656744896307966, guid: 12ab7dfd39045c04a914a2ac9e59b02f, type: 3}
-  spikeBallPowerUpPrefab: {fileID: 8217891378572228073, guid: 8ce846c7eebb84f4d92bc6bdcde36312, type: 3}
-  ghostPowerUpPrefab: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
-  AntigoalPowerUpPrefab: {fileID: 3769926552780399675, guid: 640b1c008119192418bb742524f946d6, type: 3}
-  MagnetPowerUpPrefab: {fileID: 7564358235192646565, guid: 64feaa7b7b780fb4f92198f6fb2e1bdb, type: 3}
-  m_spawnInterval: 5
-  maxSpawns: 10
-  SpawnPosition: {fileID: 1456347730}
---- !u!4 &1456347730
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456347728}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.65, y: 1.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1468261133
 GameObject:
   m_ObjectHideFlags: 0
@@ -7790,4 +7806,4 @@ SceneRoots:
   - {fileID: 672504450}
   - {fileID: 284172587}
   - {fileID: 94607264}
-  - {fileID: 1456347730}
+  - {fileID: 1260918030}
