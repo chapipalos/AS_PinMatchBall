@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Goal : MonoBehaviour
+public class GoalRespawnController : MonoBehaviour
 {
     private BoxCollider m_BoxCollider;
     public Transform m_RespawnPoint;
@@ -28,6 +28,7 @@ public class Goal : MonoBehaviour
     private void Awake()
     {
         m_BeamAtSpawnEffect = GameObject.Instantiate(m_BeamAtSpawnPrefab);
+        m_BeamAtSpawnEffect.SetActive(false);
         m_BeamAtSpawnParticleSystem = m_BeamAtSpawnEffect.GetComponentsInChildren<ParticleSystem>();
 
         m_GoalExplosionEffect = GameObject.Instantiate(m_GoalExplosionPrefab);
@@ -63,6 +64,7 @@ public class Goal : MonoBehaviour
             {
                 if (m_BeamAtSpawnPrefab != null)
                 {
+                    m_BeamAtSpawnEffect.SetActive(true);
                     foreach (ParticleSystem ps in m_BeamAtSpawnParticleSystem)
                     {
                         if (ps.CompareTag("Beam"))

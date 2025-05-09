@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class FlippersController : MonoBehaviour
 {
     public KeyCode keyCode = KeyCode.J;
 
