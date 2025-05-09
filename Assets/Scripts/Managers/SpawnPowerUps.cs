@@ -11,7 +11,7 @@ public class SpawnPowerUps : MonoBehaviour
     public GameObject AntigoalPowerUpPrefab;
     public GameObject MagnetPowerUpPrefab;
 
-    public float m_spawnInterval=2f;
+    public float m_spawnInterval = 2f;
     public int maxSpawns = 20;
     private float timer;
     private int counter = 0;
@@ -23,7 +23,8 @@ public class SpawnPowerUps : MonoBehaviour
     {
         if (counter >= maxSpawns) { return; }
         timer += Time.deltaTime;
-        if (timer >= m_spawnInterval) {
+        if (timer >= m_spawnInterval)
+        {
             timer = 0f;
             if (SpawnPosition == null)
             {
@@ -31,11 +32,13 @@ public class SpawnPowerUps : MonoBehaviour
             }
             Vector3 positionRandom = SpawnPosition.position + new Vector3(Random.Range(-20f, 20f), 0f, Random.Range(-20f, 20f));
             GameObject PrefaboUp = GetRandomPoUP();
-            if (PrefaboUp != null) {
+            if (PrefaboUp != null)
+            {
                 Instantiate(PrefaboUp, positionRandom, Quaternion.identity);
                 counter++;
             }
-        } }
+        }
+    }
 
     private GameObject GetRandomPoUP()
     {
@@ -49,8 +52,8 @@ public class SpawnPowerUps : MonoBehaviour
             AntigoalPowerUpPrefab,
             MagnetPowerUpPrefab
         };
-     
-   //If is empty, don't spawn, only valid prefabs
+
+        //If is empty, don't spawn, only valid prefabs
         var validPrefabs = System.Array.FindAll(prefabs, p => p != null);
 
         if (validPrefabs.Length == 0) return null;
