@@ -5,8 +5,14 @@ public class Goal : MonoBehaviour
 {
     private BoxCollider m_BoxCollider;
     public Transform m_RespawnPoint;
-    public GameObject particles;
-    public GameObject Goalparticles;
+
+    public GameObject m_BeamAtSpawnPrefab;
+    private GameObject m_BeamAtSpawnEffect;
+    private ParticleSystem[] m_BeamAtSpawnParticleSystem;
+
+    public GameObject m_GoalExplosionPrefab;
+    private GameObject m_GoalExplosionEffect;
+    private ParticleSystem[] m_GoalExplosionParticleSystem;
 
     private bool m_ParticlesSpawn;
 
@@ -18,6 +24,15 @@ public class Goal : MonoBehaviour
     private float m_RemainingTimeToRespawn;
 
     public Material m_MaterialPlayer;
+
+    private void Awake()
+    {
+        m_BeamAtSpawnEffect = GameObject.Instantiate(m_BeamAtSpawnPrefab);
+        m_BeamAtSpawnParticleSystem = m_BeamAtSpawnEffect.GetComponentsInChildren<ParticleSystem>();
+
+        m_GoalExplosionEffect = GameObject.Instantiate(m_GoalExplosionPrefab);
+        m_GoalExplosionParticleSystem = m_GoalExplosionEffect.GetComponentsInChildren<ParticleSystem>();
+    }
 
     void Start()
     {
@@ -46,9 +61,20 @@ public class Goal : MonoBehaviour
             }
             else if (m_ParticlesSpawn && m_RemainingTimeToRespawn <= 0.5f)
             {
-                if (particles != null)
+                if (m_BeamAtSpawnPrefab != null)
                 {
-                    Instantiate(particles, m_RespawnPoint.position, Quaternion.identity);
+                    foreach (ParticleSystem ps in m_BeamAtSpawnParticleSystem)
+                    {
+                        if (ps.CompareTag("Beam"))
+                        {
+                            ps.transform.position = m_RespawnPoint.position - new Vector3(0f, 13f, 0f);
+                        }
+                        else
+                        {
+                            ps.transform.position = m_RespawnPoint.position;
+                        }
+                        ps.Play();
+                    }
                     m_ParticlesSpawn = false;
                 }
             }
@@ -63,10 +89,12 @@ public class Goal : MonoBehaviour
     {
         if(other.tag == "BALL")
         {
-            if (Goalparticles != null)
+            foreach (ParticleSystem ps in m_GoalExplosionParticleSystem)
             {
-                Instantiate(Goalparticles, other.transform.position, Quaternion.identity);
+                ps.transform.position = other.transform.position;
+                ps.Play();
             }
+
             m_Ball = other.gameObject;
             m_Ball.SetActive(false);
             m_Goal = true;

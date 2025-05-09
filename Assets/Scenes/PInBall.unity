@@ -1935,7 +1935,7 @@ Transform:
   m_GameObject: {fileID: 498821630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.42024413, z: 0, w: 0.90741116}
-  m_LocalPosition: {x: 22.79, y: -1.1, z: 17.22}
+  m_LocalPosition: {x: 22.79, y: -1.2, z: 17.22}
   m_LocalScale: {x: 1, y: 2.4, z: 7.371497}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2616,7 +2616,7 @@ Transform:
   m_GameObject: {fileID: 742150108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.42024413, z: -0, w: 0.90741116}
-  m_LocalPosition: {x: 22.79, y: -1.1, z: -17.22}
+  m_LocalPosition: {x: 22.79, y: -1.2, z: -17.22}
   m_LocalScale: {x: 1, y: 2.4, z: 7.371497}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3676,7 +3676,7 @@ Transform:
   m_GameObject: {fileID: 956328655}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.42024413, z: 0, w: 0.90741116}
-  m_LocalPosition: {x: -22.79, y: -1.1, z: 17.22}
+  m_LocalPosition: {x: -22.79, y: -1.2, z: 17.22}
   m_LocalScale: {x: 1, y: 2.4, z: 7.371497}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4740,8 +4740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RespawnPoint: {fileID: 289685832}
-  particles: {fileID: 100000, guid: 9f29ca98810539c408b7cc3a04ca61b4, type: 3}
-  Goalparticles: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
+  m_BeamAtSpawnPrefab: {fileID: 100000, guid: 9f29ca98810539c408b7cc3a04ca61b4, type: 3}
+  m_GoalExplosionPrefab: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
   m_MaterialPlayer: {fileID: 2100000, guid: 0a0bedef7de5541499bb0271f257c552, type: 2}
 --- !u!65 &1468261135
 BoxCollider:
@@ -5014,8 +5014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RespawnPoint: {fileID: 1750882290}
-  particles: {fileID: 100000, guid: 41caabb81e9bb9f468feae7e763002e2, type: 3}
-  Goalparticles: {fileID: 100000, guid: 60656d7d0b74a9a45b3c02ba301ae223, type: 3}
+  m_BeamAtSpawnPrefab: {fileID: 100000, guid: 41caabb81e9bb9f468feae7e763002e2, type: 3}
+  m_GoalExplosionPrefab: {fileID: 100000, guid: 60656d7d0b74a9a45b3c02ba301ae223, type: 3}
   m_MaterialPlayer: {fileID: 2100000, guid: cb9053d6f12b6904583f1d0c6cc10b4e, type: 2}
 --- !u!65 &1569581056
 BoxCollider:
@@ -5334,7 +5334,7 @@ Transform:
   m_GameObject: {fileID: 1707680585}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.42024413, z: 0, w: 0.90741116}
-  m_LocalPosition: {x: -22.79, y: -1.1, z: -17.22}
+  m_LocalPosition: {x: -22.79, y: -1.2, z: -17.22}
   m_LocalScale: {x: 1, y: 2.4, z: 7.371497}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5548,6 +5548,7 @@ GameObject:
   - component: {fileID: 1724512091}
   - component: {fileID: 1724512094}
   - component: {fileID: 1724512095}
+  - component: {fileID: 1724512096}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5630,7 +5631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 60, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27.5, y: 35}
+  m_AnchoredPosition: {x: -30.42, y: 35}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1724512094
@@ -5685,6 +5686,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724512090}
   m_CullTransparentMesh: 1
+--- !u!114 &1724512096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724512090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b023778a03c80499cbcb3360b870e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 2058409806}
+  m_FollowAmount: {x: 5, y: 30}
+  m_SmoothSpeed: 3
 --- !u!1 &1750882289
 GameObject:
   m_ObjectHideFlags: 0
