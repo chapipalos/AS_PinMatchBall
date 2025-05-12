@@ -906,7 +906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6690334922884907528, guid: f76c23026ec07a64dbb637a6dabcf582, type: 3}
       propertyPath: m_TagString
-      value: Player2
+      value: P2_Right
       objectReference: {fileID: 0}
     - target: {fileID: 8137729866900979112, guid: f76c23026ec07a64dbb637a6dabcf582, type: 3}
       propertyPath: m_Constraints
@@ -4406,8 +4406,8 @@ MonoBehaviour:
   freezePowerUpPrefab: {fileID: 689703387598504572, guid: 6a43ca4885280844bb009563bd7d1dcd, type: 3}
   wheelPowerUpPrefab: {fileID: 4244544703068471477, guid: 3b5a28db09a60f0479da5f8cdf8d7039, type: 3}
   accelerationPowerUpPrefab: {fileID: 4667656744896307966, guid: 12ab7dfd39045c04a914a2ac9e59b02f, type: 3}
-  spikeBallPowerUpPrefab: {fileID: 8217891378572228073, guid: 8ce846c7eebb84f4d92bc6bdcde36312, type: 3}
-  ghostPowerUpPrefab: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
+  spikeBallPowerUpPrefab: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
+  ghostPowerUpPrefab: {fileID: 6350738330080727634, guid: da98780e533fe794aa83fa27bbfddf57, type: 3}
   AntigoalPowerUpPrefab: {fileID: 3769926552780399675, guid: 640b1c008119192418bb742524f946d6, type: 3}
   MagnetPowerUpPrefab: {fileID: 7564358235192646565, guid: 64feaa7b7b780fb4f92198f6fb2e1bdb, type: 3}
   m_spawnInterval: 5
@@ -7052,7 +7052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6690334922884907528, guid: f76c23026ec07a64dbb637a6dabcf582, type: 3}
       propertyPath: m_TagString
-      value: Player2
+      value: P2_Left
       objectReference: {fileID: 0}
     - target: {fileID: 8137729866900979112, guid: f76c23026ec07a64dbb637a6dabcf582, type: 3}
       propertyPath: m_Constraints
@@ -7489,12 +7489,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 179655438363153334, guid: 116a6120502dffa4abc06520c4d8dffd, type: 3}
+      propertyPath: m_Name
+      value: RightFlipperP1
+      objectReference: {fileID: 0}
+    - target: {fileID: 179655438363153334, guid: 116a6120502dffa4abc06520c4d8dffd, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 179655438363153334, guid: 116a6120502dffa4abc06520c4d8dffd, type: 3}
       propertyPath: m_TagString
-      value: Player1
+      value: P1_Right
       objectReference: {fileID: 0}
     - target: {fileID: 959122699032958356, guid: 116a6120502dffa4abc06520c4d8dffd, type: 3}
       propertyPath: keyCode
@@ -7601,12 +7605,16 @@ PrefabInstance:
       value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4506744630876398734, guid: 116a6120502dffa4abc06520c4d8dffd, type: 3}
+      propertyPath: m_Name
+      value: LeftFlipperP1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506744630876398734, guid: 116a6120502dffa4abc06520c4d8dffd, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4506744630876398734, guid: 116a6120502dffa4abc06520c4d8dffd, type: 3}
       propertyPath: m_TagString
-      value: Player1
+      value: P1_Left
       objectReference: {fileID: 0}
     - target: {fileID: 4804380007952790737, guid: 116a6120502dffa4abc06520c4d8dffd, type: 3}
       propertyPath: m_LocalPosition.x

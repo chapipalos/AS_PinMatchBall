@@ -25,12 +25,12 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player1"))
+        if(collision.gameObject.transform.parent.CompareTag("Player1"))
         {
             m_MeshRenderer.material = m_MaterialPlayer1;
             GameManager.m_PlayerOwner = false;
         }
-        if(collision.gameObject.CompareTag("Player2"))
+        if(collision.gameObject.transform.parent.CompareTag("Player2"))
         {
             m_MeshRenderer.material = m_MaterialPlayer2;
             GameManager.m_PlayerOwner = true;
@@ -42,6 +42,31 @@ public class Ball : MonoBehaviour
                 ps.transform.position = transform.position;
                 ps.Play();
             }
+        }
+        if (collision.gameObject.CompareTag("FreezePU"))
+        {
+            GameManager.m_FrozenPowerUp = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("StunnedPU"))
+        {
+            GameManager.m_StunnedPowerUp = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag.Contains("Left"))
+        {
+            GameManager.m_StunnedPowerUpActive = true;
+            GameManager.m_StunnedSide = false;
+        }
+        if (collision.gameObject.tag.Contains("Right"))
+        {
+            GameManager.m_StunnedPowerUpActive = true;
+            GameManager.m_StunnedSide = true;
+        }
+        if (collision.gameObject.CompareTag("GhostPU"))
+        {
+            GameManager.m_GhostBall = true;
+            Destroy(collision.gameObject);
         }
     }
 }

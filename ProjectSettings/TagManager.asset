@@ -11,6 +11,13 @@ TagManager:
   - Trigger
   - Wall
   - Beam
+  - P1_Left
+  - P1_Right
+  - P2_Left
+  - P2_Right
+  - FreezePU
+  - StunnedPU
+  - GhostPU
   layers:
   - Default
   - TransparentFX
