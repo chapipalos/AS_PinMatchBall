@@ -53,12 +53,12 @@ public class Ball : MonoBehaviour
             GameManager.m_StunnedPowerUp = true;
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag.Contains("Left"))
+        if (collision.gameObject.tag.Contains("Left") && GameManager.m_StunnedPowerUp)
         {
             GameManager.m_StunnedPowerUpActive = true;
             GameManager.m_StunnedSide = false;
         }
-        if (collision.gameObject.tag.Contains("Right"))
+        if (collision.gameObject.tag.Contains("Right") && GameManager.m_StunnedPowerUp)
         {
             GameManager.m_StunnedPowerUpActive = true;
             GameManager.m_StunnedSide = true;
