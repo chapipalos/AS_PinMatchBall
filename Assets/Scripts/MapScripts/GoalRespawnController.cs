@@ -25,6 +25,8 @@ public class GoalRespawnController : MonoBehaviour
 
     public Material m_MaterialPlayer;
 
+    public ScoreManager m_ScoreManager;
+
     private void Awake()
     {
         m_BeamAtSpawnEffect = GameObject.Instantiate(m_BeamAtSpawnPrefab);
@@ -91,11 +93,15 @@ public class GoalRespawnController : MonoBehaviour
     {
         if(other.tag == "BALL")
         {
+
             foreach (ParticleSystem ps in m_GoalExplosionParticleSystem)
             {
                 ps.transform.position = other.transform.position;
                 ps.Play();
             }
+
+
+            m_ScoreManager.IncreaseScore();
 
             m_Ball = other.gameObject;
             m_Ball.SetActive(false);
