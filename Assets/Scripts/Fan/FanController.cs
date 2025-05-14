@@ -66,7 +66,7 @@ public class FanController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (GameManager.m_FanRotating && other.CompareTag("BALL"))
         {
