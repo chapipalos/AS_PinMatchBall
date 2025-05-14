@@ -25,16 +25,6 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.transform.parent.CompareTag("Player1"))
-        {
-            m_MeshRenderer.material = m_MaterialPlayer1;
-            GameManager.m_PlayerOwner = false;
-        }
-        if(collision.gameObject.transform.parent.CompareTag("Player2"))
-        {
-            m_MeshRenderer.material = m_MaterialPlayer2;
-            GameManager.m_PlayerOwner = true;
-        }
         if (collision.gameObject.CompareTag("Wall"))
         {
             foreach (ParticleSystem ps in m_SparklePartycleSystem)
@@ -42,6 +32,16 @@ public class Ball : MonoBehaviour
                 ps.transform.position = transform.position;
                 ps.Play();
             }
+        }
+        if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.CompareTag("Player1"))
+        {
+            m_MeshRenderer.material = m_MaterialPlayer1;
+            GameManager.m_PlayerOwner = false;
+        }
+        if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.CompareTag("Player2"))
+        {
+            m_MeshRenderer.material = m_MaterialPlayer2;
+            GameManager.m_PlayerOwner = true;
         }
         if (collision.gameObject.CompareTag("FreezePU"))
         {

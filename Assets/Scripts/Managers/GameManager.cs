@@ -12,4 +12,10 @@ public static class GameManager
     public static bool m_GhostBall;
 
     public static bool m_FanRotating;
+
+    public static bool m_RobotActivate;
+    public static bool m_RedRobotSearching;
+    public static bool m_BlueRobotSearching;
+    public static bool m_RedRobot;
+    public static bool m_BlueRobot;
 }

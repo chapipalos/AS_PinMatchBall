@@ -18,6 +18,8 @@ TagManager:
   - FreezePU
   - StunnedPU
   - GhostPU
+  - RedRobot
+  - BlueRobot
   layers:
   - Default
   - TransparentFX

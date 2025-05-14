@@ -42,11 +42,11 @@ public class CCDControlB : MonoBehaviour
             Vector3 goalDirection = target.transform.position - part.position;
             // Goal orientation
             Quaternion goalOrientation =
-              isSearchEnabled ?
+              CalculateActivation() ?
               Quaternion.FromToRotation(currentDirection, goalDirection) * part.rotation :
               defaultOrientations[part];
             // New orientation
-            Quaternion newOrientation = Quaternion.Slerp(part.rotation, goalOrientation, (isSearchEnabled ? searchSpeed : idleSpeed) * Time.deltaTime);
+            Quaternion newOrientation = Quaternion.Slerp(part.rotation, goalOrientation, (CalculateActivation() ? searchSpeed : idleSpeed) * Time.deltaTime);
             // Update
             if (part.parent == null ||
                   transform.GetComponent<AngleLimit>() == null ||
@@ -57,12 +57,30 @@ public class CCDControlB : MonoBehaviour
             // Child last position storage
             childlastPositions[part] = part.childCount > 0 ? part.GetChild(0).position : Vector3.zero;
         }
+
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            GameManager.m_RobotActivate = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameManager.m_RedRobot = true;
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GameManager.m_BlueRobot = true;
+        }
+    }
+
+    private bool CalculateActivation()
+    {
+        return (transform.parent.CompareTag("RedRobot") && GameManager.m_RedRobot && GameManager.m_RedRobotSearching) || (transform.parent.CompareTag("BlueRobot") && GameManager.m_BlueRobot && GameManager.m_BlueRobotSearching);
     }
 
     // ATTRIBUTES
 
     public bool isPureCCD = true;  // Pure CCD switch
-    public bool isSearchEnabled = false; // Switch controlling active search
     public bool isReactionToMovementEnabled = true;  // Switch controlling reaction to movement
     public float searchSpeed = 1.0f;  // Search speed
     public float idleSpeed = 1.0f;  // Idle speed
