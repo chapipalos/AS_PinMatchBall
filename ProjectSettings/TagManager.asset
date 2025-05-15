@@ -16,10 +16,11 @@ TagManager:
   - P2_Left
   - P2_Right
   - FreezePU
-  - StunnedPU
   - GhostPU
   - RedRobot
   - BlueRobot
+  - ShieldPU
+  - SpikePU
   layers:
   - Default
   - TransparentFX

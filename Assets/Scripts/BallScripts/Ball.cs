@@ -48,7 +48,7 @@ public class Ball : MonoBehaviour
             GameManager.m_FrozenPowerUp = true;
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.CompareTag("StunnedPU"))
+        if (collision.gameObject.CompareTag("SpikePU"))
         {
             GameManager.m_StunnedPowerUp = true;
             Destroy(collision.gameObject);
