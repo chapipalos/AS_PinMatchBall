@@ -9,7 +9,8 @@ public class Frame : MonoBehaviour
     private Image img;
     private int index;
     private float timer;
-
+    public GameObject imageInac;
+    WinManager win;
     void Start()
     {
         img = GetComponent<Image>();
@@ -25,6 +26,12 @@ public class Frame : MonoBehaviour
             index = (index + 1) % frames.Length;
             img.sprite = frames[index];
             timer = 0f;
+        }
+        if (win.init == true)
+        {
+            imageInac.SetActive(false);
+            imageInac.SetActive(true);
+            win.init = false;
         }
     }
 }

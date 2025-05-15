@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 
     public int m_Score = 0;
 
+
     public GameObject m_Number;
 
     private SpriteRenderer m_Renderer;
