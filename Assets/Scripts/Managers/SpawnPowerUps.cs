@@ -3,25 +3,30 @@ using UnityEngine;
 
 public class SpawnPowerUps : MonoBehaviour
 {
-    public GameObject freezePowerUpPrefab;
-    public GameObject wheelPowerUpPrefab;
-    public GameObject accelerationPowerUpPrefab;
-    public GameObject spikeBallPowerUpPrefab;
-    public GameObject ghostPowerUpPrefab;
-    public GameObject AntigoalPowerUpPrefab;
-    public GameObject MagnetPowerUpPrefab;
-
     public float m_spawnInterval = 2f;
     public int maxSpawns = 20;
-    private float timer;
+    public float timer;
     private int counter = 0;
     public Transform SpawnPosition;
 
+    private Vector3 m_LastPosition;
 
+    private PowerUpsPoolManager m_PowerUpsPoolManager;
+
+    private void Awake()
+    {
+        m_PowerUpsPoolManager = FindFirstObjectByType<PowerUpsPoolManager>();
+    }
+
+    private void Start()
+    {
+        m_LastPosition = Vector3.zero;
+    }
 
     void Update()
     {
         if (counter >= maxSpawns) { return; }
+        Debug.Log("Test");
         timer += Time.deltaTime;
         if (timer >= m_spawnInterval)
         {
@@ -30,36 +35,24 @@ public class SpawnPowerUps : MonoBehaviour
             {
                 return;
             }
-            Vector3 positionRandom = SpawnPosition.position + new Vector3(Random.Range(-20f, 20f), 0f, Random.Range(-20f, 20f));
-            GameObject PrefaboUp = GetRandomPoUP();
-            if (PrefaboUp != null)
+            Vector3 newPos = Vector3.zero;
+            do
             {
-                Instantiate(PrefaboUp, positionRandom, Quaternion.identity);
-                counter++;
+                newPos = new Vector3(Random.Range(-20f, 20f), 0f, Random.Range(-20f, 20f));
             }
+            while (CheckNewPosition(newPos));
+            m_LastPosition = newPos;
+            Vector3 positionRandom = SpawnPosition.position + newPos;
+            GameObject pu = m_PowerUpsPoolManager.Take();
+            pu.transform.position = positionRandom;
+            pu.SetActive(true);
+            counter++;
         }
     }
 
-    private GameObject GetRandomPoUP()
+    private bool CheckNewPosition(Vector3 newPos)
     {
-        GameObject[] prefabs = new GameObject[]
-        {
-            freezePowerUpPrefab,
-            wheelPowerUpPrefab,
-            accelerationPowerUpPrefab,
-            spikeBallPowerUpPrefab,
-            ghostPowerUpPrefab,
-            AntigoalPowerUpPrefab,
-            MagnetPowerUpPrefab
-        };
-
-        //If is empty, don't spawn, only valid prefabs
-        var validPrefabs = System.Array.FindAll(prefabs, p => p != null);
-
-        if (validPrefabs.Length == 0) return null;
-
-        int randomIndex = Random.Range(0, validPrefabs.Length);
-        return validPrefabs[randomIndex];
+        return (m_LastPosition.x - newPos.x < 1f && m_LastPosition.z - newPos.z < 1f);
     }
 }
 
