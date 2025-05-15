@@ -6,7 +6,7 @@ public class FlippersController : MonoBehaviour
 
     public bool m_Side;
 
-    private Rigidbody rb;
+    private Rigidbody m_Rigidbody;
 
     private bool m_Player;
 
@@ -15,9 +15,9 @@ public class FlippersController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        m_Rigidbody = GetComponent<Rigidbody>();
         m_Player = transform.parent.CompareTag("Player1");
-        m_Collider = rb.GetComponent<Collider>();
+        m_Collider = m_Rigidbody.GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -26,8 +26,15 @@ public class FlippersController : MonoBehaviour
         // Freeze comprobation
         if (GameManager.m_FrozenPowerUp && m_Player != GameManager.m_PlayerOwner)
         {
+            //m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+            //GetComponentInChildren<GameObject>().SetActive(true);
             return;
         }
+        //else
+        //{
+        //    m_Rigidbody.constraints = RigidbodyConstraints.None;
+        //    GetComponentInChildren<GameObject>().SetActive(false);
+        //}
 
         // Ghost ball comprobation
         if (GameManager.m_GhostBall)

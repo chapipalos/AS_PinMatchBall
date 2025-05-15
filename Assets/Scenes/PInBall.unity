@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueIceRight
       objectReference: {fileID: 0}
+    - target: {fileID: 8440924062240477119, guid: 5ad177d84c195744b8d137ab6c694798, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9110781062276207877, guid: 5ad177d84c195744b8d137ab6c694798, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.9799995
@@ -774,6 +778,10 @@ PrefabInstance:
     - target: {fileID: 8440924062240477119, guid: 5ad177d84c195744b8d137ab6c694798, type: 3}
       propertyPath: m_Name
       value: RedIceRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440924062240477119, guid: 5ad177d84c195744b8d137ab6c694798, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9110781062276207877, guid: 5ad177d84c195744b8d137ab6c694798, type: 3}
       propertyPath: m_LocalScale.x
@@ -11367,7 +11375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46061cc35b0816e41ace472c33dc822a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TimeFrozen: 0
+  m_TimeFrozen: 2
   m_TimeStunned: 0
   m_TimeGhostBall: 0
 --- !u!114 &1260918029
@@ -20042,6 +20050,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueIceLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 8440924062240477119, guid: 5ad177d84c195744b8d137ab6c694798, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9110781062276207877, guid: 5ad177d84c195744b8d137ab6c694798, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.980001
@@ -20268,6 +20280,10 @@ PrefabInstance:
     - target: {fileID: 8440924062240477119, guid: 5ad177d84c195744b8d137ab6c694798, type: 3}
       propertyPath: m_Name
       value: RedIceLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440924062240477119, guid: 5ad177d84c195744b8d137ab6c694798, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9110781062276207877, guid: 5ad177d84c195744b8d137ab6c694798, type: 3}
       propertyPath: m_LocalScale.x
