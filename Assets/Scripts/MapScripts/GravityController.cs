@@ -29,11 +29,11 @@ public class GravityController : MonoBehaviour
         {
             if(m_Ball.transform.position.z >= 0)
             {
-                m_BallRigidbody.AddForce((m_PointOfGravity1.position - m_Ball.transform.position).normalized * velocityGravity * Vector3.Distance(m_Ball.transform.position, m_PointOfGravity2.position), ForceMode.Force);
+                m_BallRigidbody.AddForce(Vector3.forward * velocityGravity * Vector3.Distance(m_Ball.transform.position, m_PointOfGravity2.position), ForceMode.Force);
             }
             else
             {
-                m_BallRigidbody.AddForce((m_PointOfGravity2.position - m_Ball.transform.position).normalized * velocityGravity * Vector3.Distance(m_Ball.transform.position, m_PointOfGravity1.position), ForceMode.Force);
+                m_BallRigidbody.AddForce(-Vector3.forward * velocityGravity * Vector3.Distance(m_Ball.transform.position, m_PointOfGravity1.position), ForceMode.Force);
             }
         }
     }
