@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Mesh: {fileID: 2691494714349495474}
   m_FreezePosition: {fileID: 5385929356030825544}
   m_Option: 0
+  test: 2
 --- !u!65 &6329820104552560775
 BoxCollider:
   m_ObjectHideFlags: 0

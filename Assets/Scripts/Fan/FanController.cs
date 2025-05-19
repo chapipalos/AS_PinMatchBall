@@ -102,7 +102,7 @@ public class FanController : MonoBehaviour
         if (fanLight != null)
         {
             fanLight.color = newColor;
-        
+            fanLight.intensity = 1000;
         }
     }
 
@@ -111,6 +111,7 @@ public class FanController : MonoBehaviour
         if (fanLight != null)
         {
             fanLight.color = originalLightColor;
+            fanLight.intensity = 10;
         }
     }
 }

@@ -57,20 +57,6 @@ public class CCDControlB : MonoBehaviour
             // Child last position storage
             childlastPositions[part] = part.childCount > 0 ? part.GetChild(0).position : Vector3.zero;
         }
-
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            GameManager.m_RobotActivate = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            GameManager.m_RedRobot = true;
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            GameManager.m_BlueRobot = true;
-        }
     }
 
     private bool CalculateActivation()

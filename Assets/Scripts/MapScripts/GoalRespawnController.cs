@@ -116,6 +116,9 @@ public class GoalRespawnController : MonoBehaviour
             {
                 GameManager.m_PlayerOwner = true;
             }
+
+            GameManager.m_GhostBall = false;
+            GameManager.m_FrozenPowerUp = false;
         }
     
     }

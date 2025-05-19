@@ -13,7 +13,6 @@ public static class GameManager
 
     public static bool m_FanRotating = false;
 
-    public static bool m_RobotActivate = false;
     public static bool m_RedRobotSearching = false;
     public static bool m_BlueRobotSearching = false;
     public static bool m_RedRobot = false;

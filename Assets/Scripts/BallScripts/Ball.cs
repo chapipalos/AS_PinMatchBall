@@ -7,20 +7,41 @@ public class Ball : MonoBehaviour
     public Material m_MaterialPlayer2;
 
     private MeshRenderer m_MeshRenderer;
+    private MeshFilter m_MeshFilter;
 
     public GameObject m_SparklePrefab;
     private GameObject m_SparkleEffect;
     private ParticleSystem[] m_SparklePartycleSystem;
 
+    public Mesh m_GhostMesh;
+    private Mesh m_NormalMesh;
+
+    private PowerUpsPoolManager m_PowerUpsPoolManager;
+
     private void Awake()
     {
         m_SparkleEffect = GameObject.Instantiate(m_SparklePrefab);
         m_SparklePartycleSystem = m_SparkleEffect.GetComponentsInChildren<ParticleSystem>();
+        m_PowerUpsPoolManager = FindFirstObjectByType<PowerUpsPoolManager>();
     }
 
     void Start()
     {
         m_MeshRenderer = GetComponent<MeshRenderer>();
+        m_MeshFilter = GetComponent<MeshFilter>();
+        m_NormalMesh = m_MeshFilter.mesh;
+    }
+
+    private void Update()
+    {
+        if (GameManager.m_GhostBall)
+        {
+            m_MeshFilter.mesh = m_GhostMesh;
+        }
+        else
+        {
+            m_MeshFilter.mesh = m_NormalMesh;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -35,23 +56,19 @@ public class Ball : MonoBehaviour
         }
         if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.CompareTag("Player1"))
         {
-            m_MeshRenderer.material = m_MaterialPlayer1;
-            GameManager.m_PlayerOwner = false;
+            if (!GameManager.m_FrozenPowerUp)
+            {
+                m_MeshRenderer.material = m_MaterialPlayer1;
+                GameManager.m_PlayerOwner = false;
+            }
         }
         if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.CompareTag("Player2"))
         {
-            m_MeshRenderer.material = m_MaterialPlayer2;
-            GameManager.m_PlayerOwner = true;
-        }
-        if (collision.gameObject.CompareTag("FreezePU"))
-        {
-            GameManager.m_FrozenPowerUp = true;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.CompareTag("SpikePU"))
-        {
-            GameManager.m_StunnedPowerUp = true;
-            Destroy(collision.gameObject);
+            if (!GameManager.m_FrozenPowerUp)
+            {
+                m_MeshRenderer.material = m_MaterialPlayer2;
+                GameManager.m_PlayerOwner = true;
+            }
         }
         if (collision.gameObject.tag.Contains("Left") && GameManager.m_StunnedPowerUp)
         {
@@ -63,10 +80,35 @@ public class Ball : MonoBehaviour
             GameManager.m_StunnedPowerUpActive = true;
             GameManager.m_StunnedSide = true;
         }
-        if (collision.gameObject.CompareTag("GhostPU"))
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("FreezePU"))
+        {
+            GameManager.m_FrozenPowerUp = true;
+            m_PowerUpsPoolManager.Return(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("SpikePU"))
+        {
+            GameManager.m_StunnedPowerUp = true;
+            m_PowerUpsPoolManager.Return(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("GhostPU"))
         {
             GameManager.m_GhostBall = true;
-            Destroy(collision.gameObject);
+            m_PowerUpsPoolManager.Return(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("ShieldPU"))
+        {
+            if(GameManager.m_PlayerOwner)
+            {
+                GameManager.m_BlueRobot = true;
+            }
+            else
+            {
+                GameManager.m_RedRobot = true;
+            }
+            m_PowerUpsPoolManager.Return(other.gameObject);
         }
     }
 }

@@ -8,9 +8,11 @@ public class FlippersController : MonoBehaviour
 
     private Rigidbody m_Rigidbody;
 
-    private bool m_Player;
+    public bool m_Player;
 
     private Collider m_Collider;
+
+    public GameObject m_Freeze;
 
     // Start is called before the first frame update
     void Start()
@@ -24,17 +26,16 @@ public class FlippersController : MonoBehaviour
     void FixedUpdate()
     {
         // Freeze comprobation
-        if (GameManager.m_FrozenPowerUp && m_Player != GameManager.m_PlayerOwner)
+        if (GameManager.m_FrozenPowerUp && m_Player == GameManager.m_PlayerOwner)
         {
             //m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
-            //GetComponentInChildren<GameObject>().SetActive(true);
+            m_Freeze.SetActive(true);
             return;
         }
-        //else
-        //{
-        //    m_Rigidbody.constraints = RigidbodyConstraints.None;
-        //    GetComponentInChildren<GameObject>().SetActive(false);
-        //}
+        else
+        {
+            m_Freeze.SetActive(false);
+        }
 
         // Ghost ball comprobation
         if (GameManager.m_GhostBall)

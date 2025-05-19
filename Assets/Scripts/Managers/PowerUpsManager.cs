@@ -3,13 +3,13 @@ using UnityEngine;
 public class PowerUpsManager : MonoBehaviour
 {
     public float m_TimeFrozen;
-    private float m_RemainingTimeFrozen;
+    public float m_RemainingTimeFrozen;
 
     public float m_TimeStunned;
-    private float m_RemainingTimeStunned;
+    public float m_RemainingTimeStunned;
 
     public float m_TimeGhostBall;
-    private float m_RemainingTimeGhostBall;
+    public float m_RemainingTimeGhostBall;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

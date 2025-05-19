@@ -14,6 +14,7 @@ public class PowerUp : MonoBehaviour
     private Quaternion m_MeshTransform;
 
     public int m_Option;
+
     private void Awake()
     {
         m_MeshFilter = m_Mesh.GetComponent<MeshFilter>();
