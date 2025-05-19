@@ -43,6 +43,8 @@ public class Ball : MonoBehaviour
         {
             m_MeshFilter.mesh = m_NormalMesh;
         }
+
+        //if (GameManager.m_StunnedPowerUp) {
     }
 
     private void OnCollisionEnter(Collision collision)

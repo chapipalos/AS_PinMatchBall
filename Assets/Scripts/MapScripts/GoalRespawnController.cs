@@ -119,6 +119,8 @@ public class GoalRespawnController : MonoBehaviour
 
             GameManager.m_GhostBall = false;
             GameManager.m_FrozenPowerUp = false;
+            GameManager.m_RedRobotSearching = false;
+            GameManager.m_BlueRobotSearching = false;
         }
     
     }
