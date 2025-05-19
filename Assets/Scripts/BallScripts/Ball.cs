@@ -13,8 +13,9 @@ public class Ball : MonoBehaviour
     private GameObject m_SparkleEffect;
     private ParticleSystem[] m_SparklePartycleSystem;
 
-    public Mesh m_GhostMesh;
     private Mesh m_NormalMesh;
+    public Mesh m_GhostMesh;
+    public Mesh m_SpikeMesh;
 
     private PowerUpsPoolManager m_PowerUpsPoolManager;
 
