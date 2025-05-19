@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 public class FanController : MonoBehaviour
@@ -14,30 +14,27 @@ public class FanController : MonoBehaviour
     private GameObject m_WindEffect;
     private ParticleSystem m_WindParticleSystem;
 
-    public GameObject m_WindHitEffectPrefab;
-    private GameObject m_WindHitEffect;
-    private ParticleSystem[] m_WindHitParticles;
+    public Light fanLight; // ← la luz que va a cambiar de color
+    public Color newColor = Color.magenta;
+
+    private Color originalLightColor;
 
     private bool m_Effect;
 
-    private HashSet<Collider> m_AlreadyTriggered = new HashSet<Collider>();
-
     private void Awake()
     {
- 
         m_WindEffect = Instantiate(m_WindPrefab);
         m_WindEffect.transform.position = m_Blades.transform.position;
         m_WindParticleSystem = m_WindEffect.GetComponent<ParticleSystem>();
-
-  
-        m_WindHitEffect = Instantiate(m_WindHitEffectPrefab);
-        m_WindHitEffect.SetActive(false);
-        m_WindHitParticles = m_WindHitEffect.GetComponentsInChildren<ParticleSystem>();
     }
 
     private void Start()
     {
         m_CurrentSpeed = 0f;
+        if (fanLight != null)
+        {
+            originalLightColor = fanLight.color;
+        }
     }
 
     void Update()
@@ -84,39 +81,36 @@ public class FanController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (GameManager.m_FanRotating && other.CompareTag("BALL") && !m_AlreadyTriggered.Contains(other))
+        if (GameManager.m_FanRotating && other.CompareTag("BALL"))
         {
-            m_AlreadyTriggered.Add(other);
-
-            if (m_WindHitEffect != null)
-            {
-               
-                m_WindHitEffect.SetActive(true);
-
-                foreach (var ps in m_WindHitParticles)
-                {
-                    ps.transform.position = other.transform.position;
-                    ps.Play();
-                }
-
-                
-                Invoke(nameof(DeactivateWindHitEffect), 2f);
-            }
+            ChangeLightColorTemporarily();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        m_AlreadyTriggered.Remove(other);
+        if (GameManager.m_FanRotating && other.CompareTag("BALL"))
+        {
+            RevertLightColor();
+        }
     }
 
-    private void DeactivateWindHitEffect()
+    private void ChangeLightColorTemporarily()
     {
-        foreach (var ps in m_WindHitParticles)
+        CancelInvoke(nameof(RevertLightColor));
+
+        if (fanLight != null)
         {
-            ps.Stop();
+            fanLight.color = newColor;
+        
         }
-        m_WindHitEffect.SetActive(false);
+    }
+
+    private void RevertLightColor()
+    {
+        if (fanLight != null)
+        {
+            fanLight.color = originalLightColor;
+        }
     }
 }
-
