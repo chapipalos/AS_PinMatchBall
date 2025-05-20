@@ -96,6 +96,10 @@ public class FlippersController : MonoBehaviour
                 GetComponent<HingeJoint>().motor = motor;
             }
         }
+    }
+
+    private void Update()
+    {
         if (Input.GetKeyDown(keyCode))
         {
             m_Splash.GetComponent<SplashController>().SplashAction();

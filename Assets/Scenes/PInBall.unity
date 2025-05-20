@@ -9130,7 +9130,7 @@ PrefabInstance:
       objectReference: {fileID: 2058409801}
     - target: {fileID: 2402942466287873023, guid: fc14b2461dd46594e85d26abe1c095a1, type: 3}
       propertyPath: searchSpeed
-      value: 50
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2543922497340458405, guid: fc14b2461dd46594e85d26abe1c095a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10109,7 +10109,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
+  m_Radius: 1.25
   m_Center: {x: 0, y: 0, z: -2}
 --- !u!4 &890771805
 Transform:
@@ -13876,7 +13876,7 @@ PrefabInstance:
       objectReference: {fileID: 2058409801}
     - target: {fileID: 2402942466287873023, guid: fc14b2461dd46594e85d26abe1c095a1, type: 3}
       propertyPath: searchSpeed
-      value: 50
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2543922497340458405, guid: fc14b2461dd46594e85d26abe1c095a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20843,7 +20843,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
+  m_Radius: 1.25
   m_Center: {x: 0, y: 0, z: -2}
 --- !u!4 &1949118277
 Transform:
