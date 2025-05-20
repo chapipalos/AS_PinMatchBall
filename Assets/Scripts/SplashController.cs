@@ -40,6 +40,14 @@ public class SplashController : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            m_Gamma = 1f;
+            foreach (GameObject splash in m_SplashList)
+            {
+                splash.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, m_Gamma);
+            }
+        }
     }
 
     public void SplashAction()

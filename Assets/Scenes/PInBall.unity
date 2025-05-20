@@ -12311,11 +12311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46061cc35b0816e41ace472c33dc822a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TimeFrozen: 3
+  m_TimeFrozen: 3.5
   m_RemainingTimeFrozen: 0
   m_TimeStunned: 3
   m_RemainingTimeStunned: 0
-  m_TimeGhostBall: 1
+  m_TimeGhostBall: 2.5
   m_RemainingTimeGhostBall: 0
 --- !u!114 &1260918029
 MonoBehaviour:
