@@ -115,5 +115,17 @@ public class Ball : MonoBehaviour
             }
             m_PowerUpsPoolManager.Return(other.gameObject);
         }
+        if (other.gameObject.CompareTag("SplashPU"))
+        {
+            if (GameManager.m_PlayerOwner)
+            {
+                GameManager.m_RedSplash = true;
+            }
+            else
+            {
+                GameManager.m_BlueSplash = true;
+            }
+            m_PowerUpsPoolManager.Return(other.gameObject);
+        }
     }
 }

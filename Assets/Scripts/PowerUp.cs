@@ -52,8 +52,21 @@ public class PowerUp : MonoBehaviour
                 m_Mesh.transform.position = transform.position + new Vector3(0f, 1.65f, 0f);
                 tag = "ShieldPU";
                 break;
+            case 4:
+                m_Mesh.transform.localScale = new Vector3(0.15f, 0.15f, 0.15f);
+                m_Mesh.transform.rotation = m_FreezePosition.rotation;
+                m_Mesh.transform.position = transform.position + new Vector3(0f, 1.8f, 0f);
+                tag = "SplashPU";
+                break;
         }
-        m_MeshRendererPU.material = m_Materials[op];
+        if (op == 4)
+        {
+            m_MeshRendererPU.materials = new Material[]{ m_Materials[op],m_Materials[op + 1]};
+        }
+        else
+        {
+            m_MeshRendererPU.material = m_Materials[op];
+        }
         m_MeshFilter.mesh = m_Meshes[op];
     }
 }

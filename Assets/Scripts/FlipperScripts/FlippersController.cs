@@ -14,6 +14,8 @@ public class FlippersController : MonoBehaviour
 
     public GameObject m_Freeze;
 
+    public GameObject m_Splash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +95,10 @@ public class FlippersController : MonoBehaviour
 
                 GetComponent<HingeJoint>().motor = motor;
             }
+        }
+        if (Input.GetKeyDown(keyCode))
+        {
+            m_Splash.GetComponent<SplashController>().SplashAction();
         }
     }
 }

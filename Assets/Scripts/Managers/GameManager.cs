@@ -11,6 +11,9 @@ public static class GameManager
     public static bool m_StunnedSide = false; // true for right flippers / false for left ones
     public static bool m_GhostBall = false;
 
+    public static bool m_RedSplash = false;
+    public static bool m_BlueSplash = false;
+
     public static bool m_FanRotating = false;
 
     public static bool m_RedRobotSearching = false;

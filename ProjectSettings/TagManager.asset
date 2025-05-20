@@ -21,6 +21,7 @@ TagManager:
   - BlueRobot
   - ShieldPU
   - SpikePU
+  - SplashPU
   layers:
   - Default
   - TransparentFX
