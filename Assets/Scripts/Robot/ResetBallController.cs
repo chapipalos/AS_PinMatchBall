@@ -5,6 +5,8 @@ public class ResetBallController : MonoBehaviour
 {
     public Transform m_ResetBall;
 
+    public GameObject m_Parent;
+
     public GameObject m_ResetBallnPrefab;
     private GameObject m_ResetBallEffect;
     private ParticleSystem[] m_ResetBallParticleSystem;
@@ -27,6 +29,15 @@ public class ResetBallController : MonoBehaviour
             other.attachedRigidbody.linearVelocity = Vector3.zero;
             other.gameObject.SetActive(false);
             StartCoroutine(ResetBall(other.transform));
+
+            if (m_Parent.tag == "BlueRobot")
+            {
+                GameManager.m_BlueRobot = false;
+            }
+            else if (m_Parent.tag == "RedRobot")
+            {
+                GameManager.m_RedRobot = false;
+            }
         }
     }
 

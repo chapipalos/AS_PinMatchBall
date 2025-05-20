@@ -39,12 +39,14 @@ public class Ball : MonoBehaviour
         {
             m_MeshFilter.mesh = m_GhostMesh;
         }
+        else if (GameManager.m_StunnedPowerUp)
+        {
+            m_MeshFilter.mesh = m_SpikeMesh;
+        }
         else
         {
             m_MeshFilter.mesh = m_NormalMesh;
         }
-
-        //if (GameManager.m_StunnedPowerUp) {
     }
 
     private void OnCollisionEnter(Collision collision)
