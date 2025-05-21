@@ -13,9 +13,9 @@ public class Ball : MonoBehaviour
     private GameObject m_SparkleEffect;
     private ParticleSystem[] m_SparklePartycleSystem;
 
-    //public GameObject m_SparklePrefab;
-    //private GameObject m_SparkleEffect;
-    //private ParticleSystem[] m_SparklePartycleSystem;
+    public GameObject m_ZapPrefab;
+    private GameObject m_ZapEffect;
+    private ParticleSystem[] m_ZapPartycleSystem;
 
     private Mesh m_NormalMesh;
     public MeshRenderer m_GhostObject;
@@ -28,6 +28,10 @@ public class Ball : MonoBehaviour
     {
         m_SparkleEffect = GameObject.Instantiate(m_SparklePrefab);
         m_SparklePartycleSystem = m_SparkleEffect.GetComponentsInChildren<ParticleSystem>();
+
+        m_ZapEffect = GameObject.Instantiate(m_ZapPrefab);
+        m_ZapPartycleSystem = m_ZapEffect.GetComponentsInChildren<ParticleSystem>();
+
         m_PowerUpsPoolManager = FindFirstObjectByType<PowerUpsPoolManager>();
     }
 
@@ -92,22 +96,58 @@ public class Ball : MonoBehaviour
         }
         if (collision.gameObject.tag.Contains("Left") && GameManager.m_RedStunnedPowerUp)
         {
+            if(GameManager.m_PlayerOwner)
+            {
+                return;
+            }
             GameManager.m_RedStunnedPowerUpActive = true;
+            foreach (ParticleSystem ps in m_ZapPartycleSystem)
+            {
+                ps.transform.position = collision.transform.position;
+                ps.Play();
+            }
             GameManager.m_StunnedSide = false;
         }
         if (collision.gameObject.tag.Contains("Left") && GameManager.m_BlueStunnedPowerUp)
         {
+            if (!GameManager.m_PlayerOwner)
+            {
+                return;
+            }
             GameManager.m_BlueStunnedPowerUpActive = true;
+            foreach (ParticleSystem ps in m_ZapPartycleSystem)
+            {
+                ps.transform.position = collision.transform.position;
+                ps.Play();
+            }
             GameManager.m_StunnedSide = false;
         }
         if (collision.gameObject.tag.Contains("Right") && GameManager.m_RedStunnedPowerUp)
         {
+            if (GameManager.m_PlayerOwner)
+            {
+                return;
+            }
             GameManager.m_RedStunnedPowerUpActive = true;
+            foreach (ParticleSystem ps in m_ZapPartycleSystem)
+            {
+                ps.transform.position = collision.transform.position;
+                ps.Play();
+            }
             GameManager.m_StunnedSide = true;
         }
         if (collision.gameObject.tag.Contains("Right") && GameManager.m_BlueStunnedPowerUp)
         {
+            if (!GameManager.m_PlayerOwner)
+            {
+                return;
+            }
             GameManager.m_BlueStunnedPowerUpActive = true;
+            foreach (ParticleSystem ps in m_ZapPartycleSystem)
+            {
+                ps.transform.position = collision.transform.position;
+                ps.Play();
+            }
             GameManager.m_StunnedSide = true;
         }
     }
