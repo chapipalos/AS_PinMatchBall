@@ -14,6 +14,8 @@ public class FlippersController : MonoBehaviour
 
     public GameObject m_Freeze;
 
+    public GameObject m_Broken;
+
     public GameObject m_Splash;
 
     // Start is called before the first frame update
@@ -37,6 +39,27 @@ public class FlippersController : MonoBehaviour
         else
         {
             m_Freeze.SetActive(false);
+        }
+
+        if (GameManager.m_RedStunnedPowerUpActive && m_Player && GameManager.m_StunnedSide == m_Side)
+        {
+            m_Broken.SetActive(true);
+        }
+        else if (GameManager.m_BlueStunnedPowerUpActive && !m_Player && GameManager.m_StunnedSide == m_Side)
+        {
+            m_Broken.SetActive(true);
+        }
+        else if (GameManager.m_RedStunnedPowerUpActive && m_Player && GameManager.m_StunnedSide == m_Side)
+        {
+            m_Broken.SetActive(true);
+        }
+        else if (GameManager.m_BlueStunnedPowerUpActive && !m_Player && GameManager.m_StunnedSide == m_Side)
+        {
+            m_Broken.SetActive(true);
+        }
+        else
+        {
+            m_Broken.SetActive(false);
         }
 
         // Ghost ball comprobation
