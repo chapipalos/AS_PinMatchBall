@@ -14,10 +14,11 @@ public class Ball : MonoBehaviour
     private ParticleSystem[] m_SparklePartycleSystem;
 
     private Mesh m_NormalMesh;
-    public Mesh m_GhostMesh;
+    public MeshRenderer m_GhostObject;
     public Mesh m_SpikeMesh;
 
     private PowerUpsPoolManager m_PowerUpsPoolManager;
+
 
     private void Awake()
     {
@@ -37,14 +38,24 @@ public class Ball : MonoBehaviour
     {
         if (GameManager.m_GhostBall)
         {
-            m_MeshFilter.mesh = m_GhostMesh;
+            m_GhostObject.enabled = true;
+            //m_GhostObject.SetActive(true);
+            m_MeshRenderer.enabled = false;
         }
         else if (GameManager.m_RedStunnedPowerUp || GameManager.m_BlueStunnedPowerUp)
         {
             m_MeshFilter.mesh = m_SpikeMesh;
+
+            m_GhostObject.enabled = false;
+            //m_GhostObject.SetActive(false);
+            m_MeshRenderer.enabled = true;
         }
         else
         {
+            m_GhostObject.enabled = false;
+            //m_GhostObject.SetActive(false);
+            m_MeshRenderer.enabled = true;
+
             m_MeshFilter.mesh = m_NormalMesh;
         }
     }

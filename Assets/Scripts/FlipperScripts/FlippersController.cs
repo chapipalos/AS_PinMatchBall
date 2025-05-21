@@ -108,6 +108,10 @@ public class FlippersController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.m_BlueFrozenPowerUp && !m_Player || GameManager.m_RedFrozenPowerUp && m_Player)
+        {
+            return;
+        }
         if (Input.GetKeyDown(keyCode))
         {
             m_Splash.GetComponent<SplashController>().SplashAction();
