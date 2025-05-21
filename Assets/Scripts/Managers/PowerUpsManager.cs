@@ -3,10 +3,12 @@ using UnityEngine;
 public class PowerUpsManager : MonoBehaviour
 {
     public float m_TimeFrozen;
-    public float m_RemainingTimeFrozen;
+    public float m_RedRemainingTimeFrozen;
+    public float m_BlueRemainingTimeFrozen;
 
     public float m_TimeStunned;
-    public float m_RemainingTimeStunned;
+    public float m_RedRemainingTimeStunned;
+    public float m_BlueRemainingTimeStunned;
 
     public float m_TimeGhostBall;
     public float m_RemainingTimeGhostBall;
@@ -14,8 +16,12 @@ public class PowerUpsManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_RemainingTimeFrozen = m_TimeFrozen;
-        m_RemainingTimeStunned = m_TimeStunned;
+        m_RedRemainingTimeFrozen = m_TimeFrozen;
+        m_BlueRemainingTimeFrozen = m_TimeFrozen;
+
+        m_RedRemainingTimeStunned = m_TimeStunned;
+        m_BlueRemainingTimeStunned = m_TimeStunned;
+
         m_RemainingTimeGhostBall = m_TimeGhostBall;
     }
 
@@ -30,33 +36,58 @@ public class PowerUpsManager : MonoBehaviour
 
     private void FreezePowerUp(float dt)
     {
-        if (GameManager.m_FrozenPowerUp)
+        if (GameManager.m_RedFrozenPowerUp)
         {
-            if (m_RemainingTimeFrozen <= 0.0f)
+            if (m_RedRemainingTimeFrozen <= 0.0f)
             {
-                m_RemainingTimeFrozen = m_TimeFrozen;
-                GameManager.m_FrozenPowerUp = false;
+                m_RedRemainingTimeFrozen = m_TimeFrozen;
+                GameManager.m_RedFrozenPowerUp = false;
             }
             else
             {
-                m_RemainingTimeFrozen -= dt;
+                m_RedRemainingTimeFrozen -= dt;
+            }
+        }
+        if (GameManager.m_BlueFrozenPowerUp)
+        {
+            if (m_BlueRemainingTimeFrozen <= 0.0f)
+            {
+                m_BlueRemainingTimeFrozen = m_TimeFrozen;
+                GameManager.m_BlueFrozenPowerUp = false;
+            }
+            else
+            {
+                m_BlueRemainingTimeFrozen -= dt;
             }
         }
     }
 
     private void StunnedPowerUp(float dt)
     {
-        if (GameManager.m_StunnedPowerUp && GameManager.m_StunnedPowerUpActive)
+        if (GameManager.m_RedStunnedPowerUpActive)
         {
-            if (m_RemainingTimeStunned <= 0.0f)
+            GameManager.m_RedStunnedPowerUp = false;
+            if (m_RedRemainingTimeStunned <= 0.0f)
             {
-                m_RemainingTimeStunned = m_TimeStunned;
-                GameManager.m_StunnedPowerUp = false;
-                GameManager.m_StunnedPowerUpActive = false;
+                m_RedRemainingTimeStunned = m_TimeStunned;
+                GameManager.m_RedStunnedPowerUpActive = false;
             }
             else
             {
-                m_RemainingTimeStunned -= dt;
+                m_RedRemainingTimeStunned -= dt;
+            }
+        }
+        if (GameManager.m_BlueStunnedPowerUpActive)
+        {
+            GameManager.m_BlueStunnedPowerUp = false;
+            if (m_BlueRemainingTimeStunned <= 0.0f)
+            {
+                m_BlueRemainingTimeStunned = m_TimeStunned;
+                GameManager.m_BlueStunnedPowerUpActive = false;
+            }
+            else
+            {
+                m_BlueRemainingTimeStunned -= dt;
             }
         }
     }

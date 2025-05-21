@@ -28,7 +28,7 @@ public class FlippersController : MonoBehaviour
     void FixedUpdate()
     {
         // Freeze comprobation
-        if (GameManager.m_FrozenPowerUp && m_Player == GameManager.m_PlayerOwner)
+        if (GameManager.m_BlueFrozenPowerUp && !m_Player || GameManager.m_RedFrozenPowerUp && m_Player)
         {
             //m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
             m_Freeze.SetActive(true);
@@ -55,7 +55,11 @@ public class FlippersController : MonoBehaviour
         if (m_Side)
         {
             // Stunned comprobation for right flipper
-            if (GameManager.m_StunnedPowerUpActive && m_Player != GameManager.m_PlayerOwner && GameManager.m_StunnedSide)
+            if (GameManager.m_RedStunnedPowerUpActive && m_Player && GameManager.m_StunnedSide)
+            {
+                return;
+            }
+            if (GameManager.m_BlueStunnedPowerUpActive && !m_Player && GameManager.m_StunnedSide)
             {
                 return;
             }
@@ -77,7 +81,11 @@ public class FlippersController : MonoBehaviour
         else
         {
             // Stunned comprobation for left flipper
-            if (GameManager.m_StunnedPowerUpActive && m_Player != GameManager.m_PlayerOwner && !GameManager.m_StunnedSide)
+            if (GameManager.m_RedStunnedPowerUpActive && m_Player && !GameManager.m_StunnedSide)
+            {
+                return;
+            }
+            if (GameManager.m_BlueStunnedPowerUpActive && !m_Player && !GameManager.m_StunnedSide)
             {
                 return;
             }

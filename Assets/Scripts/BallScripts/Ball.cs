@@ -39,7 +39,7 @@ public class Ball : MonoBehaviour
         {
             m_MeshFilter.mesh = m_GhostMesh;
         }
-        else if (GameManager.m_StunnedPowerUp)
+        else if (GameManager.m_RedStunnedPowerUp || GameManager.m_BlueStunnedPowerUp)
         {
             m_MeshFilter.mesh = m_SpikeMesh;
         }
@@ -61,7 +61,7 @@ public class Ball : MonoBehaviour
         }
         if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.CompareTag("Player1"))
         {
-            if (!GameManager.m_FrozenPowerUp)
+            if (!GameManager.m_RedFrozenPowerUp && !GameManager.m_BlueFrozenPowerUp)
             {
                 m_MeshRenderer.material = m_MaterialPlayer1;
                 GameManager.m_PlayerOwner = false;
@@ -69,20 +69,30 @@ public class Ball : MonoBehaviour
         }
         if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.CompareTag("Player2"))
         {
-            if (!GameManager.m_FrozenPowerUp)
+            if (!GameManager.m_RedFrozenPowerUp && !GameManager.m_BlueFrozenPowerUp)
             {
                 m_MeshRenderer.material = m_MaterialPlayer2;
                 GameManager.m_PlayerOwner = true;
             }
         }
-        if (collision.gameObject.tag.Contains("Left") && GameManager.m_StunnedPowerUp)
+        if (collision.gameObject.tag.Contains("Left") && GameManager.m_RedStunnedPowerUp)
         {
-            GameManager.m_StunnedPowerUpActive = true;
+            GameManager.m_RedStunnedPowerUpActive = true;
             GameManager.m_StunnedSide = false;
         }
-        if (collision.gameObject.tag.Contains("Right") && GameManager.m_StunnedPowerUp)
+        if (collision.gameObject.tag.Contains("Left") && GameManager.m_BlueStunnedPowerUp)
         {
-            GameManager.m_StunnedPowerUpActive = true;
+            GameManager.m_BlueStunnedPowerUpActive = true;
+            GameManager.m_StunnedSide = false;
+        }
+        if (collision.gameObject.tag.Contains("Right") && GameManager.m_RedStunnedPowerUp)
+        {
+            GameManager.m_RedStunnedPowerUpActive = true;
+            GameManager.m_StunnedSide = true;
+        }
+        if (collision.gameObject.tag.Contains("Right") && GameManager.m_BlueStunnedPowerUp)
+        {
+            GameManager.m_BlueStunnedPowerUpActive = true;
             GameManager.m_StunnedSide = true;
         }
     }
@@ -90,12 +100,26 @@ public class Ball : MonoBehaviour
     {
         if (other.gameObject.CompareTag("FreezePU"))
         {
-            GameManager.m_FrozenPowerUp = true;
+            if (GameManager.m_PlayerOwner)
+            {
+                GameManager.m_RedFrozenPowerUp = true;
+            }
+            else
+            {
+                GameManager.m_BlueFrozenPowerUp = true;
+            }
             m_PowerUpsPoolManager.Return(other.gameObject);
         }
         if (other.gameObject.CompareTag("SpikePU"))
         {
-            GameManager.m_StunnedPowerUp = true;
+            if (GameManager.m_PlayerOwner)
+            {
+                GameManager.m_RedStunnedPowerUp = true;
+            }
+            else
+            {
+                GameManager.m_BlueStunnedPowerUp = true;
+            }
             m_PowerUpsPoolManager.Return(other.gameObject);
         }
         if (other.gameObject.CompareTag("GhostPU"))
