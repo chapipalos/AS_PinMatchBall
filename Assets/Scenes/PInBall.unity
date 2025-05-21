@@ -1705,7 +1705,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: forceAmount
-      value: 70
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7033944699096290931, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_LocalScale.z
@@ -2099,7 +2099,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: forceAmount
-      value: 70
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7033944699096290931, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_LocalScale.z
@@ -13081,7 +13081,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: forceAmount
-      value: 70
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7033944699096290931, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_LocalScale.z
@@ -15034,7 +15034,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: forceAmount
-      value: 70
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2379129274781444960, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_IsActive
