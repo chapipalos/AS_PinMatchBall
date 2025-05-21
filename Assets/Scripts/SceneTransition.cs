@@ -12,8 +12,8 @@ public class SceneTransition : MonoBehaviour
 
     IEnumerator WaitAndLoad()
     {
-        yield return new WaitForSeconds(5f); 
-        SceneManager.LoadScene(MainMenu.nextSceneIndex); 
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("PInBall");
     }
 }
 
