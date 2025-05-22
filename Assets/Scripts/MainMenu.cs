@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     public TMP_Dropdown resdrop;
     public Toggle FullScr;
 
-    public static int nextSceneIndex; // Para almacenar la escena que se quiere cargar después de la transición
+    public static int nextSceneIndex; 
 
     private void Start()
     {
@@ -76,7 +76,7 @@ public class MainMenu : MonoBehaviour
 
     public void play()
     {
-        StartCoroutine(LoadSceneWithTransition(1)); // Cambia 1 por el índice de tu escena de juego
+        StartCoroutine(LoadSceneWithTransition(1)); 
     }
 
     public void quitGame()

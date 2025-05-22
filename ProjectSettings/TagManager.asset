@@ -22,6 +22,8 @@ TagManager:
   - ShieldPU
   - SpikePU
   - SplashPU
+  - StickLeft
+  - StickRight
   layers:
   - Default
   - TransparentFX
