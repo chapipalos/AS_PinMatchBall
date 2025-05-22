@@ -21,6 +21,9 @@ public class FanController : MonoBehaviour
 
     private bool m_Effect;
 
+    public bool m_FanType;
+
+
     private void Awake()
     {
         m_WindEffect = Instantiate(m_WindPrefab);
@@ -41,7 +44,7 @@ public class FanController : MonoBehaviour
     {
         float dt = Time.deltaTime;
 
-        if (GameManager.m_FanRotating)
+        if ((!m_FanType && GameManager.m_UpperFanActive) || (m_FanType && GameManager.m_BottomFanActive))
         {
             m_CurrentSpeed += rotationSpeed * dt;
             m_CurrentSpeed = Mathf.Clamp(m_CurrentSpeed, 0f, rotationSpeed);
@@ -66,13 +69,13 @@ public class FanController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.J)) GameManager.m_FanRotating = true;
-        if (Input.GetKeyDown(KeyCode.K)) GameManager.m_FanRotating = false;
+        //if (Input.GetKeyDown(KeyCode.J)) GameManager.m_FanRotating = true;
+        //if (Input.GetKeyDown(KeyCode.K)) GameManager.m_FanRotating = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (GameManager.m_FanRotating && other.CompareTag("BALL"))
+        if ((!m_FanType && GameManager.m_UpperFanActive) || (m_FanType && GameManager.m_BottomFanActive) && other.CompareTag("BALL"))
         {
             float distance = Vector3.Distance(other.transform.position, transform.position);
             other.attachedRigidbody?.AddForce(-transform.right * (1 / distance) * m_FanForce, ForceMode.Impulse);
@@ -81,7 +84,7 @@ public class FanController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (GameManager.m_FanRotating && other.CompareTag("BALL"))
+        if ((!m_FanType && GameManager.m_UpperFanActive) || (m_FanType && GameManager.m_BottomFanActive) && other.CompareTag("BALL"))
         {
             ChangeLightColorTemporarily();
         }
@@ -89,7 +92,7 @@ public class FanController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (GameManager.m_FanRotating && other.CompareTag("BALL"))
+        if ((!m_FanType && GameManager.m_UpperFanActive) || (m_FanType && GameManager.m_BottomFanActive) && other.CompareTag("BALL"))
         {
             RevertLightColor();
         }

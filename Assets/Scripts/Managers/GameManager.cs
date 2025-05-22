@@ -23,7 +23,8 @@ public static class GameManager
     public static bool m_RedSplash = false;
     public static bool m_BlueSplash = false;
 
-    public static bool m_FanRotating = false;
+    public static bool m_UpperFanActive = false;
+    public static bool m_BottomFanActive = false;
 
     [Header("IK Robot variables")]
     public static bool m_RedRobotSearching = false;
