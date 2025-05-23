@@ -23,10 +23,9 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-       
         FullScr.isOn = Screen.fullScreen;
 
-        // Charge value of volume
+        // Carga valores guardados
         float generalVol = PlayerPrefs.GetFloat("GeneralVolume", 0.5f);
         float musicVol = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
         float fxVol = PlayerPrefs.GetFloat("FxVolume", 0.5f);
@@ -35,10 +34,11 @@ public class MainMenu : MonoBehaviour
         musicSlider.value = musicVol;
         fxSlider.value = fxVol;
 
-        // Aplicate to mixer
+        // Aplica volumen convertido a decibelios
         audiomixer.SetFloat("GeneralVolume", VolumeToDb(generalVol));
         audiomixer.SetFloat("MusicVolume", VolumeToDb(musicVol));
         audiomixer.SetFloat("FxVolume", VolumeToDb(fxVol));
+
         backgroundMusic.Play();
         ReviseResolution();
     }
@@ -61,8 +61,10 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetFloat("FxVolume", value);
     }
 
+    // Conversión de volumen lineal (0-1) a decibelios (dB)
     private float VolumeToDb(float volume)
     {
+        // Clamp para evitar log(0) que da infinito negativo
         return Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1f)) * 20f;
     }
 
@@ -117,4 +119,3 @@ public class MainMenu : MonoBehaviour
         yield return null;
     }
 }
-
