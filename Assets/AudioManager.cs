@@ -8,14 +8,27 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource m_SFXSource;
 
     [Header("------ Audio Clips ------")]
+    [Header("Background Music")]
 
     public AudioClip m_BackgoundMusic;
 
-    public AudioClip m_FreezePowerUp;
-    public AudioClip m_GhostBallPowerUp;
-    public AudioClip m_ShieldPowerUp;
-    public AudioClip m_SpikeBallPowerUp;
-    public AudioClip m_BlooperPowerUp;
+    [Header("Power Up Sounds")]
+
+    public AudioClip m_FreezePowerUpSound;
+    public AudioClip m_GhostBallPowerUpSound;
+    public AudioClip m_ShieldPowerUpSound;
+    public AudioClip m_SpikeBallPowerUpSound;
+    public AudioClip m_BlooperPowerUpSound;
+
+    [Header("Map Sounds")]
+
+    public AudioClip m_BallWallBounceSound;
+    public AudioClip m_BumperSound;
+    public AudioClip m_TriggerSound;
+    public AudioClip m_SpeedZoneSound;
+    public AudioClip m_FanSound;
+    public AudioClip m_GoalSound;
+    public AudioClip m_RespawnSound;
 
     private void Start()
     {

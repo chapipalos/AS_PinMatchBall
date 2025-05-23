@@ -12641,11 +12641,14 @@ MonoBehaviour:
   m_MusicSource: {fileID: 1456590776}
   m_SFXSource: {fileID: 1434750257}
   m_BackgoundMusic: {fileID: 8300000, guid: 3bb11e7667a2b284c923514dfdbeba02, type: 3}
-  m_FreezePowerUp: {fileID: 8300000, guid: 351a7dbecb3e40a4689ab36a9a6f10bf, type: 3}
-  m_GhostBallPowerUp: {fileID: 8300000, guid: 96ba379f7b7e2404288ee4bb48856608, type: 3}
-  m_ShieldPowerUp: {fileID: 8300000, guid: ede86ac3093107049969ef28abb1726e, type: 3}
-  m_SpikeBallPowerUp: {fileID: 8300000, guid: 6cec947b6a4419b4b92b63f6742a2311, type: 3}
-  m_BlooperPowerUp: {fileID: 8300000, guid: e0ee854b9a0d35448a4cc023c940cbe5, type: 3}
+  m_FreezePowerUpSound: {fileID: 8300000, guid: 351a7dbecb3e40a4689ab36a9a6f10bf, type: 3}
+  m_GhostBallPowerUpSound: {fileID: 8300000, guid: 75a3556602c3db24d8285cfc8554f73f, type: 3}
+  m_ShieldPowerUpSound: {fileID: 8300000, guid: ede86ac3093107049969ef28abb1726e, type: 3}
+  m_SpikeBallPowerUpSound: {fileID: 8300000, guid: 6cec947b6a4419b4b92b63f6742a2311, type: 3}
+  m_BlooperPowerUpSound: {fileID: 8300000, guid: e0ee854b9a0d35448a4cc023c940cbe5, type: 3}
+  m_BumperSound: {fileID: 0}
+  m_TriggerSound: {fileID: 0}
+  m_SpeedZoneSound: {fileID: 0}
 --- !u!1001 &1181809488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22992,6 +22995,7 @@ MonoBehaviour:
   m_ZapPrefab: {fileID: 5627696518775099638, guid: 6839a8d6998e86d4282063ffdacb0c15, type: 3}
   m_GhostObject: {fileID: 722832661}
   m_SpikeMesh: {fileID: 4300002, guid: c455996f6e6b49d418895f41b5216202, type: 3}
+  m_AudioManager: {fileID: 1158458155}
 --- !u!1001 &2060317171
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -23,6 +23,8 @@ public class Ball : MonoBehaviour
 
     private PowerUpsPoolManager m_PowerUpsPoolManager;
 
+    public AudioManager m_AudioManager;
+
 
     private void Awake()
     {
@@ -158,10 +160,12 @@ public class Ball : MonoBehaviour
             if (GameManager.m_PlayerOwner)
             {
                 GameManager.m_RedFrozenPowerUp = true;
+                m_AudioManager.PlaySFX(m_AudioManager.m_FreezePowerUpSound);
             }
             else
             {
                 GameManager.m_BlueFrozenPowerUp = true;
+                m_AudioManager.PlaySFX(m_AudioManager.m_FreezePowerUpSound);
             }
             m_PowerUpsPoolManager.Return(other.gameObject);
         }
@@ -170,16 +174,19 @@ public class Ball : MonoBehaviour
             if (GameManager.m_PlayerOwner)
             {
                 GameManager.m_RedStunnedPowerUp = true;
+                m_AudioManager.PlaySFX(m_AudioManager.m_SpikeBallPowerUpSound);
             }
             else
             {
                 GameManager.m_BlueStunnedPowerUp = true;
+                m_AudioManager.PlaySFX(m_AudioManager.m_SpikeBallPowerUpSound);
             }
             m_PowerUpsPoolManager.Return(other.gameObject);
         }
         if (other.gameObject.CompareTag("GhostPU"))
         {
             GameManager.m_GhostBall = true;
+            m_AudioManager.PlaySFX(m_AudioManager.m_GhostBallPowerUpSound);
             m_PowerUpsPoolManager.Return(other.gameObject);
         }
         if (other.gameObject.CompareTag("ShieldPU"))
@@ -187,10 +194,12 @@ public class Ball : MonoBehaviour
             if(GameManager.m_PlayerOwner)
             {
                 GameManager.m_BlueRobot = true;
+                m_AudioManager.PlaySFX(m_AudioManager.m_ShieldPowerUpSound);
             }
             else
             {
                 GameManager.m_RedRobot = true;
+                m_AudioManager.PlaySFX(m_AudioManager.m_ShieldPowerUpSound);
             }
             m_PowerUpsPoolManager.Return(other.gameObject);
         }
@@ -199,10 +208,12 @@ public class Ball : MonoBehaviour
             if (GameManager.m_PlayerOwner)
             {
                 GameManager.m_RedSplash = true;
+                m_AudioManager.PlaySFX(m_AudioManager.m_BlooperPowerUpSound);
             }
             else
             {
                 GameManager.m_BlueSplash = true;
+                m_AudioManager.PlaySFX(m_AudioManager.m_BlooperPowerUpSound);
             }
             m_PowerUpsPoolManager.Return(other.gameObject);
         }
