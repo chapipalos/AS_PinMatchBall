@@ -3,33 +3,67 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public Slider volumeSlider;
-    float SliderVolumeValue;
+    public Slider GeneralvolumeSlider;
+    public Slider musicSlider;
+    public Slider fxSlider;
+
+    public AudioMixer audiomixer;
+
     Resolution[] resol;
     public TMP_Dropdown resdrop;
     public Toggle FullScr;
-
-    public static int nextSceneIndex; 
+    public AudioSource backgroundMusic;
+    public static int nextSceneIndex;
 
     private void Start()
     {
-        if (Screen.fullScreen)
-        {
-            FullScr.isOn = true;
-        }
-        else
-        {
-            FullScr.isOn = false;
-        }
+       
+        FullScr.isOn = Screen.fullScreen;
 
-        volumeSlider.value = PlayerPrefs.GetFloat("volumeAudio", 0.5f);
-        AudioListener.volume = volumeSlider.value;
+        // Charge value of volume
+        float generalVol = PlayerPrefs.GetFloat("GeneralVolume", 0.5f);
+        float musicVol = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        float fxVol = PlayerPrefs.GetFloat("FxVolume", 0.5f);
+
+        GeneralvolumeSlider.value = generalVol;
+        musicSlider.value = musicVol;
+        fxSlider.value = fxVol;
+
+        // Aplicate to mixer
+        audiomixer.SetFloat("GeneralVolume", VolumeToDb(generalVol));
+        audiomixer.SetFloat("MusicVolume", VolumeToDb(musicVol));
+        audiomixer.SetFloat("FxVolume", VolumeToDb(fxVol));
+        backgroundMusic.Play();
         ReviseResolution();
+    }
+
+    public void ChangeGeneralVolume(float value)
+    {
+        audiomixer.SetFloat("GeneralVolume", VolumeToDb(value));
+        PlayerPrefs.SetFloat("GeneralVolume", value);
+    }
+
+    public void ChangeMusicVolume(float value)
+    {
+        audiomixer.SetFloat("MusicVolume", VolumeToDb(value));
+        PlayerPrefs.SetFloat("MusicVolume", value);
+    }
+
+    public void ChangeFXVolume(float value)
+    {
+        audiomixer.SetFloat("FxVolume", VolumeToDb(value));
+        PlayerPrefs.SetFloat("FxVolume", value);
+    }
+
+    private float VolumeToDb(float volume)
+    {
+        return Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1f)) * 20f;
     }
 
     public void ActivateFullScreen(bool fullScreen)
@@ -40,14 +74,13 @@ public class MainMenu : MonoBehaviour
     private void ReviseResolution()
     {
         int ActualRes = 0;
-        string option;
         resol = Screen.resolutions;
         resdrop.ClearOptions();
         List<string> optionsRes = new List<string>();
 
         for (int i = 0; i < resol.Length; i++)
         {
-            option = resol[i].width + " x " + resol[i].height;
+            string option = resol[i].width + " x " + resol[i].height;
             optionsRes.Add(option);
 
             if (Screen.fullScreen && resol[i].width == Screen.currentResolution.width && resol[i].height == Screen.currentResolution.height)
@@ -67,16 +100,9 @@ public class MainMenu : MonoBehaviour
         Screen.SetResolution(resolut.width, resolut.height, Screen.fullScreen);
     }
 
-    public void changeSlider(float value)
-    {
-        SliderVolumeValue = value;
-        PlayerPrefs.SetFloat("volumeAudio", SliderVolumeValue);
-        AudioListener.volume = volumeSlider.value;
-    }
-
     public void play()
     {
-        StartCoroutine(LoadSceneWithTransition(1)); 
+        StartCoroutine(LoadSceneWithTransition(1));
     }
 
     public void quitGame()
@@ -87,7 +113,8 @@ public class MainMenu : MonoBehaviour
     IEnumerator LoadSceneWithTransition(int sceneIndex)
     {
         nextSceneIndex = sceneIndex;
-        SceneManager.LoadScene("SceneTransition"); 
-        yield return null; 
+        SceneManager.LoadScene("SceneTransition");
+        yield return null;
     }
 }
+
