@@ -2991,6 +2991,7 @@ GameObject:
   - component: {fileID: 439740956}
   - component: {fileID: 439740958}
   - component: {fileID: 439740957}
+  - component: {fileID: 439740959}
   m_Layer: 5
   m_Name: Red WINS
   m_TagString: Untagged
@@ -3014,7 +3015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 25, y: 0}
+  m_AnchoredPosition: {x: 61, y: -77}
   m_SizeDelta: {x: 352.293, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &439740957
@@ -3064,8 +3065,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3102,7 +3103,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 12.703522, y: 0, z: 0, w: 0}
+  m_margin: {x: -38.401794, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3116,6 +3117,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439740955}
   m_CullTransparentMesh: 1
+--- !u!114 &439740959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439740955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea212593f68b090469bea9ffef532e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceSpeed: 5
+  bounceAmount: 10
+  colorSpeed: 1
+  scalePulseSpeed: 2
+  scaleAmount: 0.1
 --- !u!1 &443356629
 GameObject:
   m_ObjectHideFlags: 0
@@ -9996,7 +10014,7 @@ RectTransform:
   m_GameObject: {fileID: 816416605}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1511, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1182284041}
@@ -12980,7 +12998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1331552620
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12990,7 +13008,7 @@ RectTransform:
   m_GameObject: {fileID: 1331552619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.353512, y: 1.5539668, z: 1}
+  m_LocalScale: {x: 1.4455508, y: 1.5539668, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 891701128}
@@ -12999,7 +13017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -24}
+  m_AnchoredPosition: {x: 0, y: -51}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331552621
@@ -22090,13 +22108,14 @@ GameObject:
   - component: {fileID: 1950560580}
   - component: {fileID: 1950560582}
   - component: {fileID: 1950560581}
+  - component: {fileID: 1950560583}
   m_Layer: 5
   m_Name: Blue wins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1950560580
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22113,7 +22132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 130, y: 0}
+  m_AnchoredPosition: {x: 130, y: -65}
   m_SizeDelta: {x: 340.8619, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1950560581
@@ -22163,8 +22182,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -22215,6 +22234,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950560579}
   m_CullTransparentMesh: 1
+--- !u!114 &1950560583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950560579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea212593f68b090469bea9ffef532e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceSpeed: 6
+  bounceAmount: 8
+  colorSpeed: 1
+  scalePulseSpeed: 2
+  scaleAmount: 0.1
 --- !u!1 &1957368546
 GameObject:
   m_ObjectHideFlags: 0
