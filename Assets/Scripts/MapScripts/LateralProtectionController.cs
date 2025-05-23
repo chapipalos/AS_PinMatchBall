@@ -7,6 +7,8 @@ public class LateralProtectionController : MonoBehaviour
 
     private Vector3 m_FinalPosition;
 
+    public BarrierController m_Barrier;
+
     private void Start()
     {
         m_IsActivated = false;
@@ -24,6 +26,7 @@ public class LateralProtectionController : MonoBehaviour
             else
             {
                 transform.position = m_FinalPosition;
+                m_Barrier.m_Activate = true;
             }
 
         }
