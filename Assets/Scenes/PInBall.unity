@@ -12640,15 +12640,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MusicSource: {fileID: 1456590776}
   m_SFXSource: {fileID: 1434750257}
-  m_BackgoundMusic: {fileID: 8300000, guid: 3bb11e7667a2b284c923514dfdbeba02, type: 3}
+  m_BackgoundMusic: {fileID: 8300000, guid: a57c8d96e73110e479276505fc09f587, type: 3}
   m_FreezePowerUpSound: {fileID: 8300000, guid: 351a7dbecb3e40a4689ab36a9a6f10bf, type: 3}
   m_GhostBallPowerUpSound: {fileID: 8300000, guid: 75a3556602c3db24d8285cfc8554f73f, type: 3}
   m_ShieldPowerUpSound: {fileID: 8300000, guid: ede86ac3093107049969ef28abb1726e, type: 3}
   m_SpikeBallPowerUpSound: {fileID: 8300000, guid: 6cec947b6a4419b4b92b63f6742a2311, type: 3}
   m_BlooperPowerUpSound: {fileID: 8300000, guid: e0ee854b9a0d35448a4cc023c940cbe5, type: 3}
+  m_BallWallBounceSound: {fileID: 8300000, guid: 279aecf5958ac69439cfb82b9701805e, type: 3}
   m_BumperSound: {fileID: 0}
   m_TriggerSound: {fileID: 0}
   m_SpeedZoneSound: {fileID: 0}
+  m_FanSound: {fileID: 0}
+  m_GoalSound: {fileID: 0}
+  m_RespawnSound: {fileID: 0}
 --- !u!1001 &1181809488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14043,8 +14047,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7226341344322058718, guid: 00969ef1c32e77949805cc955e78cb7a, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a57c8d96e73110e479276505fc09f587, type: 3}
+  m_Resource: {fileID: 8300000, guid: a57c8d96e73110e479276505fc09f587, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.7
   m_Pitch: 1

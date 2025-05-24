@@ -25,48 +25,40 @@ public class MainMenu : MonoBehaviour
     {
         FullScr.isOn = Screen.fullScreen;
 
-        // Carga valores guardados
-        float generalVol = PlayerPrefs.GetFloat("GeneralVolume", 0.5f);
-        float musicVol = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
-        float fxVol = PlayerPrefs.GetFloat("FxVolume", 0.5f);
+if (PlayerPrefs.HasKey("GeneralVolume"))
+        {
+            LoadVolume();
+        }
+        else
+        {
+            SetVolume();
+        }
 
-        GeneralvolumeSlider.value = generalVol;
-        musicSlider.value = musicVol;
-        fxSlider.value = fxVol;
-
-        // Aplica volumen convertido a decibelios
-        audiomixer.SetFloat("GeneralVolume", VolumeToDb(generalVol));
-        audiomixer.SetFloat("MusicVolume", VolumeToDb(musicVol));
-        audiomixer.SetFloat("FxVolume", VolumeToDb(fxVol));
-
-        backgroundMusic.Play();
         ReviseResolution();
     }
-
-    public void ChangeGeneralVolume(float value)
+    public void SetVolume()
     {
-        audiomixer.SetFloat("GeneralVolume", VolumeToDb(value));
-        PlayerPrefs.SetFloat("GeneralVolume", value);
-    }
 
-    public void ChangeMusicVolume(float value)
-    {
-        audiomixer.SetFloat("MusicVolume", VolumeToDb(value));
-        PlayerPrefs.SetFloat("MusicVolume", value);
-    }
+        float generalVol = GeneralvolumeSlider.value;
+        audiomixer.SetFloat("General", Mathf.Log10(generalVol) * 20);
+        PlayerPrefs.SetFloat("GeneralVolume", generalVol);
 
-    public void ChangeFXVolume(float value)
-    {
-        audiomixer.SetFloat("FxVolume", VolumeToDb(value));
-        PlayerPrefs.SetFloat("FxVolume", value);
+        float musicVol = musicSlider.value;
+        audiomixer.SetFloat("Music", Mathf.Log10(musicVol) * 20);
+        PlayerPrefs.SetFloat("MusicVolume", musicVol);
+        float fxVol = fxSlider.value;
+        audiomixer.SetFloat("Sfx", Mathf.Log10(fxVol) * 20);
+        PlayerPrefs.SetFloat("SfxVolume", fxVol);
     }
+   public void LoadVolume()
+    {
+        GeneralvolumeSlider.value = PlayerPrefs.GetFloat("GeneralVolume");
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        fxSlider.value = PlayerPrefs.GetFloat("SfxVolume");
+        SetVolume();
+    }
+  
 
-    // Conversión de volumen lineal (0-1) a decibelios (dB)
-    private float VolumeToDb(float volume)
-    {
-        // Clamp para evitar log(0) que da infinito negativo
-        return Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1f)) * 20f;
-    }
 
     public void ActivateFullScreen(bool fullScreen)
     {
@@ -105,6 +97,7 @@ public class MainMenu : MonoBehaviour
     public void play()
     {
         StartCoroutine(LoadSceneWithTransition(1));
+
     }
 
     public void quitGame()
