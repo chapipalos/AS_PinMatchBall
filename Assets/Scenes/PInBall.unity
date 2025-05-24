@@ -558,6 +558,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
@@ -1557,6 +1561,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
@@ -1794,6 +1802,10 @@ PrefabInstance:
       propertyPath: forceAmount
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
     - target: {fileID: 7033944699096290931, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.75
@@ -2188,6 +2200,10 @@ PrefabInstance:
       propertyPath: forceAmount
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
     - target: {fileID: 7033944699096290931, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.7500001
@@ -9286,6 +9302,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
@@ -9878,6 +9898,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
     - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: fuerzaExpulsion
       value: 20
@@ -12564,6 +12588,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
@@ -12624,16 +12652,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MusicSource: {fileID: 1456590776}
   m_SFXSource: {fileID: 1434750257}
-  m_BackgoundMusic: {fileID: 8300000, guid: a57c8d96e73110e479276505fc09f587, type: 3}
+  m_BackgoundMusic: {fileID: 0}
   m_FreezePowerUpSound: {fileID: 8300000, guid: 351a7dbecb3e40a4689ab36a9a6f10bf, type: 3}
   m_GhostBallPowerUpSound: {fileID: 8300000, guid: 75a3556602c3db24d8285cfc8554f73f, type: 3}
   m_ShieldPowerUpSound: {fileID: 8300000, guid: ede86ac3093107049969ef28abb1726e, type: 3}
   m_SpikeBallPowerUpSound: {fileID: 8300000, guid: 6cec947b6a4419b4b92b63f6742a2311, type: 3}
   m_BlooperPowerUpSound: {fileID: 8300000, guid: e0ee854b9a0d35448a4cc023c940cbe5, type: 3}
   m_BallWallBounceSound: {fileID: 8300000, guid: 279aecf5958ac69439cfb82b9701805e, type: 3}
-  m_BumperSound: {fileID: 0}
+  m_BumperSound: {fileID: 8300000, guid: 8413e1de010827544b1facc7189f43ff, type: 3}
   m_TriggerSound: {fileID: 0}
-  m_SpeedZoneSound: {fileID: 0}
+  m_SpeedZoneSound: {fileID: 8300000, guid: 5f4e4ff551a75d84bbf459c7310626bd, type: 3}
   m_FanSound: {fileID: 0}
   m_GoalSound: {fileID: 0}
   m_RespawnSound: {fileID: 0}
@@ -13610,6 +13638,10 @@ PrefabInstance:
       propertyPath: forceAmount
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
     - target: {fileID: 7033944699096290931, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.74999994
@@ -15724,6 +15756,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
@@ -15950,6 +15986,10 @@ PrefabInstance:
       propertyPath: forceAmount
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
     - target: {fileID: 2379129274781444960, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -16286,6 +16326,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_AudioManager
+      value: 
+      objectReference: {fileID: 1158458155}
     - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: fuerzaExpulsion
       value: 20

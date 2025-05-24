@@ -7,6 +7,8 @@ public class BallDetector : MonoBehaviour
 
     private Collider m_Collider;
 
+    public AudioManager m_AudioManager;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +31,7 @@ public class BallDetector : MonoBehaviour
         {
             m_Beat.activarExpansion = true;
 
+            m_AudioManager.PlaySFX(m_AudioManager.m_BumperSound);
 
             Vector3 direccionExpulsion = (other.transform.position - transform.position).normalized;
             rb.linearVelocity = Vector3.zero; // Opcional: Reinicia la velocidad antes de expulsar
