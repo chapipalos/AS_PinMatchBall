@@ -2991,7 +2991,6 @@ GameObject:
   - component: {fileID: 439740956}
   - component: {fileID: 439740958}
   - component: {fileID: 439740957}
-  - component: {fileID: 439740959}
   m_Layer: 5
   m_Name: Red WINS
   m_TagString: Untagged
@@ -3011,11 +3010,11 @@ RectTransform:
   m_LocalScale: {x: 1.0297, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1004471254}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 483.8173, y: 388.24997}
+  m_AnchoredPosition: {x: 22.942322, y: -66.00006}
   m_SizeDelta: {x: 352.293, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &439740957
@@ -3117,23 +3116,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439740955}
   m_CullTransparentMesh: 1
---- !u!114 &439740959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439740955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea212593f68b090469bea9ffef532e32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounceSpeed: 5
-  bounceAmount: 10
-  colorSpeed: 1
-  scalePulseSpeed: 2
-  scaleAmount: 0.1
 --- !u!1 &443356629
 GameObject:
   m_ObjectHideFlags: 0
@@ -11777,6 +11759,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1869190217}
+  - {fileID: 1950560580}
+  - {fileID: 439740956}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -13087,7 +13071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1331552620
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13097,7 +13081,7 @@ RectTransform:
   m_GameObject: {fileID: 1331552619}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4455508, y: 1.5539668, z: 1}
+  m_LocalScale: {x: 0.6620623, y: 0.7702702, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 891701128}
@@ -22283,7 +22267,6 @@ GameObject:
   - component: {fileID: 1950560580}
   - component: {fileID: 1950560582}
   - component: {fileID: 1950560581}
-  - component: {fileID: 1950560583}
   m_Layer: 5
   m_Name: Blue wins
   m_TagString: Untagged
@@ -22303,11 +22286,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1004471254}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 565.37506, y: 400.24994}
+  m_AnchoredPosition: {x: 104.50012, y: -54.00006}
   m_SizeDelta: {x: 340.8619, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1950560581
@@ -22409,23 +22392,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950560579}
   m_CullTransparentMesh: 1
---- !u!114 &1950560583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950560579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea212593f68b090469bea9ffef532e32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounceSpeed: 6
-  bounceAmount: 8
-  colorSpeed: 1
-  scalePulseSpeed: 2
-  scaleAmount: 0.1
 --- !u!1 &1957368546
 GameObject:
   m_ObjectHideFlags: 0
@@ -24133,8 +24099,6 @@ SceneRoots:
   - {fileID: 1053022244}
   - {fileID: 1435854094}
   - {fileID: 1004471254}
-  - {fileID: 1950560580}
-  - {fileID: 439740956}
   - {fileID: 4784462}
   - {fileID: 1211275373}
   - {fileID: 1616988224}
