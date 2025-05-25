@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip m_FanSound;
     public AudioClip m_GoalSound;
     public AudioClip m_RespawnSound;
+    public AudioClip m_StunSound;
 
     private void Start()
     {

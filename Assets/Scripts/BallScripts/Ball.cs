@@ -107,6 +107,7 @@ public class Ball : MonoBehaviour
             {
                 ps.transform.position = collision.transform.position;
                 ps.Play();
+                m_AudioManager.PlaySFX(m_AudioManager.m_StunSound);
             }
             GameManager.m_StunnedSide = false;
         }
@@ -121,6 +122,7 @@ public class Ball : MonoBehaviour
             {
                 ps.transform.position = collision.transform.position;
                 ps.Play();
+                m_AudioManager.PlaySFX(m_AudioManager.m_StunSound);
             }
             GameManager.m_StunnedSide = false;
         }
@@ -135,6 +137,7 @@ public class Ball : MonoBehaviour
             {
                 ps.transform.position = collision.transform.position;
                 ps.Play();
+                m_AudioManager.PlaySFX(m_AudioManager.m_StunSound);
             }
             GameManager.m_StunnedSide = true;
         }
@@ -149,6 +152,7 @@ public class Ball : MonoBehaviour
             {
                 ps.transform.position = collision.transform.position;
                 ps.Play();
+                m_AudioManager.PlaySFX(m_AudioManager.m_StunSound);
             }
             GameManager.m_StunnedSide = true;
         }

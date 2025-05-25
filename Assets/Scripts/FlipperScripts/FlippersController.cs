@@ -18,6 +18,8 @@ public class FlippersController : MonoBehaviour
 
     public GameObject m_Splash;
 
+    public AudioManager m_AudioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,7 @@ public class FlippersController : MonoBehaviour
         if (GameManager.m_RedStunnedPowerUpActive && m_Player && GameManager.m_StunnedSide == m_Side)
         {
             m_Broken.SetActive(true);
+
         }
         else if (GameManager.m_BlueStunnedPowerUpActive && !m_Player && GameManager.m_StunnedSide == m_Side)
         {
@@ -138,6 +141,7 @@ public class FlippersController : MonoBehaviour
         if (Input.GetKeyDown(keyCode))
         {
             m_Splash.GetComponent<SplashController>().SplashAction();
+            m_AudioManager.PlaySFX(m_AudioManager.m_TriggerSound);
         }
     }
 }
