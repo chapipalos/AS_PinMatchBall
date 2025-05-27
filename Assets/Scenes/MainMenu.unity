@@ -15662,7 +15662,7 @@ MonoBehaviour:
   m_LightsParent: {fileID: 1288101714}
   m_FirstLight: 0
   m_LastLight: 10
-  m_TimeToChangeLights: 0.001
+  m_TimeToChangeLights: 0.01
   m_PlayLightsParent: {fileID: 1827127370}
   m_OptionsLightsParent: {fileID: 308151035}
   m_ExitLightsParent: {fileID: 1179213421}
