@@ -78,6 +78,7 @@ public class Ball : MonoBehaviour
             {
                 ps.transform.position = transform.position;
                 ps.Play();
+                m_AudioManager.PlaySFX(m_AudioManager.m_BallWallBounceSound);
             }
         }
         if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.CompareTag("Player1"))

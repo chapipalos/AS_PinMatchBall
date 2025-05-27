@@ -12670,12 +12670,12 @@ MonoBehaviour:
   m_ShieldPowerUpSound: {fileID: 8300000, guid: ede86ac3093107049969ef28abb1726e, type: 3}
   m_SpikeBallPowerUpSound: {fileID: 8300000, guid: 66ed67523633b5b45a5ab07c3da99835, type: 3}
   m_BlooperPowerUpSound: {fileID: 8300000, guid: e0ee854b9a0d35448a4cc023c940cbe5, type: 3}
-  m_BallWallBounceSound: {fileID: 8300000, guid: 279aecf5958ac69439cfb82b9701805e, type: 3}
+  m_BallWallBounceSound: {fileID: 8300000, guid: 88b1cbe3caa3fee4b8b103b5edd7aba9, type: 3}
   m_BumperSound: {fileID: 8300000, guid: 8b9ef0a3bd05dd24eb23111a47c6b51e, type: 3}
   m_TriggerSound: {fileID: 8300000, guid: 0a8b9d856922c3d43b1b831bfb94b5fe, type: 3}
   m_SpeedZoneSound: {fileID: 8300000, guid: a2ab5ac1899fc8b4f857e7409c775a79, type: 3}
   m_FanSound: {fileID: 0}
-  m_GoalSound: {fileID: 0}
+  m_GoalSound: {fileID: 8300000, guid: e23705d0901531b44a5c580af3fd8809, type: 3}
   m_RespawnSound: {fileID: 0}
   m_StunSound: {fileID: 8300000, guid: 815e6e0f7bfcd9746af975f063a3f013, type: 3}
 --- !u!1001 &1181809488
@@ -14217,6 +14217,7 @@ MonoBehaviour:
   m_GoalExplosionPrefab: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
   m_MaterialPlayer: {fileID: 2100000, guid: 0a0bedef7de5541499bb0271f257c552, type: 2}
   m_ScoreManager: {fileID: 1053022241}
+  m_AudioManager: {fileID: 1158458155}
 --- !u!65 &1468261135
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14635,6 +14636,7 @@ MonoBehaviour:
   m_GoalExplosionPrefab: {fileID: 100000, guid: 60656d7d0b74a9a45b3c02ba301ae223, type: 3}
   m_MaterialPlayer: {fileID: 2100000, guid: cb9053d6f12b6904583f1d0c6cc10b4e, type: 2}
   m_ScoreManager: {fileID: 991690912}
+  m_AudioManager: {fileID: 1158458155}
 --- !u!65 &1569581056
 BoxCollider:
   m_ObjectHideFlags: 0

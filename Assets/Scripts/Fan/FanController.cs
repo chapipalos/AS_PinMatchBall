@@ -22,6 +22,7 @@ public class FanController : MonoBehaviour
     private bool m_Effect;
 
     public bool m_FanType;
+    AudioManager m_AudioManager;
 
 
     private void Awake()
@@ -52,6 +53,7 @@ public class FanController : MonoBehaviour
 
             if (!m_Effect)
             {
+                m_AudioManager.PlaySFX(m_AudioManager.m_FanSound);
                 m_WindParticleSystem.Play();
                 m_Effect = true;
             }

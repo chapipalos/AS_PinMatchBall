@@ -26,6 +26,7 @@ public class GoalRespawnController : MonoBehaviour
     public Material m_MaterialPlayer;
 
     public ScoreManager m_ScoreManager;
+    public AudioManager m_AudioManager;
 
     private void Awake()
     {
@@ -93,12 +94,17 @@ public class GoalRespawnController : MonoBehaviour
     {
         if(other.tag == "BALL")
         {
+         
 
             foreach (ParticleSystem ps in m_GoalExplosionParticleSystem)
             {
                 ps.transform.position = other.transform.position;
                 ps.Play();
+                m_AudioManager.PlaySFX(m_AudioManager.m_GoalSound);
+
             }
+
+
 
 
             m_ScoreManager.IncreaseScore();
