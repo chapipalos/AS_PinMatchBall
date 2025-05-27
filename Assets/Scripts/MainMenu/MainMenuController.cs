@@ -83,15 +83,24 @@ public class MainMenuController : MonoBehaviour
     {
         if (GameManager.m_GameOver && GameManager.m_Winner)
         {
-            m_BlueWinsPanel.SetActive(true);
+            m_OptionsPanel.gameObject.SetActive(false);
+            m_BlueWinsPanel.gameObject.SetActive(true);
+            m_RedWinsPanel.gameObject.SetActive(false);
+            m_MainMenu.gameObject.SetActive(false);
         }
         else if(GameManager.m_GameOver && !GameManager.m_Winner)
         {
-            m_RedWinsPanel.SetActive(true);
+            m_OptionsPanel.gameObject.SetActive(false);
+            m_BlueWinsPanel.gameObject.SetActive(false);
+            m_RedWinsPanel.gameObject.SetActive(true);
+            m_MainMenu.gameObject.SetActive(false);
         }
         else
         {
-            m_MainMenu.SetActive(true);
+            m_OptionsPanel.gameObject.SetActive(false);
+            m_BlueWinsPanel.gameObject.SetActive(false);
+            m_RedWinsPanel.gameObject.SetActive(false);
+            m_MainMenu.gameObject.SetActive(true);
         }
     }
 

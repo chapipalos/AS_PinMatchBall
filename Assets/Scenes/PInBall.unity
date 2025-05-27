@@ -2597,6 +2597,7 @@ MonoBehaviour:
   m_CameraArrivedGameOverRotation: 0
   m_CameraArrivedGameOverPosition: 0
   m_TimeToArrive: 5
+  m_Time: 0
   m_LinearSpeed: 400
   m_AngularSpeed: 3
   m_CameraArrivedDesiredRotation: 0
@@ -10595,7 +10596,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 86, y: 21, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 41.028}
+  m_LocalScale: {x: 30.14535, y: 1, z: 61.90715}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1325260747}
@@ -15950,7 +15951,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -36, y: 20, z: -200}
-  m_LocalScale: {x: 25, y: 1, z: 20}
+  m_LocalScale: {x: 25, y: 1, z: 30.178001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1325260747}
@@ -24969,7 +24970,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: -36, y: 20, z: 200}
-  m_LocalScale: {x: 25, y: 1, z: 20}
+  m_LocalScale: {x: 25, y: 1, z: 30.178001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1325260747}
