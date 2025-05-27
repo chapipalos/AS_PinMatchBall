@@ -87,6 +87,9 @@ public class MainMenuController : MonoBehaviour
             m_BlueWinsPanel.gameObject.SetActive(true);
             m_RedWinsPanel.gameObject.SetActive(false);
             m_MainMenu.gameObject.SetActive(false);
+            m_PlayLightsParent.gameObject.SetActive(true);
+            m_ExitLightsParent.gameObject.SetActive(true);
+            m_OptionsLightsParent.localPosition = new Vector3(-0.5f, -2.637f, -12.69f);
         }
         else if(GameManager.m_GameOver && !GameManager.m_Winner)
         {
@@ -94,6 +97,9 @@ public class MainMenuController : MonoBehaviour
             m_BlueWinsPanel.gameObject.SetActive(false);
             m_RedWinsPanel.gameObject.SetActive(true);
             m_MainMenu.gameObject.SetActive(false);
+            m_PlayLightsParent.gameObject.SetActive(true);
+            m_ExitLightsParent.gameObject.SetActive(true);
+            m_OptionsLightsParent.localPosition = new Vector3(-0.5f, -2.637f, -12.69f);
         }
         else
         {
@@ -101,6 +107,9 @@ public class MainMenuController : MonoBehaviour
             m_BlueWinsPanel.gameObject.SetActive(false);
             m_RedWinsPanel.gameObject.SetActive(false);
             m_MainMenu.gameObject.SetActive(true);
+            m_PlayLightsParent.gameObject.SetActive(true);
+            m_ExitLightsParent.gameObject.SetActive(true);
+            m_OptionsLightsParent.localPosition = new Vector3(-0.5f, -2.637f, -12.69f);
         }
     }
 
@@ -176,6 +185,9 @@ public class MainMenuController : MonoBehaviour
         m_BlueWinsPanel.gameObject.SetActive(false);
         m_RedWinsPanel.gameObject.SetActive(false);
         m_MainMenu.gameObject.SetActive(false);
+        m_OptionsLightsParent.localPosition = new Vector3(-0.5f, -10f, 17f);
+        m_PlayLightsParent.gameObject.SetActive(false);
+        m_ExitLightsParent.gameObject.SetActive(false);
     }
 
     private void MainMenuPanel()
@@ -184,6 +196,9 @@ public class MainMenuController : MonoBehaviour
         m_BlueWinsPanel.gameObject.SetActive(false);
         m_RedWinsPanel.gameObject.SetActive(false);
         m_MainMenu.gameObject.SetActive(true);
+        m_OptionsLightsParent.localPosition = new Vector3(-0.5f, -2.637f, -12.69f);
+        m_PlayLightsParent.gameObject.SetActive(true);
+        m_ExitLightsParent.gameObject.SetActive(true);
     }
 
     private void Exit()
