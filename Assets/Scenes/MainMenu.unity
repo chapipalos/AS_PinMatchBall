@@ -2532,14 +2532,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1628406565}
     m_Modifications:
-    - target: {fileID: 8210576983298268924, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175202115051014401, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 43386779966314716, guid: 9d951fac1a15ad14490b3a24bdbcd183, type: 3}
       propertyPath: m_Name
       value: OptionsLights
@@ -2809,6 +2801,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8939826598638133569, guid: 9d951fac1a15ad14490b3a24bdbcd183, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210576983298268924, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175202115051014401, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -3126,10 +3126,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 375293629}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: changeResolution
-        m_Mode: 0
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5787,10 +5787,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 375293629}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ActivateFullScreen
-        m_Mode: 0
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9692,14 +9692,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1628406565}
     m_Modifications:
-    - target: {fileID: 8210576983298268924, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175202115051014401, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 43386779966314716, guid: 9d951fac1a15ad14490b3a24bdbcd183, type: 3}
       propertyPath: m_Name
       value: ExitLights
@@ -9973,6 +9965,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8939826598638133569, guid: 9d951fac1a15ad14490b3a24bdbcd183, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210576983298268924, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175202115051014401, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -15251,14 +15251,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1628406565}
     m_Modifications:
-    - target: {fileID: 8210576983298268924, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175202115051014401, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 43386779966314716, guid: 9d951fac1a15ad14490b3a24bdbcd183, type: 3}
       propertyPath: m_Name
       value: PlayLights
@@ -15528,6 +15520,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8939826598638133569, guid: 9d951fac1a15ad14490b3a24bdbcd183, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210576983298268924, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175202115051014401, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -17606,14 +17606,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1628406565}
     m_Modifications:
-    - target: {fileID: 8210576983298268924, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175202115051014401, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 43386779966314716, guid: 9d951fac1a15ad14490b3a24bdbcd183, type: 3}
       propertyPath: m_Name
       value: RetroLights
@@ -17871,6 +17863,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8939826598638133569, guid: 9d951fac1a15ad14490b3a24bdbcd183, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210576983298268924, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175202115051014401, guid: ee490beffffaa7441a2d806f2eb285d7, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
