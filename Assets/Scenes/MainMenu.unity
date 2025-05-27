@@ -3126,9 +3126,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 375293629}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: changeResolution
+      - m_Target: {fileID: 1840117142}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: SetResolution
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5787,9 +5787,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 375293629}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ActivateFullScreen
+      - m_Target: {fileID: 1840117142}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: SetFullscreen
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15590,10 +15590,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -15683,6 +15683,8 @@ MonoBehaviour:
   m_BlueWinsPanel: {fileID: 160311082}
   m_RedWinsPanel: {fileID: 171748821}
   m_OptionsPanel: {fileID: 375293627}
+  m_ResolutionDropdown: {fileID: 323457699}
+  m_FullscreenToggle: {fileID: 746397669}
 --- !u!1 &1854420592
 GameObject:
   m_ObjectHideFlags: 0
