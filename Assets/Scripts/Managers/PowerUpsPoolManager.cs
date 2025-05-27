@@ -6,6 +6,7 @@ public class PowerUpsPoolManager : MonoBehaviour
     public List<GameObject> m_PowerUps = new List<GameObject>();
     public GameObject m_PowerUpPrefab;
     public int m_PoolSize = 10;
+    public SpawnPowerUps m_Spawner;
 
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class PowerUpsPoolManager : MonoBehaviour
             go.SetActive(false);
             m_PowerUps.Add(go);
         }
+        m_Spawner = FindFirstObjectByType<SpawnPowerUps>();
     }
 
     public GameObject Take()
@@ -35,5 +37,6 @@ public class PowerUpsPoolManager : MonoBehaviour
     public void Return(GameObject go)
     {
         go.SetActive(false);
+        m_Spawner.counter--;
     }
 }

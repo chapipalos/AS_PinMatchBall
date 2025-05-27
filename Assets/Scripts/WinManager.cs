@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class WinManager : MonoBehaviour
 {
-    public ScoreManager redScoreManager;
-    public ScoreManager blueScoreManager;
+    public ScoreManager m_RedScoreManager;
+    public ScoreManager m_BlueScoreManager;
+
+    private bool m_Winner;
 
     public GameObject m_Camera;
     public GameObject m_Ball;
@@ -17,27 +19,27 @@ public class WinManager : MonoBehaviour
         {
             return;
         }
-        if (redScoreManager.m_Score >= 1)
+        if (m_RedScoreManager.m_Score >= 9)
         {
-            GameOver(false);
+            m_Ball.SetActive(false);
+            m_Winner = false;
+            Invoke("GameOver", 1f);
         }
-        else if (blueScoreManager.m_Score >= 1)
+        else if (m_BlueScoreManager.m_Score >= 9)
         {
-            GameOver(true);
+            m_Ball.SetActive(false);
+            m_Winner = true;
+            Invoke("GameOver", 1f);
         }
     }
 
-    void GameOver(bool winner)
+    void GameOver()
     {
-        //Time.timeScale = 0;
-        m_Ball.SetActive(false);
-
-        Debug.Log("GameOver");
-
         m_Camera.GetComponent<CameraMovementController>().m_InitialPosition = m_Camera.transform.position;
         m_Camera.GetComponent<CameraMovementController>().m_InitialRotation = m_Camera.transform.rotation;
         m_Camera.GetComponent<CameraMovementController>().m_Time = 0f;
+
         GameManager.m_GameOver = true;
-        GameManager.m_Winner = !winner;
+        GameManager.m_Winner = !m_Winner;
     }
 }

@@ -6,7 +6,7 @@ public class SpawnPowerUps : MonoBehaviour
     public float m_spawnInterval = 2f;
     public int maxSpawns = 20;
     public float timer;
-    private int counter = 0;
+    public int counter = 0;
     public Transform SpawnPosition;
 
     private Vector3 m_LastPosition;
