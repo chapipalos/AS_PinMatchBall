@@ -23,8 +23,16 @@ public class MainMenuController : MonoBehaviour
     public Transform m_ExitLightsParent;
 
     public Button m_PlayButton;
+
+    public Button[] m_RemtachButtons = new Button[2];
     public Button m_OptionsButton;
-    public Button m_ExitButton;
+    public Button[] m_MainMenuButtons = new Button[3];
+    public Button[] m_ExitButtons = new Button[3];
+
+    public GameObject m_MainMenu;
+    public GameObject m_BlueWinsPanel;
+    public GameObject m_RedWinsPanel;
+    public GameObject m_OptionsPanel;
 
     private void Awake()
     {
@@ -56,13 +64,35 @@ public class MainMenuController : MonoBehaviour
         m_RemainingTimeToChangeLights = m_TimeToChangeLights;
 
         m_PlayButton.onClick.AddListener(Play);
-        m_OptionsButton.onClick.AddListener(Options);
-        m_ExitButton.onClick.AddListener(Exit);
+        m_OptionsButton.onClick.AddListener(OptionsPanel);
+        foreach (Button button in m_MainMenuButtons)
+        {
+            button.onClick.AddListener(MainMenuPanel);
+        }
+        foreach (Button button in m_RemtachButtons)
+        {
+            button.onClick.AddListener(Play);
+        }
+        foreach (Button button in m_ExitButtons)
+        {
+            button.onClick.AddListener(Exit);
+        }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        if (GameManager.m_GameOver && GameManager.m_Winner)
+        {
+            m_BlueWinsPanel.SetActive(true);
+        }
+        else if(GameManager.m_GameOver && !GameManager.m_Winner)
+        {
+            m_RedWinsPanel.SetActive(true);
+        }
+        else
+        {
+            m_MainMenu.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -127,16 +157,28 @@ public class MainMenuController : MonoBehaviour
 
     private void Play()
     {
-        SceneManager.LoadScene("PInBall");
+        GameManager.m_GameOver = false;
+        SceneManager.LoadScene(1);
     }
 
-    private void Options()
+    private void OptionsPanel()
     {
+        m_OptionsPanel.gameObject.SetActive(true);
+        m_BlueWinsPanel.gameObject.SetActive(false);
+        m_RedWinsPanel.gameObject.SetActive(false);
+        m_MainMenu.gameObject.SetActive(false);
+    }
 
+    private void MainMenuPanel()
+    {
+        m_OptionsPanel.gameObject.SetActive(false);
+        m_BlueWinsPanel.gameObject.SetActive(false);
+        m_RedWinsPanel.gameObject.SetActive(false);
+        m_MainMenu.gameObject.SetActive(true);
     }
 
     private void Exit()
     {
-
+        Application.Quit();
     }
 }

@@ -38,6 +38,6 @@ public class WinManager : MonoBehaviour
         m_Camera.GetComponent<CameraMovementController>().m_InitialRotation = m_Camera.transform.rotation;
         m_Camera.GetComponent<CameraMovementController>().m_Time = 0f;
         GameManager.m_GameOver = true;
-        GameManager.m_Winner = winner;
+        GameManager.m_Winner = !winner;
     }
 }

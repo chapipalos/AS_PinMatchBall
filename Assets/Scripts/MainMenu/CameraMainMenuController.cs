@@ -46,7 +46,6 @@ public class CameraMainMenuController : MonoBehaviour
         {
             m_CameraArrivedDesiredRotation = true;
         }
-        Debug.Log(m_Time);
         ActivateCanvas();
     }
     

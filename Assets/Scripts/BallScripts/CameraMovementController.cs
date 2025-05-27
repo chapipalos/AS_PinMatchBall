@@ -48,8 +48,8 @@ public class CameraMovementController : MonoBehaviour
         {
             m_Time += Time.deltaTime;
             float factor = m_Time / m_TimeToArrive;
-            Movement(factor, m_FinalPosition);
-            Rotate(factor, m_FinalRotation);
+            Movement(factor, m_FinalPosition, m_CameraArrivedDesiredPosition);
+            Rotate(factor, m_FinalRotation, m_CameraArrivedDesiredRotation);
             if (transform.position == m_FinalPosition)
             {
                 m_CameraArrivedDesiredPosition = true;
@@ -65,8 +65,8 @@ public class CameraMovementController : MonoBehaviour
             m_Time += Time.deltaTime;
             Debug.Log(m_Time);
             float factor = m_Time / m_TimeToArrive;
-            Movement(factor, m_GameOverPosition);
-            Rotate(factor, m_GameOverRotation);
+            Movement(factor, m_GameOverPosition, m_CameraArrivedGameOverPosition);
+            Rotate(factor, m_GameOverRotation, m_CameraArrivedGameOverRotation);
             if (transform.position == m_GameOverPosition)
             {
                 m_CameraArrivedGameOverPosition = true;
@@ -94,18 +94,18 @@ public class CameraMovementController : MonoBehaviour
         }
     }
 
-    private void Movement(float dt, Vector3 desiredPos)
+    private void Movement(float dt, Vector3 desiredPos, bool checker)
     {
-        if (m_CameraArrivedDesiredPosition)
+        if (checker)
         {
             return;
         }
         transform.position = Vector3.MoveTowards(m_InitialPosition, desiredPos, m_LinearSpeed * dt);
     }
 
-    private void Rotate(float dt, Quaternion desiredRot)
+    private void Rotate(float dt, Quaternion desiredRot, bool checker)
     {
-        if (m_CameraArrivedDesiredRotation)
+        if (checker)
         {
             return;
         }
@@ -126,6 +126,8 @@ public class CameraMovementController : MonoBehaviour
     {
         if (m_CameraArrivedGameOverPosition && m_CameraArrivedGameOverRotation)
         {
+            GameManager.m_PositionOfCamera = transform.position;
+            GameManager.m_RotationOfCamera = transform.rotation;
             SceneManager.LoadScene(0);
         }
     }
