@@ -78,7 +78,10 @@ public class GoalRespawnController : MonoBehaviour
                         {
                             ps.transform.position = m_RespawnPoint.position;
                         }
+                        m_AudioManager.PlaySFX(m_AudioManager.m_RespawnSound);
+
                         ps.Play();
+
                     }
                     m_ParticlesSpawn = false;
                 }

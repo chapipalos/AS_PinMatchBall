@@ -12674,9 +12674,9 @@ MonoBehaviour:
   m_BumperSound: {fileID: 8300000, guid: 8b9ef0a3bd05dd24eb23111a47c6b51e, type: 3}
   m_TriggerSound: {fileID: 8300000, guid: 0a8b9d856922c3d43b1b831bfb94b5fe, type: 3}
   m_SpeedZoneSound: {fileID: 8300000, guid: a2ab5ac1899fc8b4f857e7409c775a79, type: 3}
-  m_FanSound: {fileID: 0}
+  m_FanSound: {fileID: 8300000, guid: fd25a15f9797641458336cccfb445343, type: 3}
   m_GoalSound: {fileID: 8300000, guid: e23705d0901531b44a5c580af3fd8809, type: 3}
-  m_RespawnSound: {fileID: 0}
+  m_RespawnSound: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
   m_StunSound: {fileID: 8300000, guid: 815e6e0f7bfcd9746af975f063a3f013, type: 3}
 --- !u!1001 &1181809488
 PrefabInstance:
@@ -21850,6 +21850,7 @@ MonoBehaviour:
   fanLight: {fileID: 879116567}
   newColor: {r: 0.19942844, g: 1, b: 0, a: 1}
   m_FanType: 0
+  m_AudioManager: {fileID: 1158458155}
 --- !u!65 &1877725441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22698,6 +22699,7 @@ MonoBehaviour:
   fanLight: {fileID: 879116567}
   newColor: {r: 0.28235292, g: 1, b: 0, a: 1}
   m_FanType: 1
+  m_AudioManager: {fileID: 1158458155}
 --- !u!65 &1996385030
 BoxCollider:
   m_ObjectHideFlags: 0

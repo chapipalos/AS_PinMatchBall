@@ -22,7 +22,7 @@ public class FanController : MonoBehaviour
     private bool m_Effect;
 
     public bool m_FanType;
-    AudioManager m_AudioManager;
+  public   AudioManager m_AudioManager;
 
 
     private void Awake()
