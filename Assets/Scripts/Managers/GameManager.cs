@@ -34,4 +34,7 @@ public static class GameManager
 
     public static Vector3 m_PositionOfCamera = new Vector3(-200f, 65f, 0f);
     public static Quaternion m_RotationOfCamera = Quaternion.Euler(20f, 90f, 0f);
+
+    public static bool m_GameOver;
+    public static bool m_Winner;
 }

@@ -1,7 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class TopDownFollow : MonoBehaviour
+public class CameraMovementController : MonoBehaviour
 {
     public Transform m_Target;              // El objeto que la cámara seguirá (por ejemplo, la bola)
     public Vector2 m_FollowAmount = new Vector2(2f, 2f); // Cuánto se puede mover la cámara desde su posición base
@@ -9,11 +10,16 @@ public class TopDownFollow : MonoBehaviour
 
     public Vector3 m_FinalPosition;
     public Quaternion m_FinalRotation;
-    private Vector3 m_InitialPosition;
-    private Quaternion m_InitialRotation;
+    public Vector3 m_InitialPosition;
+    public Quaternion m_InitialRotation;
+
+    public Vector3 m_GameOverPosition;
+    public Quaternion m_GameOverRotation;
+    public bool m_CameraArrivedGameOverRotation;
+    public bool m_CameraArrivedGameOverPosition;
 
     public float m_TimeToArrive;
-    private float m_Time;
+    public float m_Time;
 
     public float m_LinearSpeed;
     public float m_AngularSpeed;
@@ -28,6 +34,7 @@ public class TopDownFollow : MonoBehaviour
 
     void Start()
     {
+        GameManager.m_GameOver = false;
         transform.position = GameManager.m_PositionOfCamera;
         transform.rotation = GameManager.m_RotationOfCamera;
 
@@ -41,8 +48,8 @@ public class TopDownFollow : MonoBehaviour
         {
             m_Time += Time.deltaTime;
             float factor = m_Time / m_TimeToArrive;
-            Movement(factor);
-            Rotate(factor);
+            Movement(factor, m_FinalPosition);
+            Rotate(factor, m_FinalRotation);
             if (transform.position == m_FinalPosition)
             {
                 m_CameraArrivedDesiredPosition = true;
@@ -52,6 +59,23 @@ public class TopDownFollow : MonoBehaviour
                 m_CameraArrivedDesiredRotation = true;
             }
             CheckDesiredPosition();
+        }
+        else if(GameManager.m_GameOver)
+        {
+            m_Time += Time.deltaTime;
+            Debug.Log(m_Time);
+            float factor = m_Time / m_TimeToArrive;
+            Movement(factor, m_GameOverPosition);
+            Rotate(factor, m_GameOverRotation);
+            if (transform.position == m_GameOverPosition)
+            {
+                m_CameraArrivedGameOverPosition = true;
+            }
+            if (transform.rotation == m_GameOverRotation)
+            {
+                m_CameraArrivedGameOverRotation = true;
+            }
+            ChangeScene();
         }
         else
         {
@@ -70,22 +94,22 @@ public class TopDownFollow : MonoBehaviour
         }
     }
 
-    private void Movement(float dt)
+    private void Movement(float dt, Vector3 desiredPos)
     {
         if (m_CameraArrivedDesiredPosition)
         {
             return;
         }
-        transform.position = Vector3.MoveTowards(m_InitialPosition, m_FinalPosition, m_LinearSpeed * dt);
+        transform.position = Vector3.MoveTowards(m_InitialPosition, desiredPos, m_LinearSpeed * dt);
     }
 
-    private void Rotate(float dt)
+    private void Rotate(float dt, Quaternion desiredRot)
     {
         if (m_CameraArrivedDesiredRotation)
         {
             return;
         }
-        transform.rotation = Quaternion.Slerp(m_InitialRotation, m_FinalRotation, m_AngularSpeed * dt);
+        transform.rotation = Quaternion.Slerp(m_InitialRotation, desiredRot, m_AngularSpeed * dt);
     }
 
     private void CheckDesiredPosition()
@@ -94,8 +118,15 @@ public class TopDownFollow : MonoBehaviour
         {
             m_GamePlayCamera = true;
             m_Ball.SetActive(true);
-
             m_InitialPositionForGameplay = transform.position;
+        }
+    }
+
+    private void ChangeScene()
+    {
+        if (m_CameraArrivedGameOverPosition && m_CameraArrivedGameOverRotation)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

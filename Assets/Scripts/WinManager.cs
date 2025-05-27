@@ -8,53 +8,36 @@ public class WinManager : MonoBehaviour
     public ScoreManager redScoreManager;
     public ScoreManager blueScoreManager;
 
-    public GameObject redWinsText;
-    public GameObject blueWinsText;
-    public GameObject MainMenub;
-    public bool init=false;
-    public Transform m_Camera;
+    public GameObject m_Camera;
+    public GameObject m_Ball;
 
     void Update()
     {
-        if (redScoreManager.m_Score >= 9)
+        if (GameManager.m_GameOver)
         {
-            GameOver("Red");
+            return;
         }
-        else if (blueScoreManager.m_Score >= 9)
+        if (redScoreManager.m_Score >= 1)
         {
-            GameOver("Blue");
+            GameOver(false);
+        }
+        else if (blueScoreManager.m_Score >= 1)
+        {
+            GameOver(true);
         }
     }
 
-    void GameOver(string winner)
+    void GameOver(bool winner)
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        m_Ball.SetActive(false);
 
-        if (winner == "Red" && redWinsText != null)
-        {
-            blueWinsText.SetActive(true);
-            MainMenub.SetActive(true);
-        }
-        else if (winner == "Blue" && blueWinsText != null)
-        {
-            redWinsText.SetActive(true);
-            MainMenub.SetActive(true);
-        }
-    }
-    public void MainMenu()
-    {
-        GameManager.m_PositionOfCamera = m_Camera.position;
-        GameManager.m_RotationOfCamera = m_Camera.rotation;
-        SceneManager.LoadScene(0);
-        init = true;
-    }
-    public void PlayAgain()
-    {
-        GameManager.m_PositionOfCamera = m_Camera.position;
-        GameManager.m_RotationOfCamera = m_Camera.rotation;
-        blueScoreManager.m_Score = 0;
-        redScoreManager.m_Score = 0;
-        Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        Debug.Log("GameOver");
+
+        m_Camera.GetComponent<CameraMovementController>().m_InitialPosition = m_Camera.transform.position;
+        m_Camera.GetComponent<CameraMovementController>().m_InitialRotation = m_Camera.transform.rotation;
+        m_Camera.GetComponent<CameraMovementController>().m_Time = 0f;
+        GameManager.m_GameOver = true;
+        GameManager.m_Winner = winner;
     }
 }

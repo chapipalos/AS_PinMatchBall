@@ -8,7 +8,7 @@ public class CameraMainMenuController : MonoBehaviour
     private Quaternion m_InitialRotation;
 
     public float m_TimeToArrive;
-    private float m_Time;
+    public float m_Time;
 
     public float m_LinearSpeed;
     public float m_AngularSpeed;
@@ -46,6 +46,7 @@ public class CameraMainMenuController : MonoBehaviour
         {
             m_CameraArrivedDesiredRotation = true;
         }
+        Debug.Log(m_Time);
         ActivateCanvas();
     }
     
@@ -75,6 +76,8 @@ public class CameraMainMenuController : MonoBehaviour
             m_Screen.GetComponent<MeshRenderer>().material = m_ScreenOnMaterial;
             GameManager.m_PositionOfCamera = transform.position;
             GameManager.m_RotationOfCamera = transform.rotation;
+            m_CameraArrivedDesiredPosition = false;
+            m_CameraArrivedDesiredRotation = false;
         }
     }
 }
