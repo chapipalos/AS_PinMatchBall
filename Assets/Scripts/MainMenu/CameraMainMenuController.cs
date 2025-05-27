@@ -16,6 +16,8 @@ public class CameraMainMenuController : MonoBehaviour
     public bool m_CameraArrivedDesiredPosition;
 
     public GameObject m_Canvas;
+    public GameObject m_Screen;
+    public Material m_ScreenOnMaterial;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -65,6 +67,7 @@ public class CameraMainMenuController : MonoBehaviour
         if (m_CameraArrivedDesiredRotation && m_CameraArrivedDesiredPosition)
         {
             m_Canvas.SetActive(true);
+            m_Screen.GetComponent<MeshRenderer>().material = m_ScreenOnMaterial;
         }
     }
 }
