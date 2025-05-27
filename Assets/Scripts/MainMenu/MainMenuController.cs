@@ -1,6 +1,8 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -11,22 +13,51 @@ public class MainMenuController : MonoBehaviour
     public float m_TimeToChangeLights;
     private float m_RemainingTimeToChangeLights;
 
+    private List<GameObject> m_PlayLighs = new List<GameObject>();
+    public Transform m_PlayLightsParent;
+
+    private List<GameObject> m_OptionsLighs = new List<GameObject>();
+    public Transform m_OptionsLightsParent;
+
+    private List<GameObject> m_ExitLighs = new List<GameObject>();
+    public Transform m_ExitLightsParent;
+
+    public Button m_PlayButton;
+    public Button m_OptionsButton;
+    public Button m_ExitButton;
+
     private void Awake()
     {
         for (int i = 0; i < m_LightsParent.childCount; i++)
         {
-            GameObject go = m_LightsParent.GetChild(i).gameObject;
+            GameObject lightGo = m_LightsParent.GetChild(i).gameObject;
+            GameObject lightPlayGo = m_PlayLightsParent.GetChild(i).gameObject;
+            GameObject lightOptGo = m_OptionsLightsParent.GetChild(i).gameObject;
+            GameObject lightExitGo = m_ExitLightsParent.GetChild(i).gameObject;
             if (i < m_LastLight)
             {
-                go.SetActive(true);
+                lightGo.SetActive(true);
+                lightPlayGo.SetActive(true);
+                lightOptGo.SetActive(true);
+                lightExitGo.SetActive(true);
             }
             else
             {
-                go.SetActive(false);
+                lightGo.SetActive(false);
+                lightPlayGo.SetActive(false);
+                lightOptGo.SetActive(false);
+                lightExitGo.SetActive(false);
             }
-            m_Lighs.Add(go);
+            m_Lighs.Add(lightGo);
+            m_PlayLighs.Add(lightPlayGo);
+            m_OptionsLighs.Add(lightOptGo);
+            m_ExitLighs.Add(lightExitGo);
         }
         m_RemainingTimeToChangeLights = m_TimeToChangeLights;
+
+        m_PlayButton.onClick.AddListener(Play);
+        m_OptionsButton.onClick.AddListener(Options);
+        m_ExitButton.onClick.AddListener(Exit);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -56,10 +87,16 @@ public class MainMenuController : MonoBehaviour
             if(CheckActivationOfLight(i))
             {
                 m_Lighs[i].gameObject.SetActive(true);
+                m_PlayLighs[i].gameObject.SetActive(true);
+                m_OptionsLighs[i].gameObject.SetActive(true);
+                m_ExitLighs[i].gameObject.SetActive(true);
             }
             else
             {
                 m_Lighs[i].gameObject.SetActive(false);
+                m_PlayLighs[i].gameObject.SetActive(false);
+                m_OptionsLighs[i].gameObject.SetActive(false);
+                m_ExitLighs[i].gameObject.SetActive(false);
             }
         }
         m_FirstLight++;
@@ -86,5 +123,20 @@ public class MainMenuController : MonoBehaviour
             res = true;
         }
         return res;
+    }
+
+    private void Play()
+    {
+        SceneManager.LoadScene("PInBall");
+    }
+
+    private void Options()
+    {
+
+    }
+
+    private void Exit()
+    {
+
     }
 }

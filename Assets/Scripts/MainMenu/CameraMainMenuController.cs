@@ -19,12 +19,14 @@ public class CameraMainMenuController : MonoBehaviour
     public GameObject m_Canvas;
     public GameObject m_Screen;
     public Material m_ScreenOnMaterial;
+    public Material m_ScreenOffMaterial;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         transform.position = GameManager.m_PositionOfCamera;
         transform.rotation = GameManager.m_RotationOfCamera;
+        m_Screen.GetComponent<MeshRenderer>().material = m_ScreenOffMaterial;
         m_InitialPosition = transform.position;
         m_InitialRotation = transform.rotation;
     }
@@ -71,6 +73,8 @@ public class CameraMainMenuController : MonoBehaviour
         {
             m_Canvas.SetActive(true);
             m_Screen.GetComponent<MeshRenderer>().material = m_ScreenOnMaterial;
+            GameManager.m_PositionOfCamera = transform.position;
+            GameManager.m_RotationOfCamera = transform.rotation;
         }
     }
 }

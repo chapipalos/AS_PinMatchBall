@@ -9,23 +9,14 @@ public class GravityController : MonoBehaviour
     public float velocityGravity=0.01f;
     private Rigidbody m_BallRigidbody;
 
-    private void Awake()
-    {
-        m_Ball = GameObject.FindGameObjectWithTag("BALL");
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        if (m_Ball != null)
-        {
-            m_BallRigidbody = m_Ball.GetComponent<Rigidbody>();
-        }
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(m_Ball != null)
+        if (m_Ball != null && !m_Ball.activeSelf)
+        {
+            m_BallRigidbody = m_Ball.GetComponent<Rigidbody>();
+        }
+        else 
         {
             if(m_Ball.transform.position.z >= 0)
             {

@@ -12,6 +12,7 @@ public class WinManager : MonoBehaviour
     public GameObject blueWinsText;
     public GameObject MainMenub;
     public bool init=false;
+    public Transform m_Camera;
 
     void Update()
     {
@@ -42,16 +43,18 @@ public class WinManager : MonoBehaviour
     }
     public void MainMenu()
     {
+        GameManager.m_PositionOfCamera = m_Camera.position;
+        GameManager.m_RotationOfCamera = m_Camera.rotation;
         SceneManager.LoadScene(0);
         init = true;
     }
     public void PlayAgain()
     {
+        GameManager.m_PositionOfCamera = m_Camera.position;
+        GameManager.m_RotationOfCamera = m_Camera.rotation;
         blueScoreManager.m_Score = 0;
         redScoreManager.m_Score = 0;
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
-
-     
     }
 }

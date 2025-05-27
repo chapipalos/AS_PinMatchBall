@@ -32,6 +32,6 @@ public static class GameManager
     public static bool m_RedRobot = false;
     public static bool m_BlueRobot = false;
 
-    public static Vector3 m_PositionOfCamera = new Vector3(-180f, 65f, 0f);
+    public static Vector3 m_PositionOfCamera = new Vector3(-200f, 65f, 0f);
     public static Quaternion m_RotationOfCamera = Quaternion.Euler(20f, 90f, 0f);
 }
