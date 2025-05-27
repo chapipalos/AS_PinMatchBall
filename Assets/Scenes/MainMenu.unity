@@ -2682,7 +2682,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522d8663e7d88d940b1030d0e75d06e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FinalPosition: {fileID: 865257416}
+  m_FinalPosition: {x: -6, y: 23, z: 0}
+  m_FinalRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_TimeToArrive: 5
   m_LinearSpeed: 400
   m_AngularSpeed: 3

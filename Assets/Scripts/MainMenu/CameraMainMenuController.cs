@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CameraMainMenuController : MonoBehaviour
 {
-    public Transform m_FinalPosition;
+    public Vector3 m_FinalPosition;
+    public Quaternion m_FinalRotation;
     private Vector3 m_InitialPosition;
     private Quaternion m_InitialRotation;
 
@@ -22,6 +23,8 @@ public class CameraMainMenuController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        transform.position = GameManager.m_PositionOfCamera;
+        transform.rotation = GameManager.m_RotationOfCamera;
         m_InitialPosition = transform.position;
         m_InitialRotation = transform.rotation;
     }
@@ -33,11 +36,11 @@ public class CameraMainMenuController : MonoBehaviour
         float factor = m_Time / m_TimeToArrive;
         Movement(factor);
         Rotate(factor);
-        if(transform.position == m_FinalPosition.position)
+        if(transform.position == m_FinalPosition)
         {
             m_CameraArrivedDesiredPosition = true;
         }
-        if (transform.rotation == m_FinalPosition.rotation)
+        if (transform.rotation == m_FinalRotation)
         {
             m_CameraArrivedDesiredRotation = true;
         }
@@ -50,7 +53,7 @@ public class CameraMainMenuController : MonoBehaviour
         {
             return;
         }
-        transform.position = Vector3.MoveTowards(m_InitialPosition, m_FinalPosition.position, m_LinearSpeed * dt);
+        transform.position = Vector3.MoveTowards(m_InitialPosition, m_FinalPosition, m_LinearSpeed * dt);
     }
 
     private void Rotate(float dt)
@@ -59,7 +62,7 @@ public class CameraMainMenuController : MonoBehaviour
         {
             return;
         }
-        transform.rotation = Quaternion.Slerp(m_InitialRotation, m_FinalPosition.rotation, m_AngularSpeed * dt);
+        transform.rotation = Quaternion.Slerp(m_InitialRotation, m_FinalRotation, m_AngularSpeed * dt);
     }
 
     private void ActivateCanvas()
