@@ -2832,6 +2832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 309320582}
   - component: {fileID: 309320581}
+  - component: {fileID: 309320583}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -2885,6 +2886,22 @@ Transform:
   - {fileID: 1754175508}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309320583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309320580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b5f48642efa074fb6c29e317d4fef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GeneralVolumeSlider: {fileID: 1407636946}
+  m_MusicVolumeSlider: {fileID: 1374912056}
+  m_SfxVolumeSlider: {fileID: 1041722680}
+  m_AudioMixer: {fileID: 24100000, guid: 00969ef1c32e77949805cc955e78cb7a, type: 2}
 --- !u!1 &318352038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3874,8 +3891,6 @@ MonoBehaviour:
   m_MusicVolumeSlider: {fileID: 1374912056}
   m_SfxVolumeSlider: {fileID: 1041722680}
   m_AudioMixer: {fileID: 24100000, guid: 00969ef1c32e77949805cc955e78cb7a, type: 2}
-  m_ResolutionDropdown: {fileID: 323457699}
-  m_FullScreenToggle: {fileID: 746397669}
 --- !u!1 &379336791
 GameObject:
   m_ObjectHideFlags: 0
@@ -8623,25 +8638,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0.39
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 309320583}
+        m_TargetAssemblyTypeName: OptionsMenuManager, Assembly-CSharp
         m_MethodName: SetVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11593,12 +11596,12 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0.42
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 309320583}
+        m_TargetAssemblyTypeName: OptionsMenuManager, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 1
         m_Arguments:
@@ -11606,18 +11609,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -12061,12 +12052,12 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0.37
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 309320583}
+        m_TargetAssemblyTypeName: OptionsMenuManager, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 1
         m_Arguments:
@@ -12074,18 +12065,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

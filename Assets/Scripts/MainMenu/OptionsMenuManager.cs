@@ -15,9 +15,7 @@ public class OptionsMenuManager : MonoBehaviour
 
     public AudioMixer m_AudioMixer;
 
-    Resolution[] m_Resolutions;
-    public TMP_Dropdown m_ResolutionDropdown;
-    public Toggle m_FullScreenToggle;
+
 
     private void Start()
     {
@@ -52,14 +50,7 @@ public class OptionsMenuManager : MonoBehaviour
         SetVolume();
     }
 
-    public void ActivateFullScreen(bool fullScreen)
-    {
-        Screen.fullScreen = fullScreen;
-    }
 
-    public void ChangeResolution(int index)
-    {
-        Resolution resolut = m_Resolutions[index];
-        Screen.SetResolution(resolut.width, resolut.height, Screen.fullScreen);
-    }
+
+
 }
