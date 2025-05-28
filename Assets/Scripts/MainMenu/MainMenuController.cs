@@ -214,33 +214,45 @@ public class MainMenuController : MonoBehaviour
     }
     private void InitResolutionSettings()
     {
-        m_Resolutions = Screen.resolutions;
-        m_ResolutionDropdown.ClearOptions();
-
-        List<string> options = new List<string>();
-        int currentResolutionIndex = 0;
-
-        for (int i = 0; i < m_Resolutions.Length; i++)
+        private void InitResolutionSettings()
         {
-            string option = m_Resolutions[i].width + " x " + m_Resolutions[i].height;
-            options.Add(option);
+            m_Resolutions = Screen.resolutions;
+            m_ResolutionDropdown.ClearOptions();
 
-            if (m_Resolutions[i].width == Screen.currentResolution.width &&
-                m_Resolutions[i].height == Screen.currentResolution.height)
+            List<string> options = new List<string>();
+            List<Resolution> filteredResolutions = new List<Resolution>();
+            int currentResolutionIndex = 0;
+
+            for (int i = 0; i < m_Resolutions.Length; i++)
             {
-                currentResolutionIndex = i;
+                Resolution res = m_Resolutions[i];
+                if (res.width == 1920 && res.height == 1080)
+                {
+                    string option = res.width + " x " + res.height;
+                    options.Add(option);
+                    filteredResolutions.Add(res);
+
+                    if (res.width == Screen.currentResolution.width &&
+                        res.height == Screen.currentResolution.height)
+                    {
+                        currentResolutionIndex = options.Count - 1;
+                    }
+                }
             }
+
+            m_ResolutionDropdown.AddOptions(options);
+            m_ResolutionDropdown.value = currentResolutionIndex;
+            m_ResolutionDropdown.RefreshShownValue();
+
+            m_FullscreenToggle.isOn = Screen.fullScreen;
+
+          
+            m_Resolutions = filteredResolutions.ToArray();
+
+            m_ResolutionDropdown.onValueChanged.AddListener(SetResolution);
+            m_FullscreenToggle.onValueChanged.AddListener(SetFullscreen);
         }
 
-        m_ResolutionDropdown.AddOptions(options);
-        m_ResolutionDropdown.value = currentResolutionIndex;
-        m_ResolutionDropdown.RefreshShownValue();
-
-        m_FullscreenToggle.isOn = Screen.fullScreen;
-
-       
-        m_ResolutionDropdown.onValueChanged.AddListener(SetResolution);
-        m_FullscreenToggle.onValueChanged.AddListener(SetFullscreen);
     }
 
 
