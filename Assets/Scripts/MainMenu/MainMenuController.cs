@@ -214,8 +214,7 @@ public class MainMenuController : MonoBehaviour
     }
     private void InitResolutionSettings()
     {
-        private void InitResolutionSettings()
-        {
+     
             m_Resolutions = Screen.resolutions;
             m_ResolutionDropdown.ClearOptions();
 
