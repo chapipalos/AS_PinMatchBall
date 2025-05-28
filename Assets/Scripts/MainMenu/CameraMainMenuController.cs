@@ -21,6 +21,9 @@ public class CameraMainMenuController : MonoBehaviour
     public Material m_ScreenOnMaterial;
     public Material m_ScreenOffMaterial;
 
+    private bool m_InitMovement = false;
+    public float m_TimeToStart;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,11 +32,16 @@ public class CameraMainMenuController : MonoBehaviour
         m_Screen.GetComponent<MeshRenderer>().material = m_ScreenOffMaterial;
         m_InitialPosition = transform.position;
         m_InitialRotation = transform.rotation;
+        Invoke("InitializeMovement", m_TimeToStart);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!m_InitMovement)
+        {
+            return;
+        }
         m_Time += Time.deltaTime;
         float factor = m_Time / m_TimeToArrive;
         Movement(factor);
@@ -47,6 +55,11 @@ public class CameraMainMenuController : MonoBehaviour
             m_CameraArrivedDesiredRotation = true;
         }
         ActivateCanvas();
+    }
+    
+    private void InitializeMovement()
+    {
+        m_InitMovement = true;
     }
     
     private void Movement(float dt)

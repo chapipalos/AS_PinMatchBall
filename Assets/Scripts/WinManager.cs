@@ -19,15 +19,15 @@ public class WinManager : MonoBehaviour
         {
             return;
         }
-        if (m_RedScoreManager.m_Score >= 9)
+        if (m_RedScoreManager.m_Score >= 1)
         {
-            m_Ball.SetActive(false);
+            m_Ball.GetComponent<Ball>().enabled = false;
             m_Winner = false;
             Invoke("GameOver", 1f);
         }
-        else if (m_BlueScoreManager.m_Score >= 9)
+        else if (m_BlueScoreManager.m_Score >= 1)
         {
-            m_Ball.SetActive(false);
+            m_Ball.GetComponent<Ball>().enabled = false;
             m_Winner = true;
             Invoke("GameOver", 1f);
         }

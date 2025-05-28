@@ -3339,6 +3339,7 @@ MonoBehaviour:
   m_Screen: {fileID: 748837263}
   m_ScreenOnMaterial: {fileID: 2100000, guid: 24554361321b2ba4a9961c8f60ec64ab, type: 2}
   m_ScreenOffMaterial: {fileID: 2100000, guid: f64a0a6b9c591b343943ef958a546712, type: 2}
+  m_TimeToStart: 2
 --- !u!1 &333466351
 GameObject:
   m_ObjectHideFlags: 0

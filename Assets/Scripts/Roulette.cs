@@ -18,7 +18,8 @@ public class Roulette : MonoBehaviour
     [SerializeField] private float StopPower;
 
     [Header("General Settings")]
-    public float m_Time = 0.1f;
+    private float m_Time = 0f;
+    public float m_TimeToScale;
 
     private Rigidbody rbody;
 
@@ -34,13 +35,17 @@ public class Roulette : MonoBehaviour
     public Material m_MaterialPlayerRed;
     public Material m_MaterialPlayerBlue;
 
-
+    public bool m_ReescaletRoulette;
+    public Vector3 m_MinScale;
+    public Vector3 m_MaxScale;
 
     private void Start()
     {
         rbody = GetComponent<Rigidbody>();
         RotatePower = Random.Range(m_MinRotatePower, m_MaxRotatePower);
         StopPower = Random.Range(m_MinStopPower, m_MaxStopPower);
+        m_ReescaletRoulette = false;
+        transform.parent.localScale = m_MaxScale;
     }
 
     float t;
@@ -64,6 +69,9 @@ public class Roulette : MonoBehaviour
                 t = 0;
             }
         }
+        float factor = m_Time / m_TimeToScale;
+        ReescalteRoulette(factor);
+        RouletteDeescalted();
     }
 
     public void Rotate()
@@ -105,20 +113,19 @@ public class Roulette : MonoBehaviour
     private void SnapRotation(float y)
     {
         transform.eulerAngles = new Vector3(0, y, 0);
-        StartCoroutine(DeactivateAfterDelay());
+        m_ReescaletRoulette = true;
     }
 
-    private IEnumerator DeactivateAfterDelay()
+    private void DeactivateRoulette()
     {
-        yield return new WaitForSeconds(m_Time);
         m_Rulette.SetActive(false);
+        m_Ball.SetActive(true);
     }
 
     public void BlueWins()
     {
         m_Ball.GetComponent<MeshRenderer>().material = m_MaterialPlayerBlue;
         m_Ball.transform.position = m_RespawnPointBlue.position;
-        m_Ball.SetActive(true);
         GameManager.m_PlayerOwner = false;
     }
 
@@ -126,7 +133,25 @@ public class Roulette : MonoBehaviour
     {
         m_Ball.GetComponent<MeshRenderer>().material = m_MaterialPlayerRed;
         m_Ball.transform.position = m_RespawnPointRed.position;
-        m_Ball.SetActive(true);
         GameManager.m_PlayerOwner = true;
+    }
+
+    private void ReescalteRoulette(float factor)
+    {
+        if (!m_ReescaletRoulette)
+        {
+            return;
+        }
+        m_Time += Time.deltaTime;
+        transform.parent.localScale = Vector3.Lerp(transform.parent.localScale, m_MinScale, factor);
+    }
+
+    private void RouletteDeescalted()
+    {
+        if(transform.parent.localScale == m_MinScale)
+        {
+            m_ReescaletRoulette = false;
+            DeactivateRoulette();
+        }
     }
 }

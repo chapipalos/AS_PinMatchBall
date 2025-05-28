@@ -164,11 +164,13 @@ public class Ball : MonoBehaviour
         {
             if (GameManager.m_PlayerOwner)
             {
+                GameManager.m_RedFrozenPowerUp = false;
                 GameManager.m_RedFrozenPowerUp = true;
                 m_AudioManager.PlaySFX(m_AudioManager.m_FreezePowerUpSound);
             }
             else
             {
+                GameManager.m_BlueFrozenPowerUp = false;
                 GameManager.m_BlueFrozenPowerUp = true;
                 m_AudioManager.PlaySFX(m_AudioManager.m_FreezePowerUpSound);
             }
@@ -178,11 +180,13 @@ public class Ball : MonoBehaviour
         {
             if (GameManager.m_PlayerOwner)
             {
+                GameManager.m_RedStunnedPowerUp = false;
                 GameManager.m_RedStunnedPowerUp = true;
                 m_AudioManager.PlaySFX(m_AudioManager.m_SpikeBallPowerUpSound);
             }
             else
             {
+                GameManager.m_BlueStunnedPowerUp = false;
                 GameManager.m_BlueStunnedPowerUp = true;
                 m_AudioManager.PlaySFX(m_AudioManager.m_SpikeBallPowerUpSound);
             }
@@ -190,6 +194,7 @@ public class Ball : MonoBehaviour
         }
         if (other.gameObject.CompareTag("GhostPU"))
         {
+            GameManager.m_GhostBall = false;
             GameManager.m_GhostBall = true;
             m_AudioManager.PlaySFX(m_AudioManager.m_GhostBallPowerUpSound);
             m_PowerUpsPoolManager.Return(other.gameObject);
@@ -212,11 +217,13 @@ public class Ball : MonoBehaviour
         {
             if (GameManager.m_PlayerOwner)
             {
+                GameManager.m_RedSplash = false;
                 GameManager.m_RedSplash = true;
                 m_AudioManager.PlaySFX(m_AudioManager.m_BlooperPowerUpSound);
             }
             else
             {
+                GameManager.m_BlueSplash = false;
                 GameManager.m_BlueSplash = true;
                 m_AudioManager.PlaySFX(m_AudioManager.m_BlooperPowerUpSound);
             }
