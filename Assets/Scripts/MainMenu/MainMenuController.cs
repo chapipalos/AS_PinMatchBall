@@ -212,47 +212,33 @@ public class MainMenuController : MonoBehaviour
     {
         Application.Quit();
     }
-    private void InitResolutionSettings()
-    {
-     
-            m_Resolutions = Screen.resolutions;
+   
+        private void InitResolutionSettings()
+        {
+            // Only resolution 1920x1080
+            Resolution res= new Resolution
+            {
+                width = 1920,
+                height = 1080
+            };
+
+            m_Resolutions = new Resolution[] { res};
             m_ResolutionDropdown.ClearOptions();
 
-            List<string> options = new List<string>();
-            List<Resolution> filteredResolutions = new List<Resolution>();
-            int currentResolutionIndex = 0;
-
-            for (int i = 0; i < m_Resolutions.Length; i++)
-            {
-                Resolution res = m_Resolutions[i];
-                if (res.width == 1920 && res.height == 1080)
-                {
-                    string option = res.width + " x " + res.height;
-                    options.Add(option);
-                    filteredResolutions.Add(res);
-
-                    if (res.width == Screen.currentResolution.width &&
-                        res.height == Screen.currentResolution.height)
-                    {
-                        currentResolutionIndex = options.Count - 1;
-                    }
-                }
-            }
-
+            List<string> options = new List<string> { "1920 x 1080" };
             m_ResolutionDropdown.AddOptions(options);
-            m_ResolutionDropdown.value = currentResolutionIndex;
+            m_ResolutionDropdown.value = 0;
             m_ResolutionDropdown.RefreshShownValue();
 
             m_FullscreenToggle.isOn = Screen.fullScreen;
 
-          
-            m_Resolutions = filteredResolutions.ToArray();
-
             m_ResolutionDropdown.onValueChanged.AddListener(SetResolution);
             m_FullscreenToggle.onValueChanged.AddListener(SetFullscreen);
-        }
+        
 
-    
+    }
+
+
 
 
     public void SetResolution(int resolutionIndex)

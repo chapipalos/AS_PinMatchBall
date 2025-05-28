@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        FullScr.isOn = Screen.fullScreen;
+
 
 if (PlayerPrefs.HasKey("GeneralVolume"))
         {
@@ -34,7 +34,7 @@ if (PlayerPrefs.HasKey("GeneralVolume"))
             SetVolume();
         }
 
-        ReviseResolution();
+
     }
     public void SetVolume()
     {
@@ -65,28 +65,7 @@ if (PlayerPrefs.HasKey("GeneralVolume"))
         Screen.fullScreen = fullScreen;
     }
 
-    private void ReviseResolution()
-    {
-        int ActualRes = 0;
-        resol = Screen.resolutions;
-        resdrop.ClearOptions();
-        List<string> optionsRes = new List<string>();
 
-        for (int i = 0; i < resol.Length; i++)
-        {
-            string option = resol[i].width + " x " + resol[i].height;
-            optionsRes.Add(option);
-
-            if (Screen.fullScreen && resol[i].width == Screen.currentResolution.width && resol[i].height == Screen.currentResolution.height)
-            {
-                ActualRes = i;
-            }
-        }
-
-        resdrop.AddOptions(optionsRes);
-        resdrop.value = ActualRes;
-        resdrop.RefreshShownValue();
-    }
 
     public void changeResolution(int index)
     {
