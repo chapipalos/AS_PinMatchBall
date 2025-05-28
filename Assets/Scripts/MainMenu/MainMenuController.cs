@@ -252,7 +252,7 @@ public class MainMenuController : MonoBehaviour
             m_FullscreenToggle.onValueChanged.AddListener(SetFullscreen);
         }
 
-    }
+    
 
 
     public void SetResolution(int resolutionIndex)
