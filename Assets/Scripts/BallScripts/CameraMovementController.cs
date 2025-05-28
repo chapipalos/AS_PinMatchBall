@@ -28,7 +28,7 @@ public class CameraMovementController : MonoBehaviour
     public bool m_CameraArrivedDesiredPosition;
 
     public bool m_GamePlayCamera;
-    public GameObject m_Ball;
+    public Roulette m_Roulette;
 
     private Vector3 m_InitialPositionForGameplay;      // Posición inicial de la cámara
 
@@ -116,8 +116,9 @@ public class CameraMovementController : MonoBehaviour
     {
         if (m_CameraArrivedDesiredRotation && m_CameraArrivedDesiredPosition)
         {
+        
             m_GamePlayCamera = true;
-            m_Ball.SetActive(true);
+            m_Roulette.Rotate();
             m_InitialPositionForGameplay = transform.position;
         }
     }
