@@ -31,6 +31,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip m_RespawnSound;
     public AudioClip m_StunSound;
 
+    [Header("Menu")]
+    public AudioClip m_Background2;
+
     private void Start()
     {
         m_MusicSource.clip = m_BackgoundMusic;
@@ -41,6 +44,9 @@ public class AudioManager : MonoBehaviour
     {
         m_SFXSource.PlayOneShot(clip);
     }
-
+    public void PlayMusic(AudioClip clip)
+    {
+        m_MusicSource.PlayOneShot(clip);
+    }
 
 }

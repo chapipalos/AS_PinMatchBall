@@ -14315,6 +14315,7 @@ MonoBehaviour:
   m_GoalSound: {fileID: 8300000, guid: e23705d0901531b44a5c580af3fd8809, type: 3}
   m_RespawnSound: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
   m_StunSound: {fileID: 8300000, guid: 815e6e0f7bfcd9746af975f063a3f013, type: 3}
+  m_Background2: {fileID: 8300000, guid: 9dee30713ff9e8744989e2c2a958106e, type: 3}
 --- !u!1 &1168038021
 GameObject:
   m_ObjectHideFlags: 0
