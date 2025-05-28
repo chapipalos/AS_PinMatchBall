@@ -3807,13 +3807,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b5f48642efa074fb6c29e317d4fef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GeneralvolumeSlider: {fileID: 1407636946}
-  musicSlider: {fileID: 1374912056}
-  fxSlider: {fileID: 1041722680}
-  audiomixer: {fileID: 24100000, guid: 00969ef1c32e77949805cc955e78cb7a, type: 2}
-  resdrop: {fileID: 323457699}
-  FullScr: {fileID: 746397669}
-  backgroundMusic: {fileID: 0}
+  m_GeneralVolumeSlider: {fileID: 1407636946}
+  m_MusicVolumeSlider: {fileID: 1374912056}
+  m_SfxVolumeSlider: {fileID: 1041722680}
+  m_AudioMixer: {fileID: 24100000, guid: 00969ef1c32e77949805cc955e78cb7a, type: 2}
+  m_ResolutionDropdown: {fileID: 323457699}
+  m_FullScreenToggle: {fileID: 746397669}
+  m_BackgroundMusic: {fileID: 0}
 --- !u!1 &379336791
 GameObject:
   m_ObjectHideFlags: 0

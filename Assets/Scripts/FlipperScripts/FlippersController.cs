@@ -34,7 +34,6 @@ public class FlippersController : MonoBehaviour
         // Freeze comprobation
         if (GameManager.m_BlueFrozenPowerUp && !m_Player || GameManager.m_RedFrozenPowerUp && m_Player)
         {
-            //m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
             m_Freeze.SetActive(true);
             return;
         }

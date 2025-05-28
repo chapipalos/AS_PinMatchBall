@@ -4,51 +4,47 @@ using UnityEngine.Rendering;
 public class Beat : MonoBehaviour
 {
 
-    public float tiempoExpansion = 2f; // Tiempo para expandirse
-    public float tiempoContraccion = 1f; // Tiempo para contraerse
-    public Vector3 escalaInicial;  // Tamaño normal
-    public Vector3 escalaFinal; // Doble de tamaño
-    public bool activarExpansion = false; // Controla si debe expandirse o no
+    public float m_ExpansionTime = 2f;
+    public float m_ContractionTime = 1f;
+    public Vector3 m_InitialScale;
+    public Vector3 m_FinalScale;
+    public bool m_ActivateExpansion = false;
 
-    private float tiempoInicio;
+    private float m_InitialTime;
 
     void Update()
     {
-        if (activarExpansion)
+        if (m_ActivateExpansion)
         {
-            float cicloTotal = tiempoExpansion + tiempoContraccion;
-            float tiempoCiclo = (Time.time - tiempoInicio) % cicloTotal; // Control del tiempo
+            float cicloTotal = m_ExpansionTime + m_ContractionTime;
+            float tiempoCiclo = (Time.time - m_InitialTime) % cicloTotal;
 
             float factor;
 
-            if (tiempoCiclo < tiempoExpansion)
+            if (tiempoCiclo < m_ExpansionTime)
             {
-                // Expandir
-                factor = tiempoCiclo / tiempoExpansion;
+                factor = tiempoCiclo / m_ExpansionTime;
             }
             else
             {
-                // Contraer
-                factor = 1 - ((tiempoCiclo - tiempoExpansion) / tiempoContraccion);
+                factor = 1 - ((tiempoCiclo - m_ExpansionTime) / m_ContractionTime);
             }
 
-            transform.localScale = Vector3.Lerp(escalaInicial, escalaFinal, factor);
+            transform.localScale = Vector3.Lerp(m_InitialScale, m_FinalScale, factor);
 
-            // Si el ciclo ha terminado, desactivar el bool
             if (tiempoCiclo >= cicloTotal - Time.deltaTime)
             {
-                activarExpansion = false;
+                m_ActivateExpansion = false;
             }
         }
     }
 
-    // Método para activar la expansión
-    public void IniciarExpansion()
+    public void InitExpansion()
     {
-        if (!activarExpansion)
+        if (!m_ActivateExpansion)
         {
-            activarExpansion = true;
-            tiempoInicio = Time.time; // Reinicia el tiempo de inicio
+            m_ActivateExpansion = true;
+            m_InitialTime = Time.time;
         }
     }
 }

@@ -21,9 +21,9 @@ public class Roulette : MonoBehaviour
     private float m_Time = 0f;
     public float m_TimeToScale;
 
-    private Rigidbody rbody;
+    private Rigidbody m_Rigidbody;
 
-    private int inRotate;
+    private int m_InRotate;
 
     public GameObject m_Rulette;
 
@@ -41,7 +41,7 @@ public class Roulette : MonoBehaviour
 
     private void Start()
     {
-        rbody = GetComponent<Rigidbody>();
+        m_Rigidbody = GetComponent<Rigidbody>();
         RotatePower = Random.Range(m_MinRotatePower, m_MaxRotatePower);
         StopPower = Random.Range(m_MinStopPower, m_MaxStopPower);
         m_ReescaletRoulette = false;
@@ -51,21 +51,21 @@ public class Roulette : MonoBehaviour
     float t;
     private void Update()
     {
-        if (rbody.angularVelocity.y > 0)
+        if (m_Rigidbody.angularVelocity.y > 0)
         {
-            Vector3 av = rbody.angularVelocity;
+            Vector3 av = m_Rigidbody.angularVelocity;
             av.y -= StopPower * Time.deltaTime;
             av.y = Mathf.Clamp(av.y, 0, 1440 * Mathf.Deg2Rad);
-            rbody.angularVelocity = av;
+            m_Rigidbody.angularVelocity = av;
         }
 
-        if (Mathf.Approximately(rbody.angularVelocity.y, 0f) && inRotate == 1)
+        if (Mathf.Approximately(m_Rigidbody.angularVelocity.y, 0f) && m_InRotate == 1)
         {
             t += Time.deltaTime;
             if (t >= 0.5f)
             {
                 GetReward();
-                inRotate = 0;
+                m_InRotate = 0;
                 t = 0;
             }
         }
@@ -76,10 +76,10 @@ public class Roulette : MonoBehaviour
 
     public void Rotate()
     {
-        if (inRotate == 0)
+        if (m_InRotate == 0)
         {
-            rbody.AddTorque(Vector3.up * RotatePower, ForceMode.Acceleration);
-            inRotate = 1;
+            m_Rigidbody.AddTorque(Vector3.up * RotatePower, ForceMode.Acceleration);
+            m_InRotate = 1;
         }
     }
 

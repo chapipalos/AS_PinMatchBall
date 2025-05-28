@@ -5,6 +5,7 @@ public class SplashController : MonoBehaviour
     private float m_SplashCounter = 5f;
 
     public GameObject[] m_SplashList;
+    private bool m_InitSplash = false;
     private float m_Gamma;
 
     public GameObject m_Parent;
@@ -14,7 +15,10 @@ public class SplashController : MonoBehaviour
     {
         if (m_Parent.tag == "Player1" && GameManager.m_RedSplash)
         {
-            m_Gamma = 1f;
+            if (!m_InitSplash)
+            {
+                InitSplash();
+            }
             foreach (GameObject splash in m_SplashList)
             {
                 m_Gamma = (float)(m_SplashCounter / 5f);
@@ -23,11 +27,17 @@ public class SplashController : MonoBehaviour
                 if (m_Gamma == 0)
                 {
                     GameManager.m_RedSplash = false;
+                    m_InitSplash = false;
+                    m_SplashCounter = 5f;
                 }
             }
         }
         else if (m_Parent.tag == "Player2" && GameManager.m_BlueSplash)
         {
+            if (!m_InitSplash)
+            {
+                InitSplash();
+            }
             m_Gamma = 1f;
             foreach (GameObject splash in m_SplashList)
             {
@@ -37,6 +47,8 @@ public class SplashController : MonoBehaviour
                 if (m_Gamma == 0)
                 {
                     GameManager.m_BlueSplash = false;
+                    m_InitSplash = false;
+                    m_SplashCounter = 5f;
                 }
             }
         }
@@ -47,6 +59,7 @@ public class SplashController : MonoBehaviour
             {
                 splash.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, m_Gamma);
             }
+            m_SplashCounter = 5f;
         }
     }
 
@@ -60,5 +73,14 @@ public class SplashController : MonoBehaviour
         {
             m_SplashCounter--;
         }
+    }
+    public void InitSplash()
+    {
+        m_Gamma = 1f;
+        foreach (GameObject splash in m_SplashList)
+        {
+            splash.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, m_Gamma);
+        }
+        m_InitSplash = true;
     }
 }

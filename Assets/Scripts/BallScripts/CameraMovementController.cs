@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class CameraMovementController : MonoBehaviour
 {
-    public Transform m_Target;              // El objeto que la cámara seguirá (por ejemplo, la bola)
-    public Vector2 m_FollowAmount = new Vector2(2f, 2f); // Cuánto se puede mover la cámara desde su posición base
-    public float m_SmoothSpeed = 0.1f;      // Qué tan rápido se mueve la cámara hacia la nueva posición
+    public Transform m_Target;
+    public Vector2 m_FollowAmount = new Vector2(2f, 2f);
+    public float m_SmoothSpeed = 0.1f;
 
     public Vector3 m_FinalPosition;
     public Quaternion m_FinalRotation;
@@ -30,7 +30,7 @@ public class CameraMovementController : MonoBehaviour
     public bool m_GamePlayCamera;
     public Roulette m_Roulette;
 
-    private Vector3 m_InitialPositionForGameplay;      // Posición inicial de la cámara
+    private Vector3 m_InitialPositionForGameplay;
 
     void Start()
     {
@@ -81,14 +81,12 @@ public class CameraMovementController : MonoBehaviour
         {
             if (m_Target == null) return;
 
-            // Calcula el desplazamiento horizontal (x, z) en relación al objetivo
             Vector3 offset = new Vector3(
                 Mathf.Clamp(m_Target.position.x - m_InitialPositionForGameplay.x, -m_FollowAmount.x, m_FollowAmount.x),
                 0,
                 Mathf.Clamp(m_Target.position.z - m_InitialPositionForGameplay.z, -m_FollowAmount.y, m_FollowAmount.y)
             );
 
-            // Aplica suavizado al movimiento de la cámara
             Vector3 desiredPosition = m_InitialPositionForGameplay + offset;
             transform.position = Vector3.Lerp(transform.position, desiredPosition, m_SmoothSpeed * Time.deltaTime);
         }

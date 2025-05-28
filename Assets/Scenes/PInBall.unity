@@ -341,9 +341,45 @@ PrefabInstance:
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpulsionForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4612712052678712850, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: m_Radius
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.y
+      value: 1.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpansionTime
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.y
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ContractionTime
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1872,6 +1908,10 @@ PrefabInstance:
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpulsionForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3814891202798138614, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1879,6 +1919,38 @@ PrefabInstance:
     - target: {fileID: 4612712052678712850, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: m_Radius
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.y
+      value: 1.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpansionTime
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.y
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ContractionTime
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2195,6 +2267,10 @@ PrefabInstance:
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: forceAmount
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
+      propertyPath: m_ForceAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_AudioManager
@@ -2552,6 +2628,10 @@ PrefabInstance:
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: forceAmount
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
+      propertyPath: m_ForceAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_AudioManager
@@ -9985,9 +10065,45 @@ PrefabInstance:
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpulsionForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4612712052678712850, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: m_Radius
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.y
+      value: 1.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpansionTime
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.y
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ContractionTime
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10044,6 +10160,9 @@ MonoBehaviour:
   m_swingSpeed: 10
   m_parent: {fileID: 1999514318}
   m_rotationSpeed: 1000
+  m_initialRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_previousParentPosition: {x: 0, y: 0, z: 0}
+  m_currentSwingAngle: 0
 --- !u!23 &722832661
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10582,6 +10701,10 @@ PrefabInstance:
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpulsionForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3814891202798138614, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -10589,6 +10712,38 @@ PrefabInstance:
     - target: {fileID: 4612712052678712850, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: m_Radius
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.y
+      value: 1.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpansionTime
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.y
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ContractionTime
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13967,9 +14122,45 @@ PrefabInstance:
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpulsionForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4612712052678712850, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: m_Radius
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.y
+      value: 1.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpansionTime
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.y
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ContractionTime
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14667,10 +14858,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnInterval: 3
-  maxSpawns: 5
-  timer: 0
-  counter: 0
-  SpawnPosition: {fileID: 1048563849}
+  m_MaxSpawns: 5
+  m_Timer: 0
+  m_Counter: 0
+  m_SpawnPosition: {fileID: 1048563849}
 --- !u!4 &1260918030
 Transform:
   m_ObjectHideFlags: 0
@@ -15373,6 +15564,10 @@ PrefabInstance:
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: forceAmount
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
+      propertyPath: m_ForceAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_AudioManager
@@ -16238,7 +16433,7 @@ MonoBehaviour:
   m_Ball: {fileID: 2058409801}
   m_PointOfGravity1: {fileID: 1552381224}
   m_PointOfGravity2: {fileID: 1606881629}
-  velocityGravity: 0.05
+  m_GravityForce: 0.05
 --- !u!4 &1499359274
 Transform:
   m_ObjectHideFlags: 0
@@ -17965,9 +18160,45 @@ PrefabInstance:
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpulsionForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4612712052678712850, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: m_Radius
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.y
+      value: 1.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpansionTime
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.y
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ContractionTime
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18107,6 +18338,10 @@ PrefabInstance:
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: forceAmount
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
+      propertyPath: m_ForceAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 803174438416011301, guid: 07c7cd7cf2f00c0488fa4328eaeb9342, type: 3}
       propertyPath: m_AudioManager
@@ -18374,6 +18609,10 @@ PrefabInstance:
       propertyPath: fuerzaExpulsion
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2984052035478439121, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpulsionForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3814891202798138614, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -18385,6 +18624,38 @@ PrefabInstance:
     - target: {fileID: 4615811967641460186, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.y
+      value: 1.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_FinalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ExpansionTime
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.y
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_InitialScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207932541668670967, guid: 12f5e270f904389498058bf96dbd22f1, type: 3}
+      propertyPath: m_ContractionTime
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

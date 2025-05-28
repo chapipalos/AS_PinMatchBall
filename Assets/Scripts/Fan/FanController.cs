@@ -14,7 +14,7 @@ public class FanController : MonoBehaviour
     private GameObject m_WindEffect;
     private ParticleSystem m_WindParticleSystem;
 
-    public Light fanLight; // ← la luz que va a cambiar de color
+    public Light fanLight;
     public Color newColor = Color.magenta;
 
     private Color originalLightColor;
@@ -70,9 +70,6 @@ public class FanController : MonoBehaviour
                 m_Effect = false;
             }
         }
-
-        //if (Input.GetKeyDown(KeyCode.J)) GameManager.m_FanRotating = true;
-        //if (Input.GetKeyDown(KeyCode.K)) GameManager.m_FanRotating = false;
     }
 
     private void OnTriggerStay(Collider other)

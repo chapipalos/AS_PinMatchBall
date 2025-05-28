@@ -37,6 +37,6 @@ public class PowerUpsPoolManager : MonoBehaviour
     public void Return(GameObject go)
     {
         go.SetActive(false);
-        m_Spawner.counter--;
+        m_Spawner.m_Counter--;
     }
 }

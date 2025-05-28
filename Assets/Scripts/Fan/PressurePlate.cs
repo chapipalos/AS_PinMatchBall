@@ -40,7 +40,6 @@ public class PressurePlate : MonoBehaviour
         }
         else if (m_IsReturning)
         {
-            // Mover hacia arriba
             transform.position = Vector3.MoveTowards(transform.position, m_InitialPosition, m_PlateSpeed * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, m_InitialPosition) < 0.01f)

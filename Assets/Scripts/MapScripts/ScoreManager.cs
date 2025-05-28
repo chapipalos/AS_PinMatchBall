@@ -14,7 +14,6 @@ public class ScoreManager : MonoBehaviour
     private SpriteRenderer m_Renderer;
     void Start()
     {
-        //m_Numbers[m_Score].SetActive(true);
         m_Renderer = m_Number.GetComponent<SpriteRenderer>();
         m_Renderer.sprite = m_Numbers[m_Score];
     }

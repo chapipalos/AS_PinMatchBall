@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PropultionZone : MonoBehaviour
 {
-    public float forceAmount = 10f; // Fuerza en la dirección X
+    public float m_ForceAmount = 10f;
 
     public AudioManager m_AudioManager;
 
@@ -20,8 +20,7 @@ public class PropultionZone : MonoBehaviour
 
         if (rb != null && other.tag == "BALL")
         {
-            // Aplica una fuerza constante solo en la dirección X
-            rb.AddForce(transform.right * forceAmount, ForceMode.Force);
+            rb.AddForce(transform.right * m_ForceAmount, ForceMode.Force);
         }
     }
 }

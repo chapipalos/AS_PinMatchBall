@@ -49,7 +49,6 @@ public class Ball : MonoBehaviour
         if (GameManager.m_GhostBall)
         {
             m_GhostObject.enabled = true;
-            //m_GhostObject.SetActive(true);
             m_MeshRenderer.enabled = false;
         }
         else if (GameManager.m_RedStunnedPowerUp || GameManager.m_BlueStunnedPowerUp)
@@ -57,13 +56,11 @@ public class Ball : MonoBehaviour
             m_MeshFilter.mesh = m_SpikeMesh;
 
             m_GhostObject.enabled = false;
-            //m_GhostObject.SetActive(false);
             m_MeshRenderer.enabled = true;
         }
         else
         {
             m_GhostObject.enabled = false;
-            //m_GhostObject.SetActive(false);
             m_MeshRenderer.enabled = true;
 
             m_MeshFilter.mesh = m_NormalMesh;

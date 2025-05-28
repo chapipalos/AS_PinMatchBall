@@ -97,7 +97,7 @@ public class MainMenuController : MonoBehaviour
             m_ExitLightsParent.gameObject.SetActive(true);
             m_OptionsLightsParent.localPosition = new Vector3(-0.5f, -2.637f, -12.69f);
         }
-        else if(GameManager.m_GameOver && !GameManager.m_Winner)
+        else if (GameManager.m_GameOver && !GameManager.m_Winner)
         {
             m_OptionsPanel.gameObject.SetActive(false);
             m_BlueWinsPanel.gameObject.SetActive(false);
@@ -123,7 +123,7 @@ public class MainMenuController : MonoBehaviour
     void Update()
     {
         float dt = Time.deltaTime;
-        if( m_RemainingTimeToChangeLights <= 0)
+        if (m_RemainingTimeToChangeLights <= 0)
         {
             ChangeLights();
             m_RemainingTimeToChangeLights = m_TimeToChangeLights;
@@ -138,7 +138,7 @@ public class MainMenuController : MonoBehaviour
     {
         for (int i = 0; i < m_Lighs.Count; i++)
         {
-            if(CheckActivationOfLight(i))
+            if (CheckActivationOfLight(i))
             {
                 m_Lighs[i].gameObject.SetActive(true);
                 m_PlayLighs[i].gameObject.SetActive(true);
@@ -154,7 +154,7 @@ public class MainMenuController : MonoBehaviour
             }
         }
         m_FirstLight++;
-        if(m_FirstLight >= m_Lighs.Count)
+        if (m_FirstLight >= m_Lighs.Count)
         {
             m_FirstLight = 0;
         }
@@ -168,11 +168,11 @@ public class MainMenuController : MonoBehaviour
     private bool CheckActivationOfLight(int index)
     {
         bool res = false;
-        if(index >= m_FirstLight && index <= m_LastLight)
+        if (index >= m_FirstLight && index <= m_LastLight)
         {
             res = true;
         }
-        else if(m_FirstLight > m_LastLight && (index >= m_FirstLight || index <= m_LastLight))
+        else if (m_FirstLight > m_LastLight && (index >= m_FirstLight || index <= m_LastLight))
         {
             res = true;
         }
@@ -212,29 +212,29 @@ public class MainMenuController : MonoBehaviour
     {
         Application.Quit();
     }
-   
-        private void InitResolutionSettings()
+
+    private void InitResolutionSettings()
+    {
+        // Only resolution 1920x1080
+        Resolution res = new Resolution
         {
-            // Only resolution 1920x1080
-            Resolution res= new Resolution
-            {
-                width = 1920,
-                height = 1080
-            };
+            width = 1920,
+            height = 1080
+        };
 
-            m_Resolutions = new Resolution[] { res};
-            m_ResolutionDropdown.ClearOptions();
+        m_Resolutions = new Resolution[] { res };
+        m_ResolutionDropdown.ClearOptions();
 
-            List<string> options = new List<string> { "1920 x 1080" };
-            m_ResolutionDropdown.AddOptions(options);
-            m_ResolutionDropdown.value = 0;
-            m_ResolutionDropdown.RefreshShownValue();
+        List<string> options = new List<string> { "1920 x 1080" };
+        m_ResolutionDropdown.AddOptions(options);
+        m_ResolutionDropdown.value = 0;
+        m_ResolutionDropdown.RefreshShownValue();
 
-            m_FullscreenToggle.isOn = Screen.fullScreen;
+        m_FullscreenToggle.isOn = Screen.fullScreen;
 
-            m_ResolutionDropdown.onValueChanged.AddListener(SetResolution);
-            m_FullscreenToggle.onValueChanged.AddListener(SetFullscreen);
-        
+        m_ResolutionDropdown.onValueChanged.AddListener(SetResolution);
+        m_FullscreenToggle.onValueChanged.AddListener(SetFullscreen);
+
 
     }
 

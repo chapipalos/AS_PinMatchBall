@@ -6,7 +6,7 @@ public class GravityController : MonoBehaviour
 
     public Transform m_PointOfGravity1;
     public Transform m_PointOfGravity2;
-    public float velocityGravity=0.01f;
+    public float m_GravityForce = 0.01f;
     private Rigidbody m_BallRigidbody;
 
     // Update is called once per frame
@@ -16,15 +16,15 @@ public class GravityController : MonoBehaviour
         {
             m_BallRigidbody = m_Ball.GetComponent<Rigidbody>();
         }
-        else 
+        else
         {
-            if(m_Ball.transform.position.z >= 0)
+            if (m_Ball.transform.position.z >= 0)
             {
-                m_BallRigidbody.AddForce(Vector3.forward * velocityGravity * Vector3.Distance(m_Ball.transform.position, m_PointOfGravity2.position), ForceMode.Force);
+                m_BallRigidbody.AddForce(Vector3.forward * m_GravityForce * Vector3.Distance(m_Ball.transform.position, m_PointOfGravity2.position), ForceMode.Force);
             }
             else
             {
-                m_BallRigidbody.AddForce(-Vector3.forward * velocityGravity * Vector3.Distance(m_Ball.transform.position, m_PointOfGravity1.position), ForceMode.Force);
+                m_BallRigidbody.AddForce(-Vector3.forward * m_GravityForce * Vector3.Distance(m_Ball.transform.position, m_PointOfGravity1.position), ForceMode.Force);
             }
         }
     }

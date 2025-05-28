@@ -4,10 +4,10 @@ using UnityEngine;
 public class SpawnPowerUps : MonoBehaviour
 {
     public float m_spawnInterval = 2f;
-    public int maxSpawns = 20;
-    public float timer;
-    public int counter = 0;
-    public Transform SpawnPosition;
+    public int m_MaxSpawns = 20;
+    public float m_Timer;
+    public int m_Counter = 0;
+    public Transform m_SpawnPosition;
 
     private Vector3 m_LastPosition;
 
@@ -25,13 +25,13 @@ public class SpawnPowerUps : MonoBehaviour
 
     void Update()
     {
-        if (counter >= maxSpawns) { return; }
+        if (m_Counter >= m_MaxSpawns) { return; }
         Debug.Log("Test");
-        timer += Time.deltaTime;
-        if (timer >= m_spawnInterval)
+        m_Timer += Time.deltaTime;
+        if (m_Timer >= m_spawnInterval)
         {
-            timer = 0f;
-            if (SpawnPosition == null)
+            m_Timer = 0f;
+            if (m_SpawnPosition == null)
             {
                 return;
             }
@@ -42,11 +42,11 @@ public class SpawnPowerUps : MonoBehaviour
             }
             while (CheckNewPosition(newPos));
             m_LastPosition = newPos;
-            Vector3 positionRandom = SpawnPosition.position + newPos;
+            Vector3 positionRandom = m_SpawnPosition.position + newPos;
             GameObject pu = m_PowerUpsPoolManager.Take();
             pu.transform.position = positionRandom;
             pu.SetActive(true);
-            counter++;
+            m_Counter++;
         }
     }
 

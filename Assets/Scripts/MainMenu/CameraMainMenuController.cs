@@ -38,7 +38,7 @@ public class CameraMainMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!m_InitMovement)
+        if (!m_InitMovement)
         {
             return;
         }
@@ -46,7 +46,7 @@ public class CameraMainMenuController : MonoBehaviour
         float factor = m_Time / m_TimeToArrive;
         Movement(factor);
         Rotate(factor);
-        if(transform.position == m_FinalPosition)
+        if (transform.position == m_FinalPosition)
         {
             m_CameraArrivedDesiredPosition = true;
         }
@@ -56,12 +56,12 @@ public class CameraMainMenuController : MonoBehaviour
         }
         ActivateCanvas();
     }
-    
+
     private void InitializeMovement()
     {
         m_InitMovement = true;
     }
-    
+
     private void Movement(float dt)
     {
         if (m_CameraArrivedDesiredPosition)

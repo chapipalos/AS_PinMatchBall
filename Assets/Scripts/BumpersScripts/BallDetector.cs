@@ -17,7 +17,7 @@ public class BallDetector : MonoBehaviour
         m_Collider = GetComponent<Collider>();
     }
 
-    public float fuerzaExpulsion = 10f; // Ajusta la fuerza de expulsi�n
+    public float m_ExpulsionForce = 10f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,15 +27,15 @@ public class BallDetector : MonoBehaviour
         }
         Rigidbody rb = other.GetComponent<Rigidbody>();
 
-        if (rb != null && other.tag == "BALL") // Verifica si el objeto tiene un Rigidbody2D
+        if (rb != null && other.tag == "BALL")
         {
-            m_Beat.activarExpansion = true;
+            m_Beat.m_ActivateExpansion = true;
 
             m_AudioManager.PlaySFX(m_AudioManager.m_BumperSound);
 
             Vector3 direccionExpulsion = (other.transform.position - transform.position).normalized;
-            rb.linearVelocity = Vector3.zero; // Opcional: Reinicia la velocidad antes de expulsar
-            rb.AddForce(direccionExpulsion * fuerzaExpulsion, ForceMode.Impulse);
+            rb.linearVelocity = Vector3.zero;
+            rb.AddForce(direccionExpulsion * m_ExpulsionForce, ForceMode.Impulse);
         }
     }
 
