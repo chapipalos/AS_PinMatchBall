@@ -14302,17 +14302,17 @@ MonoBehaviour:
   m_MusicSource: {fileID: 1456590776}
   m_SFXSource: {fileID: 1434750257}
   m_BackgoundMusic: {fileID: 8300000, guid: ccd9592b41270b7478d6fd25fce80c16, type: 3}
-  m_FreezePowerUpSound: {fileID: 8300000, guid: 7cdf4a808d636f9468b774fa2a32a704, type: 3}
-  m_GhostBallPowerUpSound: {fileID: 8300000, guid: 1656355e08cf1df4ea58dce4e5ee7514, type: 3}
-  m_ShieldPowerUpSound: {fileID: 8300000, guid: ede86ac3093107049969ef28abb1726e, type: 3}
-  m_SpikeBallPowerUpSound: {fileID: 8300000, guid: 66ed67523633b5b45a5ab07c3da99835, type: 3}
-  m_BlooperPowerUpSound: {fileID: 8300000, guid: e0ee854b9a0d35448a4cc023c940cbe5, type: 3}
-  m_BallWallBounceSound: {fileID: 8300000, guid: 88b1cbe3caa3fee4b8b103b5edd7aba9, type: 3}
-  m_BumperSound: {fileID: 8300000, guid: 8b9ef0a3bd05dd24eb23111a47c6b51e, type: 3}
-  m_TriggerSound: {fileID: 8300000, guid: 0a8b9d856922c3d43b1b831bfb94b5fe, type: 3}
-  m_SpeedZoneSound: {fileID: 8300000, guid: a2ab5ac1899fc8b4f857e7409c775a79, type: 3}
+  m_FreezePowerUpSound: {fileID: 8300000, guid: c754371a347ec294eb141c0934427e9c, type: 3}
+  m_GhostBallPowerUpSound: {fileID: 8300000, guid: 84b4f54c06c14c745817e832b7a6eb1d, type: 3}
+  m_ShieldPowerUpSound: {fileID: 8300000, guid: e75517e1f76a27d4d8884bc99eba8d66, type: 3}
+  m_SpikeBallPowerUpSound: {fileID: 8300000, guid: ff916a152c3cbbd4cb4ec435b813562b, type: 3}
+  m_BlooperPowerUpSound: {fileID: 8300000, guid: f8f961cc1677b6d41befbb811f7926af, type: 3}
+  m_BallWallBounceSound: {fileID: 8300000, guid: 59811695ce876ee4b8f80e3ded17eb64, type: 3}
+  m_BumperSound: {fileID: 8300000, guid: 6268a1dcefd4a224ba3e84836c2cb186, type: 3}
+  m_TriggerSound: {fileID: 8300000, guid: 3c9e9f60090da3747ab86fa7df6da3c9, type: 3}
+  m_SpeedZoneSound: {fileID: 8300000, guid: 5515f8c6325e02647a5c8e60d010c9a1, type: 3}
   m_FanSound: {fileID: 8300000, guid: fd25a15f9797641458336cccfb445343, type: 3}
-  m_GoalSound: {fileID: 8300000, guid: e23705d0901531b44a5c580af3fd8809, type: 3}
+  m_GoalSound: {fileID: 8300000, guid: ed3ab3067d17b6a4bb3e8be606aceebd, type: 3}
   m_RespawnSound: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
   m_StunSound: {fileID: 8300000, guid: 815e6e0f7bfcd9746af975f063a3f013, type: 3}
   m_Background2: {fileID: 8300000, guid: 9dee30713ff9e8744989e2c2a958106e, type: 3}
