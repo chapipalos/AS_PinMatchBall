@@ -10156,13 +10156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836ebc24244eb6f42bae4ba8a1a3f9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxAngle: 12
-  m_swingSpeed: 10
-  m_parent: {fileID: 1999514318}
-  m_rotationSpeed: 1000
-  m_initialRotation: {x: 0, y: 0, z: 0, w: 0}
-  m_previousParentPosition: {x: 0, y: 0, z: 0}
-  m_currentSwingAngle: 0
 --- !u!23 &722832661
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14316,6 +14309,7 @@ MonoBehaviour:
   m_RespawnSound: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
   m_StunSound: {fileID: 8300000, guid: 815e6e0f7bfcd9746af975f063a3f013, type: 3}
   m_Background2: {fileID: 8300000, guid: 9dee30713ff9e8744989e2c2a958106e, type: 3}
+  m_Click: {fileID: 0}
 --- !u!1 &1168038021
 GameObject:
   m_ObjectHideFlags: 0
@@ -14853,7 +14847,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260918027}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64d92dd451f2c3641aa79185a2c701e0, type: 3}
   m_Name: 
@@ -14886,7 +14880,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260918027}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7caefb951bceca045a54ba2d478d2fd3, type: 3}
   m_Name: 
