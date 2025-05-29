@@ -33,6 +33,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Menu")]
     public AudioClip m_Background2;
+    public AudioClip m_Click;
 
     private void Start()
     {

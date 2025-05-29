@@ -34,10 +34,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject m_BlueWinsPanel;
     public GameObject m_RedWinsPanel;
     public GameObject m_OptionsPanel;
-    public TMP_Dropdown m_ResolutionDropdown;
-    public Toggle m_FullscreenToggle;
-    public AudioManager audioManager;
-    private Resolution[] m_Resolutions;
+    public AudioManager m_AudioManager;
 
     private void Awake()
     {
@@ -86,8 +83,6 @@ public class MainMenuController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //audioManager.PlayMusic(audioManager.m_Background2);
-        InitResolutionSettings();
         if (GameManager.m_GameOver && GameManager.m_Winner)
         {
             m_OptionsPanel.gameObject.SetActive(false);
@@ -180,15 +175,16 @@ public class MainMenuController : MonoBehaviour
         return res;
     }
 
-
     private void Play()
     {
+        m_AudioManager.PlaySFX(m_AudioManager.m_Click);
         GameManager.m_GameOver = false;
         SceneManager.LoadScene(1);
     }
 
     private void OptionsPanel()
     {
+        m_AudioManager.PlaySFX(m_AudioManager.m_Click);
         m_OptionsPanel.gameObject.SetActive(true);
         m_BlueWinsPanel.gameObject.SetActive(false);
         m_RedWinsPanel.gameObject.SetActive(false);
@@ -200,6 +196,7 @@ public class MainMenuController : MonoBehaviour
 
     private void MainMenuPanel()
     {
+        m_AudioManager.PlaySFX(m_AudioManager.m_Click);
         m_OptionsPanel.gameObject.SetActive(false);
         m_BlueWinsPanel.gameObject.SetActive(false);
         m_RedWinsPanel.gameObject.SetActive(false);
@@ -211,59 +208,7 @@ public class MainMenuController : MonoBehaviour
 
     private void Exit()
     {
+        m_AudioManager.PlaySFX(m_AudioManager.m_Click);
         Application.Quit();
     }
-
-    private void InitResolutionSettings()
-    {
-        m_Resolutions = Screen.resolutions;
-        m_ResolutionDropdown.ClearOptions();
-
-        List<string> options = new List<string>();
-        int currentResolutionIndex = 0;
-
-        for (int i = 0; i < m_Resolutions.Length; i++)
-        {
-            float aspectRatio = (float)m_Resolutions[i].width / m_Resolutions[i].height;
-            if (Mathf.Abs(aspectRatio - (16f / 9f)) < 0.01f) 
-            {
-                string option = m_Resolutions[i].width + " x " + m_Resolutions[i].height;
-                options.Add(option);
-
-                if (m_Resolutions[i].width == Screen.currentResolution.width &&
-                    m_Resolutions[i].height == Screen.currentResolution.height)
-                {
-                    currentResolutionIndex = options.Count - 1;
-                }
-            }
-        }
-
-        m_ResolutionDropdown.AddOptions(options);
-        m_ResolutionDropdown.value = currentResolutionIndex;
-        m_ResolutionDropdown.RefreshShownValue();
-
-        m_ResolutionDropdown.onValueChanged.AddListener(SetResolution);
-    }
-
-
-
-
-
-
-    public void SetResolution(int resolutionIndex)
-    {
-        if (m_Resolutions == null || resolutionIndex < 0 || resolutionIndex >= m_Resolutions.Length)
-            return;
-
-        Resolution resolution = m_Resolutions[resolutionIndex];
-        bool isFullscreen = m_FullscreenToggle.isOn;
-        Screen.SetResolution(resolution.width, resolution.height, isFullscreen);
-    }
-
-
-    public void SetFullscreen(bool isFullscreen)
-    {
-        Screen.fullScreen = isFullscreen;
-    }
-
 }

@@ -24,9 +24,12 @@ public class CameraMainMenuController : MonoBehaviour
     private bool m_InitMovement = false;
     public float m_TimeToStart;
 
+    public OptionsMenuManager m_OptionsMenuManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        m_OptionsMenuManager.LoadVolume();
         transform.position = GameManager.m_PositionOfCamera;
         transform.rotation = GameManager.m_RotationOfCamera;
         m_Screen.GetComponent<MeshRenderer>().material = m_ScreenOffMaterial;

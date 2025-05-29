@@ -15,18 +15,9 @@ public class OptionsMenuManager : MonoBehaviour
 
     public AudioMixer m_AudioMixer;
 
-
-
-    private void Start()
+    private void Update()
     {
-        if (PlayerPrefs.HasKey("GeneralVolume"))
-        {
-            LoadVolume();
-        }
-        else
-        {
-            SetVolume();
-        }
+        SetVolume();
     }
 
     public void SetVolume()
@@ -49,8 +40,4 @@ public class OptionsMenuManager : MonoBehaviour
         m_SfxVolumeSlider.value = PlayerPrefs.GetFloat("SfxVolume");
         SetVolume();
     }
-
-
-
-
 }
